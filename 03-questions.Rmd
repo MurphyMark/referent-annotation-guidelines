@@ -52,192 +52,6 @@ Tag "whose" as part of the referent that comes after.
 
 > There was a woman [whose car] `u` was very spacious.
 
-### Repititions
-
-> What do we do with repeated references ("A ball - a ball was rolling ...")?
-
-If a referent was repeated, tag only the last referent - the one the speaker eventually decided on.
-
-> A man `untagged` was, a man `n` was walking down the street.
-
-### Identifying Repititions
-
-<!-- Add to 00-referents -->
-> Does this example contain a repitition?
-
-Here are some previous questions about repitions, and our decisions.
-The referents in question are marked with `[]` brackets:
-
-> A woman was closing [her trunk], opening [it], and ...
-
-Tag both referents normally.
-
-> The car behind him - hit [it] also - hit [the car] - [the other car]
-
-Tag only "the other car".
-
-> And the guy with [the ball] who accidentally dropped [the ball] ...
-
-Tag only the second "the ball".
-
-### Tagging Unclear Referents
-
-<!-- Add to 00-referents -->
-> How confusing can a description be before we decide not to tag the referent?
-
-Here are some examples, and our decisions.
-The referents in question are marked with `[]` brackets:
-
-> I saw a lady, and [a boy] next to her bouncing a ball.
-
-`man` - `u`
-
-> ... so the [owner] of [the cars] called 911.
-
-Neither is tagged, because there is no single owner of two cars.
-
-> The two people came out of their cars and [a man] with the white shirt called the police.
-
-`driver` - `g`
-
-> [They] both came out, and [one of them] called the police
-
-"They": `drivers` - `g`
-
-"One of them": `driver1` - `g`
-
-> I think [someone] like called 911
-
-`drivers`
-
-> The man helped the woman. Uh, [she] helped her pick up her groceries.
-
-`man`
-
-> ... which distracted a dog that was in the road behind [a car].
-
-Untagged
-
-> [The passengers] got out and called the police.
-
-Untagged
-
-> The car behind him was coming after him, so [he] crashed into [that car] too.
-
-Both untagged
-
-### Generic Referents
-
-> Is this referent generic, and should we tag it?
-
-Here are some examples, and our decisions:
-
-<!-- Copy to dog => leash bridging -->
-> The woman was holding her dog by [the leash].
-
-`leash` - `b`
-
-> Both drivers got out of [the car]
-
-Untagged
-
-### Aposotrophe S
-
-> What do we do with 's phrases, like "the man's ball"?
-
-Normally when you see an apostrophe s, you can break the phrase up into a given and an unused-unknown.
-
-However, if there is a bridging relationship between the two members of the phrase, the second member might be bridging-contained instead.
-This requires a bridging relationship, though, and most apostrophe s’s will be unused-unknown.
-
-> A woman was getting her groceries. 
-> The woman `g` [‘s dog] `u` ran into the road.
-
-> A car pulled over.
-> The car `g` [‘s driver] `bc` got out, and started yelling.
-        
-### Possessive Pronouns
-
-> What do we do with phrases containing possessive pronouns (his ball)?
-
-Possessive pronoun phrases are either unused-unknown or bridging (never bridging-contained).
-If there is a bridging relationship, then bridging. Otherwise unused-unknown.
-
-> A woman was in the parking lot.
-> [Her groceries] `u` fell.
-
-> One of the drivers stopped suddenly.
-> [ Their car ] `b` screeched really loud.
-
-### Wh-Words and Possessive Pronouns
-
-> Should we tag wh-words or possessive pronouns that are not attached to a referent?
-
-Nope! Only personal pronouns and referent phrases should be tagged.
-
-> A man `n` was in the parking lot.
-> He `g` was happy.
-
-> A man `n` was in the parking lot.
-> In his `untagged` hand was [his ball] `u`.
-
-> There was a woman.
-> The man `u` who `untagged` was with her looked confused.
-
-### Conjoined Referents
-
-> When a conjoined referent appears, are members of it treated as given or bridging?
-> Also, when members of a conjoined referent appear, is the conjoined referent treated as given or bridging?
-
-If the conjoined referent is just the collection of individual referents, members are treated as given. 
-If all members have been previously listed, the conjoined referent is given, too.
-
-Given relationship conjoined referents:
-
-* cars
-* drivers
-
-If the conjoined referent has some inferred bridging relationship between it and its members, members are treated as bridging.
-If all members have been previously listed, the conjoined referent is bridging.
-
-However, if the conjoined referent is introduced in a way that enumerates the members ("Two people were walking down the street"),
-introduced members are treated as Given.
-
-Bridging relationship conjoined referents:
-
-* couple
-* family
-
-<!-- Find the controversial examples. -->
-
-> A red car and a blue car drove down the street.
-> The cars `g` were going way too fast.
-
-> Two cars were driving down the street.
-> The red one `g` was going slow.
-
-> One car’s driver got out.
-> Then the other car’s driver got out.
-> The drivers `g` started arguing.
-
-> The drivers got out of the car.
-> The first driver `g` looked very angry.
-
-> Two people were walking down the street.
-> One of them `g` was bouncing a ball.
-
-> A man and a woman were standing around.
-> The couple `b` was holding hands.
-
-> A couple was standing in the parking lot.
-> The husband `b` was looking around.
-
-> A man, a woman, and a baby were standing in the parking lot.
-> The family `b` looked happy.
-
-> A family was walking down the street.
-> The baby `b` was crying.
-
 ## R-Types
 
 ### New vs. Unused-Unknown
@@ -363,7 +177,7 @@ Since this example doesn't have "the first car" in the same phrase as "the drive
 
 <!-- TODO: Examples -->
 
-### Possessive Pronoun Multiple Referents
+### Unused-Unknown Across Coordination
 
 <!-- link possessive-pronoun & unused-unknown -->
 > Can a possessive pronoun give unused-unknown status to multiple coordinated referents?
@@ -373,27 +187,7 @@ Yes, if the possessive pronoun applies to a coordinated noun phrase, all referen
 > There was a woman with [her dog] `u` and [groceries] `u`.
 
 
-### Counting CU's
 
-> How do we count the 5 CU's between a referent and its most recent co-referent/anchor
-
-An r-type is `-Displaced` if there are 5 CU's *between* the CU containing the referent and the CU containing its most recent co-referent/anchor.
-
-The count of CU's should exclude [empty CU's](empty-cu's).
-
-### Empty CU's
-
-> Which CU's are empty CU's?
-
-Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
-
-<!-- TODO: Add examples -->
-<!-- TODO: What about "hmm" -->
-
-### Introductions
-
-<!-- Add section in 00-rtype -->
-<!-- Explain more about introductions -->
 
 ## Conjoined Referents
 
@@ -407,6 +201,61 @@ It’s possible, for someone to explain a conjoined referent, even if it’s a p
 
 > There was a family walking down the street.
 > They `family` `g` `1`, a man, a woman, and a child, were walking quickly.
+
+### Conjoined Referent Members
+
+> When a conjoined referent appears, are members of it treated as given or bridging?
+> Also, when members of a conjoined referent appear, is the conjoined referent treated as given or bridging?
+
+If the conjoined referent is just the collection of individual referents, members are treated as given. 
+If all members have been previously listed, the conjoined referent is given, too.
+
+Given relationship conjoined referents:
+
+* cars
+* drivers
+
+If the conjoined referent has some inferred bridging relationship between it and its members, members are treated as bridging.
+If all members have been previously listed, the conjoined referent is bridging.
+
+However, if the conjoined referent is introduced in a way that enumerates the members ("Two people were walking down the street"),
+introduced members are treated as Given.
+
+Bridging relationship conjoined referents:
+
+* couple
+* family
+
+<!-- Find the controversial examples. -->
+
+> A red car and a blue car drove down the street.
+> The cars `g` were going way too fast.
+
+> Two cars were driving down the street.
+> The red one `g` was going slow.
+
+> One car’s driver got out.
+> Then the other car’s driver got out.
+> The drivers `g` started arguing.
+
+> The drivers got out of the car.
+> The first driver `g` looked very angry.
+
+> Two people were walking down the street.
+> One of them `g` was bouncing a ball.
+
+> A man and a woman were standing around.
+> The couple `b` was holding hands.
+
+> A couple was standing in the parking lot.
+> The husband `b` was looking around.
+
+> A man, a woman, and a baby were standing in the parking lot.
+> The family `b` looked happy.
+
+> A family was walking down the street.
+> The baby `b` was crying.
+
 
 ## Phrases
 
@@ -494,6 +343,165 @@ Since we don’t know which driver the phrase refers to, we don’t tag anything
 > Should we tag "each other" ?
 
 Nope.
+
+
+## Other
+
+### Counting CU's
+
+> How do we count the 5 CU's between a referent and its most recent co-referent/anchor
+
+An r-type is `-Displaced` if there are 5 CU's *between* the CU containing the referent and the CU containing its most recent co-referent/anchor.
+
+The count of CU's should exclude [empty CU's](empty-cu's).
+
+### Empty CU's
+
+> Which CU's are empty CU's?
+
+Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
+
+<!-- TODO: Add examples -->
+<!-- TODO: What about "hmm" -->
+
+### Introductions
+
+<!-- Add section in 00-rtype -->
+<!-- Explain more about introductions -->
+
+### Aposotrophe S
+
+> What do we do with 's phrases, like "the man's ball"?
+
+Normally when you see an apostrophe s, you can break the phrase up into a given and an unused-unknown.
+
+However, if there is a bridging relationship between the two members of the phrase, the second member might be bridging-contained instead.
+This requires a bridging relationship, though, and most apostrophe s’s will be unused-unknown.
+
+> A woman was getting her groceries. 
+> The woman `g` [‘s dog] `u` ran into the road.
+
+> A car pulled over.
+> The car `g` [‘s driver] `bc` got out, and started yelling.
+        
+### Possessive Pronouns
+
+> What do we do with phrases containing possessive pronouns (his ball)?
+
+Possessive pronoun phrases are either unused-unknown or bridging (never bridging-contained).
+If there is a bridging relationship, then bridging. Otherwise unused-unknown.
+
+> A woman was in the parking lot.
+> [Her groceries] `u` fell.
+
+> One of the drivers stopped suddenly.
+> [ Their car ] `b` screeched really loud.
+
+### Wh-Words and Possessive Pronouns
+
+> Should we tag wh-words or possessive pronouns that are not attached to a referent?
+
+Nope! Only personal pronouns and referent phrases should be tagged.
+
+> A man `n` was in the parking lot.
+> He `g` was happy.
+
+> A man `n` was in the parking lot.
+> In his `untagged` hand was [his ball] `u`.
+
+> There was a woman.
+> The man `u` who `untagged` was with her looked confused.
+
+### Repititions
+
+> What do we do with repeated references ("A ball - a ball was rolling ...")?
+
+If a referent was repeated, tag only the last referent - the one the speaker eventually decided on.
+
+> A man `untagged` was, a man `n` was walking down the street.
+
+### Identifying Repititions
+
+<!-- Add to 00-referents -->
+> Does this example contain a repitition?
+
+Here are some previous questions about repitions, and our decisions.
+The referents in question are marked with `[]` brackets:
+
+> A woman was closing [her trunk], opening [it], and ...
+
+Tag both referents normally.
+
+> The car behind him - hit [it] also - hit [the car] - [the other car]
+
+Tag only "the other car".
+
+> And the guy with [the ball] who accidentally dropped [the ball] ...
+
+Tag only the second "the ball".
+
+### Tagging Unclear Referents
+
+<!-- Add to 00-referents -->
+> How confusing can a description be before we decide not to tag the referent?
+
+Here are some examples, and our decisions.
+The referents in question are marked with `[]` brackets:
+
+> I saw a lady, and [a boy] next to her bouncing a ball.
+
+`man` - `u`
+
+> ... so the [owner] of [the cars] called 911.
+
+Neither is tagged, because there is no single owner of two cars.
+
+> The two people came out of their cars and [a man] with the white shirt called the police.
+
+`driver` - `g`
+
+> [They] both came out, and [one of them] called the police
+
+"They": `drivers` - `g`
+
+"One of them": `driver1` - `g`
+
+> I think [someone] like called 911
+
+`drivers`
+
+> The man helped the woman. Uh, [she] helped her pick up her groceries.
+
+`man`
+
+> ... which distracted a dog that was in the road behind [a car].
+
+Untagged
+
+> [The passengers] got out and called the police.
+
+Untagged
+
+> The car behind him was coming after him, so [he] crashed into [that car] too.
+
+Both untagged
+
+### Generic Referents
+
+> Is this referent generic, and should we tag it?
+
+Here are some examples, and our decisions:
+
+<!-- Copy to dog => leash bridging -->
+> The woman was holding her dog by [the leash].
+
+`leash` - `b`
+
+> Both drivers got out of [the car]
+
+Untagged
+
+
 
 ## Technical
 

@@ -22,8 +22,8 @@ We use the following 7 labels:
 | 5 | Bridging-Displaced | `bd` |
 | 6 | Given | `g` |
 | 7 | Given-Displaced | `gd` |
-
-<!-- TODO: ADD EXPLANATION FOR FE & PR -->
+| (8) | Further-Explanation | `+fe` |
+| (9) | Predicative | `+pr` |
 
 
 <!-- TODO: Standardize explanation style -->
@@ -65,6 +65,9 @@ Referents preceded by possessive pronouns are also unused-unkown.
 <!-- TODO: IS "HER BABY" U OR N? -->
 > I saw a man `new` with his wife `unused-unknown` and her baby `unused-unknown`.
 
+Questions:
+
+* [New vs. Unused-Unknown](#new-vs.-unused-unknown)
 
 ## Bridging
 
@@ -138,7 +141,8 @@ A Bridging-Displaced referent is a Bridging referent with 5 non-empty CU's betwe
 > The mother was just standing there and didn't do anything
 
 Questions:
-<!-- TODO: What qualifies as a non-empty CU -->
+* [How do we count CU's?](#counting-cus)
+* [Which CU's are empty CU's?](#empty-cus)
 
 ## Given
 
@@ -158,9 +162,9 @@ A given referent is one that has been previously introduced, either as itself, o
 > There was a man who was dribbling a ball and a woman with a stroller.
 > The couple `given` was crossing the street.
 
-<!-- TODO: Given vs Bridging -->
-
 Questions:
+
+* [When a conjoined referent appears, are members of it treated as given or bridging?](#conjoined-referent-members)
 
 
 ### Given-Displaced
@@ -177,12 +181,49 @@ A Given-Displaced referent is a Given referent with 5 non-empty CU's between the
 > The man `gd` helped the lady with her groceries.
 
 Questions:
-<!-- TODO: What qualifies as a non-empty CU? -->
 
+* [How do we count CU's?](#counting-cus)
+* [Which CU's are empty CU's?](#empty-cus)
 
+## Further-Explanation
 
+Further Explanation was brought in to solve issues like the following:
 
+> [Two cars] `cars` `n`, [a blue one] `car1` `???` and [a white one] `car2` `???`, were driving down the street.
 
+In this example, it's difficult to determine the r-type of `car1` and `car2`.
+They're introduced like new referents, leading us towards `n`, but then it would seem that `car1` was introduced twice -
+once in `cars`, and once in `car1`.
+
+To resolve this, we use the `+fe` tag.
+`+fe` attaches to the end of the existing annotation, and we get:
+
+* `cars` `n`
+* `car1` `n+fe`
+* `car2` `n+fe`
+
+Theoretically, `+fe` can attach to any r-type. In practice, it is usually attached to `n`.
+
+> A dog ran into the street. The first car `n` (the blue one `n+fe`) stopped suddenly.
+
+> Two cars `cars` `n`, [a blue] `car1` `n` and [a white one] `car2` `n` stopped suddenly.
+
+## Predicative
+
+Similar to Further Explanation, Predicative solves the issue with:
+
+> There was a car `car1` `n`. It looked like a blue one `car1` `???`.
+
+"a blue one" is tagged as `car1` `n+pr`.
+
+Predicative referents generally come after descriptive verbs.
+Here are some, but not all, of those verbs:
+
+* It was
+* It looked like
+* It seemed to be
+
+<!-- EXAMPLES -->
 
 
 

@@ -1,1 +1,34 @@
 # Answer 3: Conjoined Referents
+
+> Annotated on the `norm [conj_referent]` tier in Exmaralda
+
+Out of our 19 referents, there are 4 conjoined referents:
+
+1. couple
+2. family
+3. cars
+4. drivers
+
+For each conjoined referent, we want to mark whether or not it is explained:
+
+* Unexplained `0`
+* Explained `1`
+
+An explanation is an enumeration of conjoined referent elements with indefinite articles/possessive pronouns.
+The enumeration has to come right after the conjoined referent.
+Normally the explanation is separated by a comma or is in brackets.
+
+Such explanations do not appear often, so the majority of conjoined referents will be unexplained.
+
+Generally, members of an explained conjoined referent will be treated as [+fe](#further-explanation)
+
+> There were two cars `cars` `n` `1`, a white one `car1` `n+fe` and a blue one `car2` `n+fe`. 
+
+<!-- ??? Is woman1 b+fe ??? -->
+> There was a family `family` `n` `1`, a mom `woman1` `b+fe`, a dad `man` `b+fe` and a baby `baby` `b+fe`.
+ 
+> There was a couple `couple` `n` `0` who was crossing the road.
+ 
+Please note that the elements that are enumerated in the explanation should have indefinite articles. Also, the explanation should not provide any additional info about what the elements were doing. So, the following example is not an explanation:
+ 
+> There was a couple `couple` `n` `0`. The man was playing with a ball.
