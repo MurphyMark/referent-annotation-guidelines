@@ -2,6 +2,48 @@
 
 ## Referents
 
+### Groceries
+
+> What phrases should we tag as `groceries`? What phrases should we not?
+
+Generally, `groceries` should be a mass noun.
+Here's a list of things we've decided to tag as `groceries`, and a list of things we've decided not to.
+
+Groceries:
+
+* groceries
+* produce
+* shopping
+* stuff
+* food
+
+Not Groceries:
+
+* bags
+* baggage
+* fruits
+
+### Family vs. Couple
+
+> Is this group of people `family` or `couple` ?
+
+Generally, if all the members of the family have been introduced, they refers to the family.
+If only man and woman1 (and maybe stroller) have been introduced, they refers to the couple, instead.
+
+Also: if there’s a man and a woman *with* a baby, we treat it as a couple, as the baby is just additional information about either the man or the woman.
+
+> There was a man, a woman, and a baby.
+> They `family` crossed the street.
+
+> There was a man and a woman.
+> They `couple` crossed the street.
+
+> There was a man and a woman and a stroller.
+> They `couple` went across the street.
+
+> There was a man and a woman with a baby.
+> They `couple` crossed the street. 
+
 ### Possessive Pronoun "whose"
 
 > How do we tag "whose" in referent noun phrases such as "There was a woman whose car ..."
@@ -9,6 +51,14 @@
 Tag "whose" as part of the referent that comes after.
 
 > There was a woman [whose car] `u` was very spacious.
+
+### Repititions
+
+> What do we do with repeated references ("A ball - a ball was rolling ...")?
+
+If a referent was repeated, tag only the last referent - the one the speaker eventually decided on.
+
+> A man `untagged` was, a man `n` was walking down the street.
 
 ### Identifying Repititions
 
@@ -76,6 +126,118 @@ Untagged
 
 Both untagged
 
+### Generic Referents
+
+> Is this referent generic, and should we tag it?
+
+Here are some examples, and our decisions:
+
+<!-- Copy to dog => leash bridging -->
+> The woman was holding her dog by [the leash].
+
+`leash` - `b`
+
+> Both drivers got out of [the car]
+
+Untagged
+
+### Aposotrophe S
+
+> What do we do with 's phrases, like "the man's ball"?
+
+Normally when you see an apostrophe s, you can break the phrase up into a given and an unused-unknown.
+
+However, if there is a bridging relationship between the two members of the phrase, the second member might be bridging-contained instead.
+This requires a bridging relationship, though, and most apostrophe s’s will be unused-unknown.
+
+> A woman was getting her groceries. 
+> The woman `g` [‘s dog] `u` ran into the road.
+
+> A car pulled over.
+> The car `g` [‘s driver] `bc` got out, and started yelling.
+        
+### Possessive Pronouns
+
+> What do we do with phrases containing possessive pronouns (his ball)?
+
+Possessive pronoun phrases are either unused-unknown or bridging (never bridging-contained).
+If there is a bridging relationship, then bridging. Otherwise unused-unknown.
+
+> A woman was in the parking lot.
+> [Her groceries] `u` fell.
+
+> One of the drivers stopped suddenly.
+> [ Their car ] `b` screeched really loud.
+
+### Wh-Words and Possessive Pronouns
+
+> Should we tag wh-words or possessive pronouns that are not attached to a referent?
+
+Nope! Only personal pronouns and referent phrases should be tagged.
+
+> A man `n` was in the parking lot.
+> He `g` was happy.
+
+> A man `n` was in the parking lot.
+> In his `untagged` hand was [his ball] `u`.
+
+> There was a woman.
+> The man `u` who `untagged` was with her looked confused.
+
+### Conjoined Referents
+
+> When a conjoined referent appears, are members of it treated as given or bridging?
+> Also, when members of a conjoined referent appear, is the conjoined referent treated as given or bridging?
+
+If the conjoined referent is just the collection of individual referents, members are treated as given. 
+If all members have been previously listed, the conjoined referent is given, too.
+
+Given relationship conjoined referents:
+
+* cars
+* drivers
+
+If the conjoined referent has some inferred bridging relationship between it and its members, members are treated as bridging.
+If all members have been previously listed, the conjoined referent is bridging.
+
+However, if the conjoined referent is introduced in a way that enumerates the members ("Two people were walking down the street"),
+introduced members are treated as Given.
+
+Bridging relationship conjoined referents:
+
+* couple
+* family
+
+<!-- Find the controversial examples. -->
+
+> A red car and a blue car drove down the street.
+> The cars `g` were going way too fast.
+
+> Two cars were driving down the street.
+> The red one `g` was going slow.
+
+> One car’s driver got out.
+> Then the other car’s driver got out.
+> The drivers `g` started arguing.
+
+> The drivers got out of the car.
+> The first driver `g` looked very angry.
+
+> Two people were walking down the street.
+> One of them `g` was bouncing a ball.
+
+> A man and a woman were standing around.
+> The couple `b` was holding hands.
+
+> A couple was standing in the parking lot.
+> The husband `b` was looking around.
+
+> A man, a woman, and a baby were standing in the parking lot.
+> The family `b` looked happy.
+
+> A family was walking down the street.
+> The baby `b` was crying.
+
 ## R-Types
 
 ### New vs. Unused-Unknown
@@ -93,8 +255,6 @@ Tag as `u` if:
 <!-- TODO: Tag "the woman's dog" as u -->
 
 Otherwise, tag as `n`.
-
-#### Examples
 
 <!-- TODO: Examples -->
 
@@ -183,16 +343,24 @@ Phrase does not contain a given referent
 
 > Should I tag this referent as Bridging or Bridging-Contained?
 
-<!-- TODO: "predicate" ? -->
 <!-- TODO: Link `anchor` -->
 <!-- TODO: Possessive phrase phrasing -->
-Simalar to [unused-unknown](#new-vs.-unused-unknown), tag as `bc` if:
+Simalar to [unused-unknown](#new-vs.-unused-unknown), tag as `bc` if either:
 
-* The anchor of the referent appears in the predicate
-
+* The anchor of the referent appears in the same phrase as the referent
 * The referent is a part of a possessive phrase with the anchor
 
-#### Examples
+> A child was walking down the street.
+> The father `bc` of the child was following close behind.
+
+> Two cars stopped in the street.
+> The first car ['s driver] `bc` got out angrily.
+
+> The first car stopped in the street.
+> The driver `b` got out angrily.
+
+Since this example doesn't have "the first car" in the same phrase as "the driver", it is not Bridging-Contained.
+
 <!-- TODO: Examples -->
 
 ### Possessive Pronoun Multiple Referents
@@ -227,11 +395,125 @@ Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
 <!-- Add section in 00-rtype -->
 <!-- Explain more about introductions -->
 
+## Conjoined Referents
+
+### Explaining Conjoined Referent Pronouns
+
+> If a pronoun refers to a conjoined referent ("The two cars stopped. [They] didn't stop fast enough"),
+> should we mark whether or not it’s explained?
+
+Yep.
+It’s possible, for someone to explain a conjoined referent, even if it’s a pronoun, so we’ll just mark all conjoined referents.
+
+> There was a family walking down the street.
+> They `family` `g` `1`, a man, a woman, and a child, were walking quickly.
 
 ## Phrases
 
-### Does "one behind the other" Have Referents?
+### One Behind The Other
 
+> Does thre phrase "one behind the other" have any referents?
+
+No.
+We are treating "one behind the other" as an idiom, so it has no referents.
+
+
+### Everyone
+
+> Which referent does "everyone" refer to?
+
+Here are some previous questions about "everyone", and our decisions:
+
+> The car hit into the back of another car. 
+> [Everyone] seemed fine.
+
+Untagged
+
+> The man checked with [everyone] involved in the accident.
+
+`drivers`
+
+<!-- Get context -->
+> [Everybody] got out and [they] were talking.
+
+`drivers` for both
+
+<!-- Get context -->
+> ... then [everybody] got out and was yelling.
+
+`drivers`
+
+### Either/Neither/None of the
+
+> What do we do with "Either / Neither / None of the [ conjoined referent ]" ?
+
+
+Since either, neither, and none don’t really refer to a concrete referent, we will not tag the phrase,
+and we will not tag any referents within the phrase.
+
+
+> None of the family `untagged` looked very happy.
+
+> Neither of the drivers `untagged` was at fault.
+
+> Either one of them `untagged` could have ended the fight.
+
+### Both of the
+
+What do we do with "Both of the [ conjoined referent ]" ?
+
+This phrase refers to the conjoined referent. Tag the whole phrase, and tag it with whatever the conjoined referent would be on its own.
+
+> The two cars stopped.
+> [Both of the drivers] `drivers` `b` got out.
+
+> [Both of the people] `couple` `u` who had been walking down the street looked shocked.
+
+### One of the
+
+> What do we do with "One of the [conjoined referent]" ?
+
+This phrase refers to a single member of the conjoined referent.
+If the context gives evidence that it is one or the other of the members, tag the whole phrase as that member.
+
+If there is no evidence to the identity of the referent, treat it like other ambiguous referents, and do not tag it.
+
+> The white car `g` crashed into the blue car `g`.
+> One of the drivers `driver` `b` got out and called the police.
+
+We know that the referent is driver1, because driver1 is the one who calls the police in this scenario.
+We know that the referent is bridging, because driver1 has a bridging relationship with the blue car.
+
+> The two drivers `g` crashed into each other.
+> One of them `untagged` looked upset.
+
+Both drivers could be described as looking upset.
+Since we don’t know which driver the phrase refers to, we don’t tag anything in the phrase.
+
+### Each Other
+
+> Should we tag "each other" ?
+
+Nope.
+
+## Technical
+
+### Hide Tiers
+
+> EXMARaLDA has too many tiers. Can I hide some?
+
+Yes! To hide tiers in Exmaralda, without deleting them:
+
+* Select a tier on the left, or use shift-click to select multiple tiers
+* In the top menu, go to Tier > Hide Tier
+
+### Merge Cells
+
+> Is there a way to merge cells and immediately begin typing?
+
+Yes.
+If you use the merge-cells button, you have to click on the merged cell to type into it.
+However, if you instead use the merge-cells shortcut (ctrl-1 on Windows), you can immediately begin typing in the merged cell.
 
 
 
