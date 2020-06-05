@@ -24,7 +24,7 @@ description: ""
 
 # Answer 1: Referents
 
-## asdf
+## Referents
 
 > Annotated on tier `norm[referent]` in ExMARALDA
 
@@ -52,26 +52,26 @@ We have a list of 20 possible referents, and we count how many of these 20 refer
 20. drivers (driver1 + driver2) - *conjoined referent*
 
 
-## man
-## woman1
-## couple
-## people
-## family
-## ball
-## stroller
-## baby
-## woman2
-## dog
-## leash
-## groceries
-## trunk
-## car1
-## car2
-## car3
-## cars
-## driver1
-## driver2
-## drivers
+### man
+### woman1
+### couple
+### people
+### family
+### ball
+### stroller
+### baby
+### woman2
+### dog
+### leash
+### groceries
+### trunk
+### car1
+### car2
+### car3
+### cars
+### driver1
+### driver2
+### drivers
 
 <!--chapter:end:00-referents.Rmd-->
 

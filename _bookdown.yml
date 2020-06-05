@@ -2,3 +2,4 @@ book_filename: "referent_introduction_annotation_guidelines"
 language:
   ui:
 delete_merged_file: true
+output_dir: "docs"
