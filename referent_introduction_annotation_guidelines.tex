@@ -445,6 +445,76 @@ Questions:
 \hypertarget{referents-1}{%
 \section{Referents}\label{referents-1}}
 
+\hypertarget{groceries-1}{%
+\subsection{Groceries}\label{groceries-1}}
+
+\begin{quote}
+What phrases should we tag as \texttt{groceries}? What phrases should we not?
+\end{quote}
+
+Generally, \texttt{groceries} should be a mass noun.
+Here's a list of things we've decided to tag as \texttt{groceries}, and a list of things we've decided not to.
+
+Groceries:
+
+\begin{itemize}
+\tightlist
+\item
+  groceries
+\item
+  produce
+\item
+  shopping
+\item
+  stuff
+\item
+  food
+\end{itemize}
+
+Not Groceries:
+
+\begin{itemize}
+\tightlist
+\item
+  bags
+\item
+  baggage
+\item
+  fruits
+\end{itemize}
+
+\hypertarget{family-vs.-couple}{%
+\subsection{Family vs.~Couple}\label{family-vs.-couple}}
+
+\begin{quote}
+Is this group of people \texttt{family} or \texttt{couple} ?
+\end{quote}
+
+Generally, if all the members of the family have been introduced, they refers to the family.
+If only man and woman1 (and maybe stroller) have been introduced, they refers to the couple, instead.
+
+Also: if there's a man and a woman \emph{with} a baby, we treat it as a couple, as the baby is just additional information about either the man or the woman.
+
+\begin{quote}
+There was a man, a woman, and a baby.
+They \texttt{family} crossed the street.
+\end{quote}
+
+\begin{quote}
+There was a man and a woman.
+They \texttt{couple} crossed the street.
+\end{quote}
+
+\begin{quote}
+There was a man and a woman and a stroller.
+They \texttt{couple} went across the street.
+\end{quote}
+
+\begin{quote}
+There was a man and a woman with a baby.
+They \texttt{couple} crossed the street.
+\end{quote}
+
 \hypertarget{possessive-pronoun-whose}{%
 \subsection{Possessive Pronoun ``whose''}\label{possessive-pronoun-whose}}
 
@@ -456,6 +526,19 @@ Tag ``whose'' as part of the referent that comes after.
 
 \begin{quote}
 There was a woman {[}whose car{]} \texttt{u} was very spacious.
+\end{quote}
+
+\hypertarget{repititions}{%
+\subsection{Repititions}\label{repititions}}
+
+\begin{quote}
+What do we do with repeated references (``A ball - a ball was rolling \ldots{}'')?
+\end{quote}
+
+If a referent was repeated, tag only the last referent - the one the speaker eventually decided on.
+
+\begin{quote}
+A man \texttt{untagged} was, a man \texttt{n} was walking down the street.
 \end{quote}
 
 \hypertarget{identifying-repititions}{%
@@ -552,6 +635,176 @@ The car behind him was coming after him, so {[}he{]} crashed into {[}that car{]}
 
 Both untagged
 
+\hypertarget{generic-referents}{%
+\subsection{Generic Referents}\label{generic-referents}}
+
+\begin{quote}
+Is this referent generic, and should we tag it?
+\end{quote}
+
+Here are some examples, and our decisions:
+
+\begin{quote}
+The woman was holding her dog by {[}the leash{]}.
+\end{quote}
+
+\texttt{leash} - \texttt{b}
+
+\begin{quote}
+Both drivers got out of {[}the car{]}
+\end{quote}
+
+Untagged
+
+\hypertarget{aposotrophe-s}{%
+\subsection{Aposotrophe S}\label{aposotrophe-s}}
+
+\begin{quote}
+What do we do with 's phrases, like ``the man's ball''?
+\end{quote}
+
+Normally when you see an apostrophe s, you can break the phrase up into a given and an unused-unknown.
+
+However, if there is a bridging relationship between the two members of the phrase, the second member might be bridging-contained instead.
+This requires a bridging relationship, though, and most apostrophe s's will be unused-unknown.
+
+\begin{quote}
+A woman was getting her groceries.
+The woman \texttt{g} {[}`s dog{]} \texttt{u} ran into the road.
+\end{quote}
+
+\begin{quote}
+A car pulled over.
+The car \texttt{g} {[}`s driver{]} \texttt{bc} got out, and started yelling.
+\end{quote}
+
+\hypertarget{possessive-pronouns}{%
+\subsection{Possessive Pronouns}\label{possessive-pronouns}}
+
+\begin{quote}
+What do we do with phrases containing possessive pronouns (his ball)?
+\end{quote}
+
+Possessive pronoun phrases are either unused-unknown or bridging (never bridging-contained).
+If there is a bridging relationship, then bridging. Otherwise unused-unknown.
+
+\begin{quote}
+A woman was in the parking lot.
+{[}Her groceries{]} \texttt{u} fell.
+\end{quote}
+
+\begin{quote}
+One of the drivers stopped suddenly.
+{[} Their car {]} \texttt{b} screeched really loud.
+\end{quote}
+
+\hypertarget{wh-words-and-possessive-pronouns}{%
+\subsection{Wh-Words and Possessive Pronouns}\label{wh-words-and-possessive-pronouns}}
+
+\begin{quote}
+Should we tag wh-words or possessive pronouns that are not attached to a referent?
+\end{quote}
+
+Nope! Only personal pronouns and referent phrases should be tagged.
+
+\begin{quote}
+A man \texttt{n} was in the parking lot.
+He \texttt{g} was happy.
+\end{quote}
+
+\begin{quote}
+A man \texttt{n} was in the parking lot.
+In his \texttt{untagged} hand was {[}his ball{]} \texttt{u}.
+\end{quote}
+
+\begin{quote}
+There was a woman.
+The man \texttt{u} who \texttt{untagged} was with her looked confused.
+\end{quote}
+
+\hypertarget{conjoined-referents}{%
+\subsection{Conjoined Referents}\label{conjoined-referents}}
+
+\begin{quote}
+When a conjoined referent appears, are members of it treated as given or bridging?
+Also, when members of a conjoined referent appear, is the conjoined referent treated as given or bridging?
+\end{quote}
+
+If the conjoined referent is just the collection of individual referents, members are treated as given.
+If all members have been previously listed, the conjoined referent is given, too.
+
+Given relationship conjoined referents:
+
+\begin{itemize}
+\tightlist
+\item
+  cars
+\item
+  drivers
+\end{itemize}
+
+If the conjoined referent has some inferred bridging relationship between it and its members, members are treated as bridging.
+If all members have been previously listed, the conjoined referent is bridging.
+
+However, if the conjoined referent is introduced in a way that enumerates the members (``Two people were walking down the street''),
+introduced members are treated as Given.
+
+Bridging relationship conjoined referents:
+
+\begin{itemize}
+\tightlist
+\item
+  couple
+\item
+  family
+\end{itemize}
+
+\begin{quote}
+A red car and a blue car drove down the street.
+The cars \texttt{g} were going way too fast.
+\end{quote}
+
+\begin{quote}
+Two cars were driving down the street.
+The red one \texttt{g} was going slow.
+\end{quote}
+
+\begin{quote}
+One car's driver got out.
+Then the other car's driver got out.
+The drivers \texttt{g} started arguing.
+\end{quote}
+
+\begin{quote}
+The drivers got out of the car.
+The first driver \texttt{g} looked very angry.
+\end{quote}
+
+\begin{quote}
+Two people were walking down the street.
+One of them \texttt{g} was bouncing a ball.
+\end{quote}
+
+\begin{quote}
+A man and a woman were standing around.
+The couple \texttt{b} was holding hands.
+\end{quote}
+
+\begin{quote}
+A couple was standing in the parking lot.
+The husband \texttt{b} was looking around.
+\end{quote}
+
+\begin{quote}
+A man, a woman, and a baby were standing in the parking lot.
+The family \texttt{b} looked happy.
+\end{quote}
+
+\begin{quote}
+A family was walking down the street.
+The baby \texttt{b} was crying.
+\end{quote}
+
 \hypertarget{r-types}{%
 \section{R-Types}\label{r-types}}
 
@@ -573,9 +826,6 @@ Tag as \texttt{u} if:
 \end{itemize}
 
 Otherwise, tag as \texttt{n}.
-
-\hypertarget{examples}{%
-\subsubsection{Examples}\label{examples}}
 
 \hypertarget{phrases-containing-given-referents}{%
 \subsection{Phrases Containing Given Referents}\label{phrases-containing-given-referents}}
@@ -661,17 +911,32 @@ Phrase does not contain a given referent
 Should I tag this referent as Bridging or Bridging-Contained?
 \end{quote}
 
-Simalar to \protect\hyperlink{new-vs.-unused-unknown}{unused-unknown}, tag as \texttt{bc} if:
+Simalar to \protect\hyperlink{new-vs.-unused-unknown}{unused-unknown}, tag as \texttt{bc} if either:
 
 \begin{itemize}
+\tightlist
 \item
-  The anchor of the referent appears in the predicate
+  The anchor of the referent appears in the same phrase as the referent
 \item
   The referent is a part of a possessive phrase with the anchor
 \end{itemize}
 
-\hypertarget{examples-1}{%
-\subsubsection{Examples}\label{examples-1}}
+\begin{quote}
+A child was walking down the street.
+The father \texttt{bc} of the child was following close behind.
+\end{quote}
+
+\begin{quote}
+Two cars stopped in the street.
+The first car {[}'s driver{]} \texttt{bc} got out angrily.
+\end{quote}
+
+\begin{quote}
+The first car stopped in the street.
+The driver \texttt{b} got out angrily.
+\end{quote}
+
+Since this example doesn't have ``the first car'' in the same phrase as ``the driver'', it is not Bridging-Contained.
 
 \hypertarget{possessive-pronoun-multiple-referents}{%
 \subsection{Possessive Pronoun Multiple Referents}\label{possessive-pronoun-multiple-referents}}
@@ -683,7 +948,7 @@ Can a possessive pronoun give unused-unknown status to multiple coordinated refe
 Yes, if the possessive pronoun applies to a coordinated noun phrase, all referents in that noun phrase are unused-unknown.
 
 \begin{quote}
-There was a woman with {[}her dog{]} \texttt{u} and \protect\hyperlink{groceries}{groceries} \texttt{u}.
+There was a woman with {[}her dog{]} \texttt{u} and \protect\hyperlink{groceries-1}{groceries} \texttt{u}.
 \end{quote}
 
 \hypertarget{counting-cus}{%
@@ -709,10 +974,176 @@ Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
 \hypertarget{introductions}{%
 \subsection{Introductions}\label{introductions}}
 
+\hypertarget{conjoined-referents-1}{%
+\section{Conjoined Referents}\label{conjoined-referents-1}}
+
+\hypertarget{explaining-conjoined-referent-pronouns}{%
+\subsection{Explaining Conjoined Referent Pronouns}\label{explaining-conjoined-referent-pronouns}}
+
+\begin{quote}
+If a pronoun refers to a conjoined referent (``The two cars stopped. {[}They{]} didn't stop fast enough''),
+should we mark whether or not it's explained?
+\end{quote}
+
+Yep.
+It's possible, for someone to explain a conjoined referent, even if it's a pronoun, so we'll just mark all conjoined referents.
+
+\begin{quote}
+There was a family walking down the street.
+They \texttt{family} \texttt{g} \texttt{1}, a man, a woman, and a child, were walking quickly.
+\end{quote}
+
 \hypertarget{phrases}{%
 \section{Phrases}\label{phrases}}
 
-\hypertarget{does-one-behind-the-other-have-referents}{%
-\subsection{Does ``one behind the other'' Have Referents?}\label{does-one-behind-the-other-have-referents}}
+\hypertarget{one-behind-the-other}{%
+\subsection{One Behind The Other}\label{one-behind-the-other}}
+
+\begin{quote}
+Does thre phrase ``one behind the other'' have any referents?
+\end{quote}
+
+No.
+We are treating ``one behind the other'' as an idiom, so it has no referents.
+
+\hypertarget{everyone}{%
+\subsection{Everyone}\label{everyone}}
+
+\begin{quote}
+Which referent does ``everyone'' refer to?
+\end{quote}
+
+Here are some previous questions about ``everyone'', and our decisions:
+
+\begin{quote}
+The car hit into the back of another car.
+\protect\hyperlink{everyone}{Everyone} seemed fine.
+\end{quote}
+
+Untagged
+
+\begin{quote}
+The man checked with \protect\hyperlink{everyone}{everyone} involved in the accident.
+\end{quote}
+
+\texttt{drivers}
+
+\begin{quote}
+{[}Everybody{]} got out and {[}they{]} were talking.
+\end{quote}
+
+\texttt{drivers} for both
+
+\begin{quote}
+\ldots{} then {[}everybody{]} got out and was yelling.
+\end{quote}
+
+\texttt{drivers}
+
+\hypertarget{eitherneithernone-of-the}{%
+\subsection{Either/Neither/None of the}\label{eitherneithernone-of-the}}
+
+\begin{quote}
+What do we do with ``Either / Neither / None of the {[} conjoined referent {]}'' ?
+\end{quote}
+
+Since either, neither, and none don't really refer to a concrete referent, we will not tag the phrase,
+and we will not tag any referents within the phrase.
+
+\begin{quote}
+None of the family \texttt{untagged} looked very happy.
+\end{quote}
+
+\begin{quote}
+Neither of the drivers \texttt{untagged} was at fault.
+\end{quote}
+
+\begin{quote}
+Either one of them \texttt{untagged} could have ended the fight.
+\end{quote}
+
+\hypertarget{both-of-the}{%
+\subsection{Both of the}\label{both-of-the}}
+
+What do we do with ``Both of the {[} conjoined referent {]}'' ?
+
+This phrase refers to the conjoined referent. Tag the whole phrase, and tag it with whatever the conjoined referent would be on its own.
+
+\begin{quote}
+The two cars stopped.
+{[}Both of the drivers{]} \texttt{drivers} \texttt{b} got out.
+\end{quote}
+
+\begin{quote}
+{[}Both of the people{]} \texttt{couple} \texttt{u} who had been walking down the street looked shocked.
+\end{quote}
+
+\hypertarget{one-of-the}{%
+\subsection{One of the}\label{one-of-the}}
+
+\begin{quote}
+What do we do with ``One of the {[}conjoined referent{]}'' ?
+\end{quote}
+
+This phrase refers to a single member of the conjoined referent.
+If the context gives evidence that it is one or the other of the members, tag the whole phrase as that member.
+
+If there is no evidence to the identity of the referent, treat it like other ambiguous referents, and do not tag it.
+
+\begin{quote}
+The white car \texttt{g} crashed into the blue car \texttt{g}.
+One of the drivers \texttt{driver} \texttt{b} got out and called the police.
+\end{quote}
+
+We know that the referent is driver1, because driver1 is the one who calls the police in this scenario.
+We know that the referent is bridging, because driver1 has a bridging relationship with the blue car.
+
+\begin{quote}
+The two drivers \texttt{g} crashed into each other.
+One of them \texttt{untagged} looked upset.
+\end{quote}
+
+Both drivers could be described as looking upset.
+Since we don't know which driver the phrase refers to, we don't tag anything in the phrase.
+
+\hypertarget{each-other}{%
+\subsection{Each Other}\label{each-other}}
+
+\begin{quote}
+Should we tag ``each other'' ?
+\end{quote}
+
+Nope.
+
+\hypertarget{technical}{%
+\section{Technical}\label{technical}}
+
+\hypertarget{hide-tiers}{%
+\subsection{Hide Tiers}\label{hide-tiers}}
+
+\begin{quote}
+EXMARaLDA has too many tiers. Can I hide some?
+\end{quote}
+
+Yes! To hide tiers in Exmaralda, without deleting them:
+
+\begin{itemize}
+\tightlist
+\item
+  Select a tier on the left, or use shift-click to select multiple tiers
+\item
+  In the top menu, go to Tier \textgreater{} Hide Tier
+\end{itemize}
+
+\hypertarget{merge-cells}{%
+\subsection{Merge Cells}\label{merge-cells}}
+
+\begin{quote}
+Is there a way to merge cells and immediately begin typing?
+\end{quote}
+
+Yes.
+If you use the merge-cells button, you have to click on the merged cell to type into it.
+However, if you instead use the merge-cells shortcut (ctrl-1 on Windows), you can immediately begin typing in the merged cell.
 
 \end{document}
