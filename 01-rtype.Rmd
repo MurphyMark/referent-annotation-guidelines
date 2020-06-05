@@ -1,5 +1,7 @@
 # Answer 2: R-Type
 
+<!-- TODO: Abbreviations for examples -->
+
 ## R-Type
 
 <!-- TODO: More systematic r-type examples -->
@@ -51,7 +53,7 @@ Questions:
 A new referent followed by explanation.
 The explanation must be a part of the noun phrase containing the referent, and must include a specific non-new referent.
 
-> I saw a man `new` and a woman `new`.
+> I saw a man and a woman.
 > The ball `unused-unknown` that the man was dribbling fell on the ground.
 
 <!-- TODO: IS THIS EXAMPLE TRUE? -->
@@ -145,10 +147,10 @@ Questions:
 A given referent is one that has been previously introduced, either as itself, or as part of a given-relationship conjoined referent.
 
 > There was a man.
-> He `given` was dribbling a ball.
+> He `g` was dribbling a ball.
 
 > There were these two people walking.
-> One `given` of them had a ball.
+> One `g` of them had a ball.
 
 > There were two cars approaching the scene.
 > The first car `given` stopped, and the second car `given` bumped into it.

@@ -107,9 +107,7 @@
 \hypertarget{referents}{%
 \section{Referents}\label{referents}}
 
-\begin{quote}
-Annotated on tier \texttt{norm{[}referent{]}} in ExMARALDA
-\end{quote}
+(Annotated on tier \texttt{norm{[}referent{]}} in ExMARALDA)
 
 We have a list of 20 possible referents, and we count how many of these 20 referents each speaker introduces:
 
@@ -281,7 +279,7 @@ A new referent followed by explanation.
 The explanation must be a part of the noun phrase containing the referent, and must include a specific non-new referent.
 
 \begin{quote}
-I saw a man \texttt{new} and a woman \texttt{new}.
+I saw a man and a woman.
 The ball \texttt{unused-unknown} that the man was dribbling fell on the ground.
 \end{quote}
 
@@ -398,12 +396,12 @@ A given referent is one that has been previously introduced, either as itself, o
 
 \begin{quote}
 There was a man.
-He \texttt{given} was dribbling a ball.
+He \texttt{g} was dribbling a ball.
 \end{quote}
 
 \begin{quote}
 There were these two people walking.
-One \texttt{given} of them had a ball.
+One \texttt{g} of them had a ball.
 \end{quote}
 
 \begin{quote}
@@ -444,14 +442,118 @@ Questions:
 \hypertarget{questions-answers}{%
 \chapter{Questions \& Answers}\label{questions-answers}}
 
-\hypertarget{referent-decisions}{%
-\section{Referent Decisions}\label{referent-decisions}}
+\hypertarget{referents-1}{%
+\section{Referents}\label{referents-1}}
 
-\hypertarget{man-1}{%
-\subsection{man}\label{man-1}}
+\hypertarget{possessive-pronoun-whose}{%
+\subsection{Possessive Pronoun ``whose''}\label{possessive-pronoun-whose}}
 
-\hypertarget{r-type-decisions}{%
-\section{R-Type Decisions}\label{r-type-decisions}}
+\begin{quote}
+How do we tag ``whose'' in referent noun phrases such as ``There was a woman whose car \ldots{}''
+\end{quote}
+
+Tag ``whose'' as part of the referent that comes after.
+
+\begin{quote}
+There was a woman {[}whose car{]} \texttt{u} was very spacious.
+\end{quote}
+
+\hypertarget{identifying-repititions}{%
+\subsection{Identifying Repititions}\label{identifying-repititions}}
+
+\begin{quote}
+Does this example contain a repitition?
+\end{quote}
+
+Here are some previous questions about repitions, and our decisions.
+The referents in question are marked with \texttt{{[}{]}} brackets:
+
+\begin{quote}
+A woman was closing {[}her trunk{]}, opening {[}it{]}, and \ldots{}
+\end{quote}
+
+Tag both referents normally.
+
+\begin{quote}
+The car behind him - hit {[}it{]} also - hit {[}the car{]} - {[}the other car{]}
+\end{quote}
+
+Tag only ``the other car''.
+
+\begin{quote}
+And the guy with {[}the ball{]} who accidentally dropped {[}the ball{]} \ldots{}
+\end{quote}
+
+Tag only the second ``the ball''.
+
+\hypertarget{tagging-unclear-referents}{%
+\subsection{Tagging Unclear Referents}\label{tagging-unclear-referents}}
+
+\begin{quote}
+How confusing can a description be before we decide not to tag the referent?
+\end{quote}
+
+Here are some examples, and our decisions.
+The referents in question are marked with \texttt{{[}{]}} brackets:
+
+\begin{quote}
+I saw a lady, and {[}a boy{]} next to her bouncing a ball.
+\end{quote}
+
+\texttt{man} - \texttt{u}
+
+\begin{quote}
+\ldots{} so the {[}owner{]} of {[}the cars{]} called 911.
+\end{quote}
+
+Neither is tagged, because there is no single owner of two cars.
+
+\begin{quote}
+The two people came out of their cars and {[}a man{]} with the white shirt called the police.
+\end{quote}
+
+\texttt{driver} - \texttt{g}
+
+\begin{quote}
+{[}They{]} both came out, and {[}one of them{]} called the police
+\end{quote}
+
+``They'': \texttt{drivers} - \texttt{g}
+
+``One of them'': \texttt{driver1} - \texttt{g}
+
+\begin{quote}
+I think {[}someone{]} like called 911
+\end{quote}
+
+\texttt{drivers}
+
+\begin{quote}
+The man helped the woman. Uh, {[}she{]} helped her pick up her groceries.
+\end{quote}
+
+\texttt{man}
+
+\begin{quote}
+\ldots{} which distracted a dog that was in the road behind {[}a car{]}.
+\end{quote}
+
+Untagged
+
+\begin{quote}
+{[}The passengers{]} got out and called the police.
+\end{quote}
+
+Untagged
+
+\begin{quote}
+The car behind him was coming after him, so {[}he{]} crashed into {[}that car{]} too.
+\end{quote}
+
+Both untagged
+
+\hypertarget{r-types}{%
+\section{R-Types}\label{r-types}}
 
 \hypertarget{new-vs.-unused-unknown}{%
 \subsection{New vs.~Unused-Unknown}\label{new-vs.-unused-unknown}}
@@ -570,5 +672,47 @@ Simalar to \protect\hyperlink{new-vs.-unused-unknown}{unused-unknown}, tag as \t
 
 \hypertarget{examples-1}{%
 \subsubsection{Examples}\label{examples-1}}
+
+\hypertarget{possessive-pronoun-multiple-referents}{%
+\subsection{Possessive Pronoun Multiple Referents}\label{possessive-pronoun-multiple-referents}}
+
+\begin{quote}
+Can a possessive pronoun give unused-unknown status to multiple coordinated referents?
+\end{quote}
+
+Yes, if the possessive pronoun applies to a coordinated noun phrase, all referents in that noun phrase are unused-unknown.
+
+\begin{quote}
+There was a woman with {[}her dog{]} \texttt{u} and \protect\hyperlink{groceries}{groceries} \texttt{u}.
+\end{quote}
+
+\hypertarget{counting-cus}{%
+\subsection{Counting CU's}\label{counting-cus}}
+
+\begin{quote}
+How do we count the 5 CU's between a referent and its most recent co-referent/anchor
+\end{quote}
+
+An r-type is \texttt{-Displaced} if there are 5 CU's \emph{between} the CU containing the referent and the CU containing its most recent co-referent/anchor.
+
+The count of CU's should exclude \href{empty-cu's}{empty CU's}.
+
+\hypertarget{empty-cus}{%
+\subsection{Empty CU's}\label{empty-cus}}
+
+\begin{quote}
+Which CU's are empty CU's?
+\end{quote}
+
+Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
+
+\hypertarget{introductions}{%
+\subsection{Introductions}\label{introductions}}
+
+\hypertarget{phrases}{%
+\section{Phrases}\label{phrases}}
+
+\hypertarget{does-one-behind-the-other-have-referents}{%
+\subsection{Does ``one behind the other'' Have Referents?}\label{does-one-behind-the-other-have-referents}}
 
 \end{document}

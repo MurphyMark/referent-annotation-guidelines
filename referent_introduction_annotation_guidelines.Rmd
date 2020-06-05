@@ -26,7 +26,7 @@ description: ""
 
 ## Referents
 
-> Annotated on tier `norm[referent]` in ExMARALDA
+(Annotated on tier `norm[referent]` in ExMARALDA)
 
 We have a list of 20 possible referents, and we count how many of these 20 referents each speaker introduces:
 
@@ -76,6 +76,8 @@ We have a list of 20 possible referents, and we count how many of these 20 refer
 <!--chapter:end:00-referents.Rmd-->
 
 # Answer 2: R-Type
+
+<!-- TODO: Abbreviations for examples -->
 
 ## R-Type
 
@@ -128,7 +130,7 @@ Questions:
 A new referent followed by explanation.
 The explanation must be a part of the noun phrase containing the referent, and must include a specific non-new referent.
 
-> I saw a man `new` and a woman `new`.
+> I saw a man and a woman.
 > The ball `unused-unknown` that the man was dribbling fell on the ground.
 
 <!-- TODO: IS THIS EXAMPLE TRUE? -->
@@ -222,10 +224,10 @@ Questions:
 A given referent is one that has been previously introduced, either as itself, or as part of a given-relationship conjoined referent.
 
 > There was a man.
-> He `given` was dribbling a ball.
+> He `g` was dribbling a ball.
 
 > There were these two people walking.
-> One `given` of them had a ball.
+> One `g` of them had a ball.
 
 > There were two cars approaching the scene.
 > The first car `given` stopped, and the second car `given` bumped into it.
@@ -273,12 +275,83 @@ Questions:
 
 # Questions & Answers
 
-## Referent Decisions
+## Referents
 
-### man
-<!-- TODO: Add other referents -->
+### Possessive Pronoun "whose"
 
-## R-Type Decisions
+> How do we tag "whose" in referent noun phrases such as "There was a woman whose car ..."
+
+Tag "whose" as part of the referent that comes after.
+
+> There was a woman [whose car] `u` was very spacious.
+
+### Identifying Repititions
+
+<!-- Add to 00-referents -->
+> Does this example contain a repitition?
+
+Here are some previous questions about repitions, and our decisions.
+The referents in question are marked with `[]` brackets:
+
+> A woman was closing [her trunk], opening [it], and ...
+
+Tag both referents normally.
+
+> The car behind him - hit [it] also - hit [the car] - [the other car]
+
+Tag only "the other car".
+
+> And the guy with [the ball] who accidentally dropped [the ball] ...
+
+Tag only the second "the ball".
+
+### Tagging Unclear Referents
+
+<!-- Add to 00-referents -->
+> How confusing can a description be before we decide not to tag the referent?
+
+Here are some examples, and our decisions.
+The referents in question are marked with `[]` brackets:
+
+> I saw a lady, and [a boy] next to her bouncing a ball.
+
+`man` - `u`
+
+> ... so the [owner] of [the cars] called 911.
+
+Neither is tagged, because there is no single owner of two cars.
+
+> The two people came out of their cars and [a man] with the white shirt called the police.
+
+`driver` - `g`
+
+> [They] both came out, and [one of them] called the police
+
+"They": `drivers` - `g`
+
+"One of them": `driver1` - `g`
+
+> I think [someone] like called 911
+
+`drivers`
+
+> The man helped the woman. Uh, [she] helped her pick up her groceries.
+
+`man`
+
+> ... which distracted a dog that was in the road behind [a car].
+
+Untagged
+
+> [The passengers] got out and called the police.
+
+Untagged
+
+> The car behind him was coming after him, so [he] crashed into [that car] too.
+
+Both untagged
+
+## R-Types
 
 ### New vs. Unused-Unknown
 
@@ -395,6 +468,64 @@ Simalar to [unused-unknown](#new-vs.-unused-unknown), tag as `bc` if:
 * The referent is a part of a possessive phrase with the anchor
 
 #### Examples
+<!-- TODO: Examples -->
+
+### Possessive Pronoun Multiple Referents
+
+<!-- link possessive-pronoun & unused-unknown -->
+> Can a possessive pronoun give unused-unknown status to multiple coordinated referents?
+
+Yes, if the possessive pronoun applies to a coordinated noun phrase, all referents in that noun phrase are unused-unknown.
+
+> There was a woman with [her dog] `u` and [groceries] `u`.
+
+
+### Counting CU's
+
+> How do we count the 5 CU's between a referent and its most recent co-referent/anchor
+
+An r-type is `-Displaced` if there are 5 CU's *between* the CU containing the referent and the CU containing its most recent co-referent/anchor.
+
+The count of CU's should exclude [empty CU's](empty-cu's).
+
+### Empty CU's
+
+> Which CU's are empty CU's?
+
+Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
+
+<!-- TODO: Add examples -->
+<!-- TODO: What about "hmm" -->
+
+### Introductions
+
+<!-- Add section in 00-rtype -->
+<!-- Explain more about introductions -->
+
+
+## Phrases
+
+### Does "one behind the other" Have Referents?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--chapter:end:03-questions.Rmd-->
 

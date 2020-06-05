@@ -2,7 +2,7 @@
 
 ## Referents
 
-> Annotated on tier `norm[referent]` in ExMARALDA
+(Annotated on tier `norm[referent]` in ExMARALDA)
 
 We have a list of 20 possible referents, and we count how many of these 20 referents each speaker introduces:
 
