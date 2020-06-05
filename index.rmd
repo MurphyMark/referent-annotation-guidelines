@@ -1,0 +1,21 @@
+---
+title: "Referent Introduction Annotation Guidelines"
+author: ""
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+github-repo: rstudio/bookdown-demo
+description: ""
+---
+
+```{r setup, include=FALSE}
+```
+
+# Research Questions
+
+1. Do heratige speakers introduce more referents than monolinguals?
+
+2. Do heratige speakers use different types of referents than monolinguals?
+
+3. Do heratige speakers explain conjoined referents more often than monolinguals?

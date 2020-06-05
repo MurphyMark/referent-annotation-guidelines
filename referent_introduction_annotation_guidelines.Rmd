@@ -1,0 +1,400 @@
+---
+title: "Referent Introduction Annotation Guidelines"
+author: ""
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+github-repo: rstudio/bookdown-demo
+description: ""
+---
+
+```{r setup, include=FALSE}
+```
+
+# Research Questions
+
+1. Do heratige speakers introduce more referents than monolinguals?
+
+2. Do heratige speakers use different types of referents than monolinguals?
+
+3. Do heratige speakers explain conjoined referents more often than monolinguals?
+
+<!--chapter:end:index.rmd-->
+
+# Answer 1: Referents
+
+## asdf
+
+> Annotated on tier `norm[referent]` in ExMARALDA
+
+We have a list of 20 possible referents, and we count how many of these 20 referents each speaker introduces:
+
+1. man (with the ball)
+2. woman1 (with the stroller)
+3. couple (man and woman1) - *conjoined referent*
+4. people (all the people in the parking lot) - *conjoined referent*
+5. family (man+woman1+baby) - *conjoined referent*
+6. ball
+7. stroller
+8. baby
+9. woman2 (with the dog)
+10. dog
+11. leash
+12. groceries
+13. trunk
+14. car1 (blue one, comes in first, gets hit)
+15. car2 (white one, comes in second, hits car1)
+16. car3 (red one, woman with groceries)
+17. cars (car1 + car2) - *conjoined referent*
+18. driver1 (blue car, calls 911)
+19. driver2 (white car)
+20. drivers (driver1 + driver2) - *conjoined referent*
+
+
+## man
+## woman1
+## couple
+## people
+## family
+## ball
+## stroller
+## baby
+## woman2
+## dog
+## leash
+## groceries
+## trunk
+## car1
+## car2
+## car3
+## cars
+## driver1
+## driver2
+## drivers
+
+<!--chapter:end:00-referents.Rmd-->
+
+# Answer 2: R-Type
+
+## R-Type
+
+<!-- TODO: More systematic r-type examples -->
+
+> Annotated on tier `norm[r-type]` in ExMARALDA
+
+We use the ReFlex annotation scheme to give each new referent a referential label.
+The original ReFlex paper can be found at https://elib.uni-stuttgart.de/handle/11682/9028.
+
+We use the following 7 labels:
+
+| | R-Type | Abbreviation
+|:-|-|-|
+| 1 | New | `n` |
+| 2 | Unused-Unknown | `u` |
+| 3 | Bridging | `b` |
+| 4 | Bridging-Contained | `bc` |
+| 5 | Bridging-Displaced | `bd` |
+| 6 | Given | `g` |
+| 7 | Given-Displaced | `gd` |
+
+<!-- TODO: ADD EXPLANATION FOR FE & PR -->
+
+
+<!-- TODO: Standardize explanation style -->
+<!-- TODO: Standardize examples - tagging non-target r-types -->
+
+## New
+
+A regular new referent, normally introduced with an indefinite article, referential "this", or a numeral.
+
+> I saw [this man] `new` walking down the street and [a woman] `new` with a stroller.
+> There were also [two cars] `new` coming.
+
+> A woman `new` with a black dog `new` was loading groceries `new` into a minivan `new`.
+
+<!-- TODO: Bracket all annotations? Seems non-scalable w/ multiple annotations -->
+
+<!-- TODO: Definitions link -->
+Questions:
+
+* [New vs. Unused-Unknown](#new-vs.-unused-unknown)
+
+## Unused-Unknown
+
+> “Assigned to referring expressions which come with a sufficient amount of descriptive material to enable the hearer to create a new discourse referent without any previous knowledge” (p. 4).
+
+<!-- TODO: CHECK ON THE SPECIFICS OF UNUSED-UKNOWN -->
+A new referent followed by explanation.
+The explanation must be a part of the noun phrase containing the referent, and must include a specific non-new referent.
+
+> I saw a man `new` and a woman `new`.
+> The ball `unused-unknown` that the man was dribbling fell on the ground.
+
+<!-- TODO: IS THIS EXAMPLE TRUE? -->
+> I was standing in the parking lot.
+> The two cars `unused-unkown` that were coming towards me stopped abruptly.
+
+Referents preceded by possessive pronouns are also unused-unkown.
+
+<!-- TODO: IS "HER BABY" U OR N? -->
+> I saw a man `new` with his wife `unused-unknown` and her baby `unused-unknown`.
+
+
+## Bridging
+
+> “If an entity does not have a coreferential antecedent but can be understood as unique with respect to a previously introduced situation or scenario, we will be using the label r-bridging” (p. 4).
+
+> “This label is used for non-coreferential anaphoric expressions which are dependent on and unique with respect to a previously introduced scenario” (p. 8).
+
+In other words, we use this tag for referents that have not been explicitly introduced but are implied as an essential part of an already known referent (the anchor).
+
+If a referent was bridging, you would expect it to be there, and be surprised if it did not exist.
+For something that could be there, but isn’t necessarily (e.g. a woman’s groceries), use the unused-unknown.
+
+> There were two cars `new` coming, and they crashed into each other.
+> The drivers `bridging` got out and called the police.
+
+> There was a family `new` walking down the street.
+> The father `bridging` was dribbling a ball.
+
+"Father" is bridging because we know that if there is a family, there must be a father.
+So, when "father" is introduced, you already implicitly know it's a member of that family.
+
+> I saw a car crash! The first car `bridging` stopped short, and the second `bridging` drove into it.
+
+<!-- TODO: Bridging relationships -->
+
+<!-- TODO: Common bridging cases -->
+
+<!-- TODO: Bridging conditions? -->
+
+Questions
+
+* [Bridging vs. Bridging-Contained](#bridging-vs.-bridging-contained)
+
+### Bridging-Contained
+
+> "This label applies to a non-coreferential anaphoric expression that is anchored to an embedded phrase” (p. 8).
+
+<!-- TODO: Link to Anchor -->
+<!-- TODO: Link bridging relationship -->
+
+Briding-Contained is similar to Unused-Unknown, except that it requires the anchor of a bridging relationship in the same phrase, not just an introduced referent.
+
+<!-- TODO: talk about bridging-relationship in bc examples -->
+
+Examples:
+
+> The driver `bc` of the blue car ...
+
+> The driver `bc` of the closer car ...
+
+> The father `bc` of the family ...
+
+> I saw a car crash! The driver `bc` who was in the car `b` got out.
+
+Since a car is expected to have a driver, the driver is bridging-contained.
+
+> I saw a car crash! The man `bc` who was in the car `b` got out.
+
+<!-- TODO: bc vs u -->
+
+Questions:
+
+* [Bridging vs. Bridging-Contained](#bridging-vs.-bridging-contained)
+
+### Bridging-Displaced
+
+A Bridging-Displaced referent is a Bridging referent with 5 non-empty CU's between the CU containing the referent and the most recent CU containing its anchor.
+
+> There was a couple ... 
+> [5 CU's] ... 
+> The mother was just standing there and didn't do anything
+
+Questions:
+<!-- TODO: What qualifies as a non-empty CU -->
+
+## Given
+
+<!-- TODO: Name for 'given-relationship conjoined referents' -->
+
+A given referent is one that has been previously introduced, either as itself, or as part of a given-relationship conjoined referent.
+
+> There was a man.
+> He `given` was dribbling a ball.
+
+> There were these two people walking.
+> One `given` of them had a ball.
+
+> There were two cars approaching the scene.
+> The first car `given` stopped, and the second car `given` bumped into it.
+
+> There was a man who was dribbling a ball and a woman with a stroller.
+> The couple `given` was crossing the street.
+
+<!-- TODO: Given vs Bridging -->
+
+Questions:
+
+
+### Given-Displaced
+
+A Given-Displaced referent is a Given referent with 5 non-empty CU's between the CU containing the referent and the most recent CU containing the same referent.
+
+> There was a man ...
+> [ 5 CU’s ] ... 
+> The man `gd` was running to catch the ball.
+
+> A man and a woman were walking.
+> There were two cars coming ...
+> [ 5 CU’s ] ... 
+> The man `gd` helped the lady with her groceries.
+
+Questions:
+<!-- TODO: What qualifies as a non-empty CU? -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--chapter:end:01-rtype.Rmd-->
+
+# Answer 3: Conjoined Referents
+
+<!--chapter:end:02-conjoined-referents.Rmd-->
+
+# Questions & Answers
+
+## Referent Decisions
+
+### man
+<!-- TODO: Add other referents -->
+
+## R-Type Decisions
+
+### New vs. Unused-Unknown
+
+> Should I tag this referent as New or Unused-Unknown?
+
+Tag as `u` if:
+
+<!-- TODO: predicate? How to call the other parts of NP? -->
+<!-- TODO: How to call previously-introduced referents? -->
+* The predicate contains a [given referent](#phrases-containing-given-referents)
+* The predicate contains a bridging or unused-unknown referent
+
+<!-- TODO: tag 'the back of the car' as u -->
+<!-- TODO: Tag "the woman's dog" as u -->
+
+Otherwise, tag as `n`.
+
+#### Examples
+
+<!-- TODO: Examples -->
+
+
+### Phrases Containing Given Referents
+
+<!-- TODO: Name, update links -->
+
+> Does this phrase contain a given referent?
+
+A phrase contains a given referent if:
+
+* There is an annotated referent marked `g`
+
+* There is a non-annotated referent that has been previously introduced
+
+Examples:
+
+<!--
+* `g` referent => Y
+* `n` referent => N
+* `u` referent => N
+* given un-annotated => Y
+* non-given un-annotated => N
+
+Phrase types:
+* relative clause
+* prepositional phrase
+-->
+
+<!-- TODO: Other phrase types ? -->
+
+> The man who was holding the ball `g` and talking to a woman dropped it.
+
+Phrase: "who was holding the ball"
+
+"the ball": Given
+
+"a woman": New
+
+Phrase contains a given referent
+
+> The man who was holding a ball `n` dropped it.
+
+Phrase: "who was holding a ball"
+
+"a ball": New
+
+Phrase does not contain a given referent
+
+<!-- TODO: "The man who was holding the woman's ball -->
+> The man with the woman `g` 's ball `u` dropped it.
+
+Phrase: "with the woman's ball"
+
+"the woman": Given
+
+"'s ball": Unused-Unknown
+
+Phrase contains a given referent
+
+<!-- TODO: Does sidewalk == street? -->
+
+> A couple was walking down the road.
+> A woman across the street was unloading groceries from her car.
+
+Phrase: "across the street"
+
+"the street": Given
+
+Phrase contains a given referent
+
+Note: Although "the street" is not annotated, it has been introduced in the narrative.
+So, it is considered a given referent.
+
+> A couple was walking with a stroller.
+> A woman across the street was unloading groceries from her car.
+
+Phrase: "across the street"
+
+"the street": New
+
+Phrase does not contain a given referent
+
+### Bridging vs. Bridging-Contained
+
+> Should I tag this referent as Bridging or Bridging-Contained?
+
+<!-- TODO: "predicate" ? -->
+<!-- TODO: Link `anchor` -->
+<!-- TODO: Possessive phrase phrasing -->
+Simalar to [unused-unknown](#new-vs.-unused-unknown), tag as `bc` if:
+
+* The anchor of the referent appears in the predicate
+
+* The referent is a part of a possessive phrase with the anchor
+
+#### Examples
+
+<!--chapter:end:03-questions.Rmd-->
+

@@ -1,0 +1,124 @@
+# Questions & Answers
+
+## Referent Decisions
+
+### man
+<!-- TODO: Add other referents -->
+
+## R-Type Decisions
+
+### New vs. Unused-Unknown
+
+> Should I tag this referent as New or Unused-Unknown?
+
+Tag as `u` if:
+
+<!-- TODO: predicate? How to call the other parts of NP? -->
+<!-- TODO: How to call previously-introduced referents? -->
+* The predicate contains a [given referent](#phrases-containing-given-referents)
+* The predicate contains a bridging or unused-unknown referent
+
+<!-- TODO: tag 'the back of the car' as u -->
+<!-- TODO: Tag "the woman's dog" as u -->
+
+Otherwise, tag as `n`.
+
+#### Examples
+
+<!-- TODO: Examples -->
+
+
+### Phrases Containing Given Referents
+
+<!-- TODO: Name, update links -->
+
+> Does this phrase contain a given referent?
+
+A phrase contains a given referent if:
+
+* There is an annotated referent marked `g`
+
+* There is a non-annotated referent that has been previously introduced
+
+Examples:
+
+<!--
+* `g` referent => Y
+* `n` referent => N
+* `u` referent => N
+* given un-annotated => Y
+* non-given un-annotated => N
+
+Phrase types:
+* relative clause
+* prepositional phrase
+-->
+
+<!-- TODO: Other phrase types ? -->
+
+> The man who was holding the ball `g` and talking to a woman dropped it.
+
+Phrase: "who was holding the ball"
+
+"the ball": Given
+
+"a woman": New
+
+Phrase contains a given referent
+
+> The man who was holding a ball `n` dropped it.
+
+Phrase: "who was holding a ball"
+
+"a ball": New
+
+Phrase does not contain a given referent
+
+<!-- TODO: "The man who was holding the woman's ball -->
+> The man with the woman `g` 's ball `u` dropped it.
+
+Phrase: "with the woman's ball"
+
+"the woman": Given
+
+"'s ball": Unused-Unknown
+
+Phrase contains a given referent
+
+<!-- TODO: Does sidewalk == street? -->
+
+> A couple was walking down the road.
+> A woman across the street was unloading groceries from her car.
+
+Phrase: "across the street"
+
+"the street": Given
+
+Phrase contains a given referent
+
+Note: Although "the street" is not annotated, it has been introduced in the narrative.
+So, it is considered a given referent.
+
+> A couple was walking with a stroller.
+> A woman across the street was unloading groceries from her car.
+
+Phrase: "across the street"
+
+"the street": New
+
+Phrase does not contain a given referent
+
+### Bridging vs. Bridging-Contained
+
+> Should I tag this referent as Bridging or Bridging-Contained?
+
+<!-- TODO: "predicate" ? -->
+<!-- TODO: Link `anchor` -->
+<!-- TODO: Possessive phrase phrasing -->
+Simalar to [unused-unknown](#new-vs.-unused-unknown), tag as `bc` if:
+
+* The anchor of the referent appears in the predicate
+
+* The referent is a part of a possessive phrase with the anchor
+
+#### Examples
