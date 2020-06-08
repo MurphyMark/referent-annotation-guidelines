@@ -79,7 +79,7 @@
 
 \title{Referent Introduction Annotation Guidelines}
 \author{}
-\date{\vspace{-2.5em}2020-06-05}
+\date{\vspace{-2.5em}2020-06-08}
 
 \begin{document}
 \maketitle
@@ -111,7 +111,7 @@
 Annotated on tier \texttt{norm{[}referent{]}} in ExMARALDA
 \end{quote}
 
-We have a list of 20 possible referents, and we count how many of these 20 referents each speaker introduces:
+We have a list of 19 possible referents, and we count how many of these 20 referents each speaker introduces:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -122,8 +122,6 @@ We have a list of 20 possible referents, and we count how many of these 20 refer
   woman1 (with the stroller)
 \item
   couple (man and woman1) - \emph{conjoined referent}
-\item
-  people (all the people in the parking lot) - \emph{conjoined referent}
 \item
   family (man+woman1+baby) - \emph{conjoined referent}
 \item
@@ -179,7 +177,7 @@ Annotated on tier \texttt{norm{[}r-type{]}} in ExMARALDA
 We use the ReFlex annotation scheme to give each new referent a referential label.
 The original ReFlex paper can be found at \url{https://elib.uni-stuttgart.de/handle/11682/9028}.
 
-We use the following 7 labels:
+We use the following 9 labels:
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
@@ -204,12 +202,12 @@ We use the following 7 labels:
 A regular new referent, normally introduced with an indefinite article, referential ``this'', or a numeral.
 
 \begin{quote}
-I saw {[}this man{]} \texttt{new} walking down the street and {[}a woman{]} \texttt{new} with a stroller.
-There were also {[}two cars{]} \texttt{new} coming.
+I saw {[}this man{]} \texttt{n} walking down the street and {[}a woman{]} \texttt{new} with a stroller.
+There were also {[}two cars{]} \texttt{n} coming.
 \end{quote}
 
 \begin{quote}
-A woman \texttt{new} with a black dog \texttt{new} was loading groceries \texttt{new} into a minivan \texttt{new}.
+A woman \texttt{n} with a black dog \texttt{n} was loading groceries \texttt{n} into a minivan \texttt{n}.
 \end{quote}
 
 Questions:
@@ -232,18 +230,34 @@ The explanation must be a part of the noun phrase containing the referent, and m
 
 \begin{quote}
 I saw a man and a woman.
-The ball \texttt{unused-unknown} that the man was dribbling fell on the ground.
+The ball \texttt{unused-unknown} {[}that {[}the man{]} \texttt{g} was dribbling{]} \texttt{explanation} fell on the ground.
 \end{quote}
+
+Untagged referents can appear in explanations.
 
 \begin{quote}
 I was standing in the parking lot.
-The two cars \texttt{unused-unkown} that were coming towards me stopped abruptly.
+The two cars \texttt{unused-unkown} {[}that were coming towards me \texttt{untagged} \texttt{g} very quickly{]} \texttt{explanation} stopped abruptly.
 \end{quote}
 
 Referents preceded by possessive pronouns are also unused-unkown.
+as long as the possessor is given or bridging.
 
 \begin{quote}
-I saw a man \texttt{new} with his wife \texttt{unused-unknown} and her baby \texttt{unused-unknown}.
+I saw a man \texttt{n} with his wife \texttt{u} and her baby \texttt{u}.
+\end{quote}
+
+Referents preceded by apostrophe-s possession are \emph{also} unused-unknown -
+as long as the possessor is given or bridging.
+
+\begin{quote}
+I saw a man walking down the street.
+The man{[}'s wife{]} \texttt{u} was pushing a baby carriage.
+\end{quote}
+
+\begin{quote}
+There was a car on the other side of the parking lot.
+A woman{[}'s dog{]} \texttt{n} was barking loudly.
 \end{quote}
 
 Questions:
@@ -267,30 +281,36 @@ Questions:
 
 In other words, we use this tag for referents that have not been explicitly introduced but are implied as an essential part of an already known referent (the anchor).
 
-If a referent was bridging, you would expect it to be there, and be surprised if it did not exist.
-For something that could be there, but isn't necessarily (e.g.~a woman's groceries), use the unused-unknown.
-
 \begin{quote}
-There were two cars \texttt{new} coming, and they crashed into each other.
-The drivers \texttt{bridging} got out and called the police.
+There were two cars \texttt{n} \texttt{anchor} coming, and they crashed into each other.
+The drivers \texttt{b} got out and called the police.
 \end{quote}
 
 \begin{quote}
-There was a family \texttt{new} walking down the street.
-The father \texttt{bridging} was dribbling a ball.
+There was a family \texttt{n} \texttt{anchor} walking down the street.
+The father \texttt{b} was dribbling a ball.
 \end{quote}
 
 ``Father'' is bridging because we know that if there is a family, there must be a father.
 So, when ``father'' is introduced, you already implicitly know it's a member of that family.
 
+The anchor need not be a tagged referent.
+Any \protect\hyperlink{bridging-relationships}{bridging relationship} is enough.
+
 \begin{quote}
-I saw a car crash! The first car \texttt{bridging} stopped short, and the second \texttt{bridging} drove into it.
+I saw {[}a car crash{]} \texttt{untagged} \texttt{anchor}!
+The first car \texttt{b} stopped short, and the second \texttt{b} drove into it.
 \end{quote}
+
+If a referent was bridging, you would expect it to be there, and be surprised if it did not exist.
+For something that could be there, but isn't necessarily (e.g.~a woman's groceries), use the unused-unknown.
 
 Questions
 
 \begin{itemize}
 \tightlist
+\item
+  \protect\hyperlink{bridging-relationships}{What is a bridging relationship}
 \item
   \protect\hyperlink{bridging-vs.-bridging-contained}{Bridging vs.~Bridging-Contained}
 \end{itemize}
@@ -302,31 +322,39 @@ Questions
 ``This label applies to a non-coreferential anaphoric expression that is anchored to an embedded phrase'' (p.~8).
 \end{quote}
 
-Briding-Contained is similar to Unused-Unknown, except that it requires the anchor of a bridging relationship in the same phrase, not just an introduced referent.
+Bridging-Contained is similar to Bridging, except that it requires the bridging referent to be in the same noun phrase as its anchor.
 
 Examples:
 
 \begin{quote}
-The driver \texttt{bc} of the blue car \ldots{}
+The driver \texttt{bc} of {[}the blue car{]} \texttt{anchor} \ldots{}
 \end{quote}
 
 \begin{quote}
-The driver \texttt{bc} of the closer car \ldots{}
+The driver \texttt{bc} of {[}the closer car{]} \texttt{anchor} \ldots{}
 \end{quote}
 
 \begin{quote}
-The father \texttt{bc} of the family \ldots{}
+The father \texttt{bc} of {[}the family{]} \texttt{anchor} \ldots{}
 \end{quote}
 
 \begin{quote}
-I saw a car crash! The driver \texttt{bc} who was in the car \texttt{b} got out.
+I saw a car crash!
+The driver \texttt{bc} who was in {[}the car{]} \texttt{anchor} \texttt{b} got out.
 \end{quote}
 
-Since a car is expected to have a driver, the driver is bridging-contained.
+Since a car is expected to have a driver,
+the driver is bridging-contained.
+
+It is possible for the anchor of a bridging relationship to be the referent in a different bridging relationship:
 
 \begin{quote}
-I saw a car crash! The man \texttt{bc} who was in the car \texttt{b} got out.
+I saw {[}a car crash{]} \texttt{untagged} \texttt{n} \texttt{anchor:\ car1}!
+The man \texttt{driver1} \texttt{bc} who was in {[}the car{]} \texttt{car1} \texttt{anchor:driver1} \texttt{b} got out.
 \end{quote}
+
+In this example, ``a car crash'' acts as an anchor for ``the car'',
+which in turn acts as an anchor for ``the man''.
 
 Questions:
 
@@ -342,14 +370,30 @@ Questions:
 A Bridging-Displaced referent is a Bridging referent with 5 non-empty CU's between the CU containing the referent and the most recent CU containing its anchor.
 
 \begin{quote}
-There was a couple \ldots{}
+There was a couple \texttt{couple} \texttt{n} \ldots{}
 {[}5 CU's{]} \ldots{}
-The mother was just standing there and didn't do anything
+The mother \texttt{woman1} \texttt{bd} was just standing there and didn't do anything
+\end{quote}
+
+\begin{quote}
+A family \texttt{family} \texttt{n} was walking down the street.
+On the other side of the road, there was a woman.
+She was taking groceries out of her car.
+She was holding a dog on a leash.
+The dog saw a ball that rolled into the street.
+It barked and chased after the ball.
+The man \texttt{man} \texttt{bd} yelled and tried to stop the dog.
 \end{quote}
 
 Questions:
-* \protect\hyperlink{counting-cus}{How do we count CU's?}
-* \protect\hyperlink{empty-cus}{Which CU's are empty CU's?}
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{counting-cus}{How do we count CU's?}
+\item
+  \protect\hyperlink{empty-cus}{Which CU's are empty CU's?}
+\end{itemize}
 
 \hypertarget{given}{%
 \section{Given}\label{given}}
@@ -367,13 +411,13 @@ One \texttt{g} of them had a ball.
 \end{quote}
 
 \begin{quote}
-There were two cars approaching the scene.
-The first car \texttt{given} stopped, and the second car \texttt{given} bumped into it.
+There was a man who was dribbling a ball and a woman with a stroller.
+The two people \texttt{g} were crossing the street.
 \end{quote}
 
 \begin{quote}
-There was a man who was dribbling a ball and a woman with a stroller.
-The couple \texttt{given} was crossing the street.
+There were two cars approaching the scene.
+The first car \texttt{g} stopped, and the second car \texttt{g} bumped into it.
 \end{quote}
 
 Questions:
@@ -445,7 +489,7 @@ A dog ran into the street. The first car \texttt{n} (the blue one \texttt{n+fe})
 \end{quote}
 
 \begin{quote}
-Two cars \texttt{cars} \texttt{n}, {[}a blue{]} \texttt{car1} \texttt{n} and {[}a white one{]} \texttt{car2} \texttt{n} stopped suddenly.
+Two cars \texttt{cars} \texttt{n}, {[}a blue{]} \texttt{car1} \texttt{n+fe} and {[}a white one{]} \texttt{car2} \texttt{n+fe} stopped suddenly.
 \end{quote}
 
 \hypertarget{predicative}{%
@@ -457,10 +501,9 @@ Similar to Further Explanation, Predicative solves the issue with:
 There was a car \texttt{car1} \texttt{n}. It looked like a blue one \texttt{car1} \texttt{???}.
 \end{quote}
 
-``a blue one'' is tagged as \texttt{car1} \texttt{n+pr}.
+``a blue one'' is tagged as \texttt{car1} \texttt{pr}.
 
-Predicative referents generally come after descriptive verbs.
-Here are some, but not all, of those verbs:
+Predicative referents generally come after one of these verbs:
 
 \begin{itemize}
 \tightlist
@@ -471,6 +514,15 @@ Here are some, but not all, of those verbs:
 \item
   It seemed to be
 \end{itemize}
+
+They attribute a certain characteristic to the subject of those verbs.
+
+Predicative referents are only tagged as \texttt{pr}
+
+\begin{quote}
+There were two cars.
+The first car \texttt{g} was a blue car \texttt{g+pr}.
+\end{quote}
 
 \hypertarget{answer-3-conjoined-referents}{%
 \chapter{Answer 3: Conjoined Referents}\label{answer-3-conjoined-referents}}
@@ -517,7 +569,7 @@ There were two cars \texttt{cars} \texttt{n} \texttt{1}, a white one \texttt{car
 \end{quote}
 
 \begin{quote}
-There was a family \texttt{family} \texttt{n} \texttt{1}, a mom \texttt{woman1} \texttt{b+fe}, a dad \texttt{man} \texttt{b+fe} and a baby \texttt{baby} \texttt{b+fe}.
+There was a family \texttt{family} \texttt{n} \texttt{1}, a mom \texttt{woman1} \texttt{n+fe}, a dad \texttt{man} \texttt{n+fe} and a baby \texttt{baby} \texttt{n+fe}.
 \end{quote}
 
 \begin{quote}
@@ -604,19 +656,6 @@ They \texttt{couple} went across the street.
 \begin{quote}
 There was a man and a woman with a baby.
 They \texttt{couple} crossed the street.
-\end{quote}
-
-\hypertarget{possessive-pronoun-whose}{%
-\subsection{Possessive Pronoun ``whose''}\label{possessive-pronoun-whose}}
-
-\begin{quote}
-How do we tag ``whose'' in referent noun phrases such as ``There was a woman whose car \ldots{}''
-\end{quote}
-
-Tag ``whose'' as part of the referent that comes after.
-
-\begin{quote}
-There was a woman {[}whose car{]} \texttt{u} was very spacious.
 \end{quote}
 
 \hypertarget{r-types}{%
@@ -717,6 +756,32 @@ Phrase: ``across the street''
 ``the street'': New
 
 Phrase does not contain a given referent
+
+\hypertarget{bridging-relationships}{%
+\subsection{Bridging Relationships}\label{bridging-relationships}}
+
+\begin{quote}
+What is a bridging relationship?
+What are some referents with bridging relationships?
+\end{quote}
+
+A non-exhaustive list of bridging relationships:
+
+\begin{itemize}
+\tightlist
+\item
+  man, woman \textless-\textgreater{} couple
+\item
+  man, woman, baby \textless-\textgreater{} family
+\item
+  drivers \textless-\textgreater{} cars
+\item
+  car \textless-\textgreater{} trunk
+\item
+  dog \textless-\textgreater{} leash
+\item
+  car crash \textless-\textgreater{} cars
+\end{itemize}
 
 \hypertarget{bridging-vs.-bridging-contained}{%
 \subsection{Bridging vs.~Bridging-Contained}\label{bridging-vs.-bridging-contained}}
@@ -1015,6 +1080,26 @@ Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
 \hypertarget{introductions}{%
 \subsection{Introductions}\label{introductions}}
 
+Introductions appear at the beginning of narratives.
+The speaker introduces the main events of the narrative,
+before going back and explaining more in-depth.
+
+\begin{quote}
+Oh my gosh I just saw this car crash!
+A man and a woman were walking\ldots{}
+\end{quote}
+
+Introductions can identified by two main factors:
+
+\begin{itemize}
+\tightlist
+\item
+  They summarize a portion of the later narrative
+\item
+  They are temporally displaced - after the introduction,
+  the speaker moves to a different time in the story's narrative.
+\end{itemize}
+
 \hypertarget{aposotrophe-s}{%
 \subsection{Aposotrophe S}\label{aposotrophe-s}}
 
@@ -1024,7 +1109,7 @@ What do we do with 's phrases, like ``the man's ball''?
 
 Normally when you see an apostrophe s, you can break the phrase up into a given and an unused-unknown.
 
-However, if there is a bridging relationship between the two members of the phrase, the second member might be bridging-contained instead.
+However, if there is a \protect\hyperlink{bridging-relationships}{bridging relationship} between the two members of the phrase, the second member might be bridging-contained instead.
 This requires a bridging relationship, though, and most apostrophe s's will be unused-unknown.
 
 \begin{quote}
@@ -1036,6 +1121,9 @@ The woman \texttt{g} {[}`s dog{]} \texttt{u} ran into the road.
 A car pulled over.
 The car \texttt{g} {[}`s driver{]} \texttt{bc} got out, and started yelling.
 \end{quote}
+
+Additionally, if the possessor of the phrase is New,
+the possessed referent is also New.
 
 \hypertarget{possessive-pronouns}{%
 \subsection{Possessive Pronouns}\label{possessive-pronouns}}
@@ -1055,6 +1143,19 @@ A woman was in the parking lot.
 \begin{quote}
 One of the drivers stopped suddenly.
 {[} Their car {]} \texttt{b} screeched really loud.
+\end{quote}
+
+\hypertarget{possessive-pronoun-whose}{%
+\subsection{Possessive Pronoun ``whose''}\label{possessive-pronoun-whose}}
+
+\begin{quote}
+How do we tag ``whose'' in referent noun phrases such as ``There was a woman whose car \ldots{}''
+\end{quote}
+
+Tag ``whose'' as part of the referent that comes after.
+
+\begin{quote}
+There was a woman {[}whose car{]} \texttt{u} was very spacious.
 \end{quote}
 
 \hypertarget{wh-words-and-possessive-pronouns}{%

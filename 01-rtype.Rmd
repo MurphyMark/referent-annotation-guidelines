@@ -11,7 +11,7 @@
 We use the ReFlex annotation scheme to give each new referent a referential label.
 The original ReFlex paper can be found at https://elib.uni-stuttgart.de/handle/11682/9028.
 
-We use the following 7 labels:
+We use the following 9 labels:
 
 | | R-Type | Abbreviation
 |:-|-|-|
@@ -33,12 +33,10 @@ We use the following 7 labels:
 
 A regular new referent, normally introduced with an indefinite article, referential "this", or a numeral.
 
-> I saw [this man] `new` walking down the street and [a woman] `new` with a stroller.
-> There were also [two cars] `new` coming.
+> I saw [this man] `n` walking down the street and [a woman] `new` with a stroller.
+> There were also [two cars] `n` coming.
 
-> A woman `new` with a black dog `new` was loading groceries `new` into a minivan `new`.
-
-<!-- TODO: Bracket all annotations? Seems non-scalable w/ multiple annotations -->
+> A woman `n` with a black dog `n` was loading groceries `n` into a minivan `n`.
 
 <!-- TODO: Definitions link -->
 Questions:
@@ -49,21 +47,30 @@ Questions:
 
 > “Assigned to referring expressions which come with a sufficient amount of descriptive material to enable the hearer to create a new discourse referent without any previous knowledge” (p. 4).
 
-<!-- TODO: CHECK ON THE SPECIFICS OF UNUSED-UKNOWN -->
 A new referent followed by explanation.
 The explanation must be a part of the noun phrase containing the referent, and must include a specific non-new referent.
 
 > I saw a man and a woman.
-> The ball `unused-unknown` that the man was dribbling fell on the ground.
+> The ball `unused-unknown` [that [the man] `g` was dribbling] `explanation` fell on the ground.
 
-<!-- TODO: IS THIS EXAMPLE TRUE? -->
+Untagged referents can appear in explanations.
+
 > I was standing in the parking lot.
-> The two cars `unused-unkown` that were coming towards me stopped abruptly.
+> The two cars `unused-unkown` [that were coming towards me `untagged` `g` very quickly] `explanation` stopped abruptly.
 
 Referents preceded by possessive pronouns are also unused-unkown.
+as long as the possessor is given or bridging.
 
-<!-- TODO: IS "HER BABY" U OR N? -->
-> I saw a man `new` with his wife `unused-unknown` and her baby `unused-unknown`.
+> I saw a man `n` with his wife `u` and her baby `u`.
+
+Referents preceded by apostrophe-s possession are *also* unused-unknown -
+as long as the possessor is given or bridging.
+
+> I saw a man walking down the street.
+> The man['s wife] `u` was pushing a baby carriage.
+
+> There was a car on the other side of the parking lot.
+> A woman['s dog] `n` was barking loudly.
 
 Questions:
 
@@ -77,28 +84,27 @@ Questions:
 
 In other words, we use this tag for referents that have not been explicitly introduced but are implied as an essential part of an already known referent (the anchor).
 
-If a referent was bridging, you would expect it to be there, and be surprised if it did not exist.
-For something that could be there, but isn’t necessarily (e.g. a woman’s groceries), use the unused-unknown.
+> There were two cars `n` `anchor` coming, and they crashed into each other.
+> The drivers `b` got out and called the police.
 
-> There were two cars `new` coming, and they crashed into each other.
-> The drivers `bridging` got out and called the police.
-
-> There was a family `new` walking down the street.
-> The father `bridging` was dribbling a ball.
+> There was a family `n` `anchor` walking down the street.
+> The father `b` was dribbling a ball.
 
 "Father" is bridging because we know that if there is a family, there must be a father.
 So, when "father" is introduced, you already implicitly know it's a member of that family.
 
-> I saw a car crash! The first car `bridging` stopped short, and the second `bridging` drove into it.
+The anchor need not be a tagged referent.
+Any [bridging relationship](#bridging-relationships) is enough.
 
-<!-- TODO: Bridging relationships -->
+> I saw [a car crash] `untagged` `anchor`!
+> The first car `b` stopped short, and the second `b` drove into it.
 
-<!-- TODO: Common bridging cases -->
-
-<!-- TODO: Bridging conditions? -->
+If a referent was bridging, you would expect it to be there, and be surprised if it did not exist.
+For something that could be there, but isn’t necessarily (e.g. a woman’s groceries), use the unused-unknown.
 
 Questions
 
+* [What is a bridging relationship](#bridging-relationships)
 * [Bridging vs. Bridging-Contained](#bridging-vs.-bridging-contained)
 
 ### Bridging-Contained
@@ -108,25 +114,29 @@ Questions
 <!-- TODO: Link to Anchor -->
 <!-- TODO: Link bridging relationship -->
 
-Briding-Contained is similar to Unused-Unknown, except that it requires the anchor of a bridging relationship in the same phrase, not just an introduced referent.
-
-<!-- TODO: talk about bridging-relationship in bc examples -->
+Bridging-Contained is similar to Bridging, except that it requires the bridging referent to be in the same noun phrase as its anchor.
 
 Examples:
 
-> The driver `bc` of the blue car ...
+> The driver `bc` of [the blue car] `anchor` ...
 
-> The driver `bc` of the closer car ...
+> The driver `bc` of [the closer car] `anchor` ...
 
-> The father `bc` of the family ...
+> The father `bc` of [the family] `anchor` ...
 
-> I saw a car crash! The driver `bc` who was in the car `b` got out.
+> I saw a car crash!
+> The driver `bc` who was in [the car] `anchor` `b` got out.
 
-Since a car is expected to have a driver, the driver is bridging-contained.
+Since a car is expected to have a driver,
+the driver is bridging-contained.
 
-> I saw a car crash! The man `bc` who was in the car `b` got out.
+It is possible for the anchor of a bridging relationship to be the referent in a different bridging relationship:
 
-<!-- TODO: bc vs u -->
+> I saw [a car crash] `untagged` `n` `anchor: car1`!
+> The man `driver1` `bc` who was in [the car] `car1` `anchor:driver1` `b` got out. 
+
+In this example, "a car crash" acts as an anchor for "the car",
+which in turn acts as an anchor for "the man".
 
 Questions:
 
@@ -136,11 +146,20 @@ Questions:
 
 A Bridging-Displaced referent is a Bridging referent with 5 non-empty CU's between the CU containing the referent and the most recent CU containing its anchor.
 
-> There was a couple ... 
+> There was a couple `couple` `n` ... 
 > [5 CU's] ... 
-> The mother was just standing there and didn't do anything
+> The mother `woman1` `bd` was just standing there and didn't do anything
+
+> A family `family` `n` was walking down the street.
+> On the other side of the road, there was a woman.
+> She was taking groceries out of her car.
+> She was holding a dog on a leash.
+> The dog saw a ball that rolled into the street.
+> It barked and chased after the ball.
+> The man `man` `bd` yelled and tried to stop the dog.
 
 Questions:
+
 * [How do we count CU's?](#counting-cus)
 * [Which CU's are empty CU's?](#empty-cus)
 
@@ -156,11 +175,11 @@ A given referent is one that has been previously introduced, either as itself, o
 > There were these two people walking.
 > One `g` of them had a ball.
 
-> There were two cars approaching the scene.
-> The first car `given` stopped, and the second car `given` bumped into it.
-
 > There was a man who was dribbling a ball and a woman with a stroller.
-> The couple `given` was crossing the street.
+> The two people `g` were crossing the street.
+
+> There were two cars approaching the scene.
+> The first car `g` stopped, and the second car `g` bumped into it.
 
 Questions:
 
@@ -206,7 +225,7 @@ Theoretically, `+fe` can attach to any r-type. In practice, it is usually attach
 
 > A dog ran into the street. The first car `n` (the blue one `n+fe`) stopped suddenly.
 
-> Two cars `cars` `n`, [a blue] `car1` `n` and [a white one] `car2` `n` stopped suddenly.
+> Two cars `cars` `n`, [a blue] `car1` `n+fe` and [a white one] `car2` `n+fe` stopped suddenly.
 
 ## Predicative
 
@@ -214,14 +233,20 @@ Similar to Further Explanation, Predicative solves the issue with:
 
 > There was a car `car1` `n`. It looked like a blue one `car1` `???`.
 
-"a blue one" is tagged as `car1` `n+pr`.
+"a blue one" is tagged as `car1` `pr`.
 
-Predicative referents generally come after descriptive verbs.
-Here are some, but not all, of those verbs:
+Predicative referents generally come after one of these verbs:
 
 * It was
 * It looked like
 * It seemed to be
+
+They attribute a certain characteristic to the subject of those verbs.
+
+Predicative referents are only tagged as `pr`
+
+> There were two cars.
+> The first car `g` was a blue car `g+pr`.
 
 <!-- EXAMPLES -->
 

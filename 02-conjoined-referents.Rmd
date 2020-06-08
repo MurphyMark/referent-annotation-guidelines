@@ -25,7 +25,7 @@ Generally, members of an explained conjoined referent will be treated as [+fe](#
 > There were two cars `cars` `n` `1`, a white one `car1` `n+fe` and a blue one `car2` `n+fe`. 
 
 <!-- ??? Is woman1 b+fe ??? -->
-> There was a family `family` `n` `1`, a mom `woman1` `b+fe`, a dad `man` `b+fe` and a baby `baby` `b+fe`.
+> There was a family `family` `n` `1`, a mom `woman1` `n+fe`, a dad `man` `n+fe` and a baby `baby` `n+fe`.
  
 > There was a couple `couple` `n` `0` who was crossing the road.
  

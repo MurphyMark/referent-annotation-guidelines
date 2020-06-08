@@ -44,14 +44,6 @@ Also: if there’s a man and a woman *with* a baby, we treat it as a couple, as 
 > There was a man and a woman with a baby.
 > They `couple` crossed the street. 
 
-### Possessive Pronoun "whose"
-
-> How do we tag "whose" in referent noun phrases such as "There was a woman whose car ..."
-
-Tag "whose" as part of the referent that comes after.
-
-> There was a woman [whose car] `u` was very spacious.
-
 ## R-Types
 
 ### New vs. Unused-Unknown
@@ -152,6 +144,22 @@ Phrase: "across the street"
 "the street": New
 
 Phrase does not contain a given referent
+
+### Bridging Relationships
+
+> What is a bridging relationship?
+> What are some referents with bridging relationships?
+
+<!-- TODO: What is a bridging relationship? -->
+
+A non-exhaustive list of bridging relationships:
+
+* man, woman <-> couple
+* man, woman, baby <-> family
+* drivers <-> cars
+* car <-> trunk
+* dog <-> leash
+* car crash <-> cars
 
 ### Bridging vs. Bridging-Contained
 
@@ -368,6 +376,18 @@ Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
 
 <!-- Add section in 00-rtype -->
 <!-- Explain more about introductions -->
+Introductions appear at the beginning of narratives.
+The speaker introduces the main events of the narrative,
+before going back and explaining more in-depth.
+
+> Oh my gosh I just saw this car crash!
+> A man and a woman were walking...
+
+Introductions can identified by two main factors:
+
+* They summarize a portion of the later narrative
+* They are temporally displaced - after the introduction,
+the speaker moves to a different time in the story's narrative.
 
 ### Aposotrophe S
 
@@ -375,7 +395,7 @@ Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
 
 Normally when you see an apostrophe s, you can break the phrase up into a given and an unused-unknown.
 
-However, if there is a bridging relationship between the two members of the phrase, the second member might be bridging-contained instead.
+However, if there is a [bridging relationship](#bridging-relationships) between the two members of the phrase, the second member might be bridging-contained instead.
 This requires a bridging relationship, though, and most apostrophe s’s will be unused-unknown.
 
 > A woman was getting her groceries. 
@@ -383,6 +403,9 @@ This requires a bridging relationship, though, and most apostrophe s’s will be
 
 > A car pulled over.
 > The car `g` [‘s driver] `bc` got out, and started yelling.
+
+Additionally, if the possessor of the phrase is New,
+the possessed referent is also New.
         
 ### Possessive Pronouns
 
@@ -396,6 +419,15 @@ If there is a bridging relationship, then bridging. Otherwise unused-unknown.
 
 > One of the drivers stopped suddenly.
 > [ Their car ] `b` screeched really loud.
+
+### Possessive Pronoun "whose"
+
+> How do we tag "whose" in referent noun phrases such as "There was a woman whose car ..."
+
+Tag "whose" as part of the referent that comes after.
+
+> There was a woman [whose car] `u` was very spacious.
+
 
 ### Wh-Words and Possessive Pronouns
 

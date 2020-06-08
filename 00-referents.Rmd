@@ -4,28 +4,27 @@
 
 > Annotated on tier `norm[referent]` in ExMARALDA
 
-We have a list of 20 possible referents, and we count how many of these 20 referents each speaker introduces:
+We have a list of 19 possible referents, and we count how many of these 20 referents each speaker introduces:
 
 1. man (with the ball)
 2. woman1 (with the stroller)
 3. couple (man and woman1) - *conjoined referent*
-4. people (all the people in the parking lot) - *conjoined referent*
-5. family (man+woman1+baby) - *conjoined referent*
-6. ball
-7. stroller
-8. baby
-9. woman2 (with the dog)
-10. dog
-11. leash
-12. groceries
-13. trunk
-14. car1 (blue one, comes in first, gets hit)
-15. car2 (white one, comes in second, hits car1)
-16. car3 (red one, woman with groceries)
-17. cars (car1 + car2) - *conjoined referent*
-18. driver1 (blue car, calls 911)
-19. driver2 (white car)
-20. drivers (driver1 + driver2) - *conjoined referent*
+4. family (man+woman1+baby) - *conjoined referent*
+5. ball
+6. stroller
+7. baby
+8. woman2 (with the dog)
+9. dog
+10. leash
+11. groceries
+12. trunk
+13. car1 (blue one, comes in first, gets hit)
+14. car2 (white one, comes in second, hits car1)
+15. car3 (red one, woman with groceries)
+16. cars (car1 + car2) - *conjoined referent*
+17. driver1 (blue car, calls 911)
+18. driver2 (white car)
+19. drivers (driver1 + driver2) - *conjoined referent*
 
 See also:
 
