@@ -101,7 +101,7 @@ Phrase types:
 
 > The man who was holding the ball `g` and talking to a woman dropped it.
 
-Explanaition: "who was holding the ball"
+Explanation: "who was holding the ball"
 
 "the ball": `g`
 

@@ -57,6 +57,7 @@ only referents in the final repetition should be tagged.
 See also:
 
 * [Referent Questions](#referents-1)
+* [Phrase Questions](#phrases)
 
 <!--chapter:end:00-referents.Rmd-->
 
@@ -154,6 +155,7 @@ bridging or unused-unknown, it should still be tagged `g`.
 Questions:
 
 * [New vs. Unused-Unknown](#new-vs.-unused-unknown)
+* [Referent Explanations](#referent-explanations)
 
 ## Bridging
 
@@ -298,19 +300,19 @@ or as part of a conjoined referent without a [bridging relationship](#bridging-r
 > There were these two people walking.
 > One of them `g` had a ball.
 
-> There was a man `man` who was dribbling a ball and a woman `woman1` with a stroller.
-> The two people `couple` `g` were crossing the street.
-
-> There were two people `couple` crossing the street.
-> The first person `man` `g` was bouncing a ball,
-> and the second `woman1` `g` was pushing a stroller.
-
 > There were two cars `cars` approaching the scene.
 > The first car `car1` `g` stopped, and the second car `car2` `g` bumped into it.
 
 > The drivers `drivers` of the two cars stopped suddenly.
 > The first one `driver1` `g` got out and called the police,
 > and the second one `driver2` `g` started yelling.
+
+> There was a man `man` who was dribbling a ball and a woman `woman1` with a stroller.
+> The two people `couple` `g` were crossing the street.
+
+> There were two people `couple` crossing the street.
+> The first person `man` `g` was bouncing a ball,
+> and the second `woman1` `g` was pushing a stroller.
 
 Questions:
 
@@ -329,6 +331,14 @@ A Given-Displaced referent is a Given referent with 5 non-empty CU's between the
 > There were two cars coming ...
 > [ 5 CU’s ] ... 
 > The man `gd` helped the lady with her groceries.
+
+> A man `man` and a woman were walking together.
+> The woman was pushing a stroller.
+> Across the street, there was a different woman.
+> She was putting groceries into her car.
+> But she was also holding a dog on a leash.
+> The dog tried to pull away from her, to chase a ball.
+> The man `man` `gd` looked on in horror as the dog ran into the street.
 
 Questions:
 
@@ -540,7 +550,7 @@ Phrase types:
 
 > The man who was holding the ball `g` and talking to a woman dropped it.
 
-Explanaition: "who was holding the ball"
+Explanation: "who was holding the ball"
 
 "the ball": `g`
 
@@ -1311,7 +1321,6 @@ Yes! To hide tiers in Exmaralda, without deleting them:
 Yes.
 If you use the merge-cells button, you have to click on the merged cell to type into it.
 However, if you instead use the merge-cells shortcut (ctrl-1 on Windows), you can immediately begin typing in the merged cell.
-
 
 <!--chapter:end:03-questions.Rmd-->
 
