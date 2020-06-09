@@ -15,8 +15,9 @@ For each conjoined referent, we want to mark whether or not it is explained:
 * Explained `1`
 
 An explanation is an enumeration of conjoined referent elements with indefinite articles/possessive pronouns.
-The enumeration has to come right after the conjoined referent.
-Normally the explanation is separated by a comma or is in brackets.
+The enumeration has to come right after the conjoined referent. 
+The elements in the enumeration are tagged as `n` if the conjoined referent was `n`, and as `g` if the conjoined referent was `g`.
+Normally in writing the explanation is separated by a comma or is in brackets.
 
 Such explanations do not appear often, so the majority of conjoined referents will be unexplained.
 
@@ -26,9 +27,11 @@ Generally, members of an explained conjoined referent will be treated as [+fe](#
 
 <!-- ??? Is woman1 b+fe ??? -->
 > There was a family `family` `n` `1`, a mom `woman1` `n+fe`, a dad `man` `n+fe` and a baby `baby` `n+fe`.
+
+> There was a family `family` `n` `0` walking down the street. The family `family` `g` `1` (a mom `woman1` `g+fe`, a dad `man` `g+fe` and a baby `baby` `g+fe`) looked happy.
  
 > There was a couple `couple` `n` `0` who was crossing the road.
  
-Please note that the elements that are enumerated in the explanation should have indefinite articles. Also, the explanation should not provide any additional info about what the elements were doing. So, the following example is not an explanation:
+Please note that the elements of the explanation can not be subjects of finite main clauses that follow the clause with the conjoined referent. So, the following example is not an explanation:
  
-> There was a couple `couple` `n` `0`. The man was playing with a ball.
+> There was a couple `couple` `n` `0`. The man was playing with a ball. The woman was holding a baby.
