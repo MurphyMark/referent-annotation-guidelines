@@ -4,7 +4,7 @@
 
 > Annotated on tier `norm[referent]` in ExMARALDA
 
-We have a list of 19 possible referents, and we count how many of these 20 referents each speaker introduces:
+We have a list of 19 possible referents, and we count how many of these 19 referents each speaker introduces:
 
 1. man (with the ball)
 2. woman1 (with the stroller)
@@ -26,11 +26,11 @@ We have a list of 19 possible referents, and we count how many of these 20 refer
 18. driver2 (white car)
 19. drivers (driver1 + driver2) - *conjoined referent*
 
-If there are [repitions](#identifying-repitions) in the narrative,
+If there are [repetitions](#identifying-repitions) in the narrative,
 which change the referent the speaker produces, 
 only referents in the final repetition should be tagged.
 
 See also:
 
 * [Referent Questions](#referents-1)
-* [Phrase Questions](#phrases)
+* [Phrase Questions (e.g. "each other", "one of the")](#phrases)
