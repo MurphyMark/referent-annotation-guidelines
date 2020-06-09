@@ -83,7 +83,7 @@ Otherwise, tag as `n`.
 
 [More information on identifying explanations](#referent-explanations).
 
-### Explanation Given Referent
+### Explanation containing Given Referent
 
 > Does this explanation contain a given referent?
 
@@ -159,27 +159,27 @@ Explanation: "with a dog"
 Explanation does not contain a given referent.
 Tag "the woman" as `n`.
 
-### Explanation Bridging or Unused Unknown Referent
+### Explanation containing Bridging or Unused Unknown Referent
 
 > Does this explanation contain a bridging referent?
 
 An explanation contains a Bridging referent if:
 
 * It contains a tagged referent marked `b` or `bc`
-* It contains an untagged referent with a previously introduced anchor
+* It contains an untagged bridging referent with a previously introduced anchor
 
 > A woman was loading groceries into her car `u` `anchor:trunk`.
 > The dog who was by [the trunk] `b` started barking.
 
-Explanation: "who was by the truck"
+Explanation: "who was by the trunk"
 
 "the trunk": `b`
 
 Explanation contains a bridging referent.
-Tag "the trunk" as `u`.
+Tag "the dog" as `u`.
 
 > Across the street, a dog `anchor:leash` was barking wildly.
-> The woman holding [the leash] started yelling, too.
+> The woman holding [the leash] `b` started yelling, too.
 
 Explanation: "holding the leash"
 
@@ -197,25 +197,37 @@ Explanation: "holding the dog's leash"
 
 "'s leash": `bc`
 
-Explanation contains a bridging-contained referent.
+Explanation contains a bridging-contained referent (and a given referent).
 Tag "the woman" as `u`.
 
-> Two cars `cars` `anchor:car crash` were driving down the street way too quickly.
-> The woman who saw [the car crash] stopped putting groceries into her car.
+> A woman `anchor:leg` was unloading groceries. 
+> The dog standing at her feet started barking.
 
-Explanation: "who saw the car crash"
+Explanation: "standing at her feet"
 
-"the car crash": `untagged` `b`
+"her legs": `untagged` `b`
 
 Explanation contains a bridging referent.
-Tag "the woman" as `u`.
+Tag "the dog" as `u`. 
+
+<!-- the next example sounds funny, similar to two people - the man-->
+
+<!-- > Two cars `cars` `anchor:car crash` were driving down the street way too quickly.
+> The woman who saw [the car crash] stopped putting groceries into her car.
+
+<!--Explanation: "who saw the car crash"
+
+<!--"the car crash": `untagged` `b`
+
+<!--Explanation contains a bridging referent.
+Tag "the woman" as `u`. -->
 
 An explanation contains an Unused-Unknown referent if:
 
 * It contains a tagged referent marked `u`
-* It contains an untagged referent with a previously introduced anchor
+* It contains an untagged unused-unknown referent with a previously introduced anchor
 
-> A man was bouncing the ball.
+> A man was bouncing a ball.
 > The woman who was holding [the dog] that was barking at [the ball]
 > looked annoyed.
 
@@ -234,7 +246,7 @@ Tag "the woman" as `u`.
 > How far does an explanation stretch?
 
 An explanation is the material following a referent,
-which explains how the referent is related to the narrative.
+which explains how the referent is related to the rest of the narrative.
 
 The width of the explanation depends on the type of noun phrase headed by the referent:
 
@@ -259,7 +271,7 @@ If the noun phrase is simple, there is no explanation.
 "a big tall woman" ends with the referent, and has no explanation.
 "while loading groceries into her car" might seem to explain the referent,
 but it is not a part of the noun phrase headed by `woman2`,
-and could even be moved around in the sentence.
+because it can be moved around in the sentence.
 
 * Preposition - The noun phrase is extended with a prepositional phrase
 
@@ -352,7 +364,7 @@ A non-exhaustive list of bridging relationships:
 * drivers <-> cars
 * car3 <-> trunk
 * dog <-> leash
-* car crash <-> cars
+* car crash -> cars
 
 > There was a woman next to her car `car3` `n` `anchor:trunk`.
 > She was putting groceries into the trunk `trunk` `b`.
@@ -363,8 +375,9 @@ A non-exhaustive list of bridging relationships:
 > A woman was holding back her dog `dog` `u` `anchor:leash`,
 > but it kept pulling on the leash `leash` `b` she was using.
 
-We have made the decision that bridging relationships work in both directions.
-This decision can be reviewed in the future.
+We have made the decision that bridging relationships work in both directions, 
+for everything except for "car crash" to "cars" since introducing cars does not imply their crash.
+The decision concerning the bi-directionality of the other referent pairs can be reviewed in the future.  
 
 > There was a woman putting groceries into her trunk `trunk` `n` `anchor:car3`.
 > She was loading them very quickly into the back of [the car] `car3` `b`.
@@ -442,69 +455,77 @@ Given relationship conjoined referents:
 * cars
 * drivers
 
+> Two cars were driving down the street.
+> The red one `g` was going slow.
+
+> A red car and a blue car drove down the street.
+> The cars `g` were going way too fast.
+
+> The drivers got out of the car.
+> The first driver `g` looked very angry.
+
+> One car’s driver got out.
+> Then the other car’s driver got out.
+> The drivers `g` started arguing.
+
+
 If the conjoined referent has some inferred bridging relationship between it and its members, members are treated as bridging.
 If all members have been previously listed, the conjoined referent is bridging.
-
-However, if the conjoined referent is introduced in a way that enumerates the members ("Two people were walking down the street"),
-introduced members are treated as Given.
 
 Bridging relationship conjoined referents:
 
 * couple
 * family
 
+> A couple `couple` `n` was walking down the street.
+> The husband `man` `b` was bouncing a ball.
+
+> A family `family` `n` was ready to cross the street.
+> The father `man` `b` wearing a white shirt had a ball.
+
+> I saw a guy `man` `n` with a ball and a woman `woman1` `n` with a stroller walking across the parking lot.
+> The couple `couple` `b` wanted to turn right.
+
+> A man `man`, a woman `woman1`, and a baby `baby` were standing in the parking lot.
+> The family `family` `b` looked strange to me.
+
 However, a conjoined referent is not always introduced with the words "couple" or "family". 
-Sometimes they are introduced in a way that enumerates the members [EXAMPLE].
+Sometimes they are introduced in a way that enumerates the members, e.g. "two pedestrians", "three people", "these people".
 If the conjoined referent is introduced in this way, individual members are treated as given.
 If all the members are introduced, and then the conjoined referent is introduced in this way, the conjoined referent is treated as given.
 
-???
+Note how the examples below are exactly the same as the examples above, except for the words that introduce "couple" and "family". These words change the relationship between the conjoined referent and its members from new-bridging to new-given.
 
-> There were two people walking down the street.
-> The man was bouncing a ball.
+> Two pedestrians `couple` `n` were walking down the street.
+> One of them `man` `g` was bouncing a ball.
 
-> How do I tag "the man"? 
+> Three people `family` `n` were ready to cross the street.
+> One person `man` `g` wearing a white shirt had a ball.
 
-It's `n`. 
+> I saw a guy `man` `n` with a ball and a woman `woman1` `n` with a stroller walking across the parking lot.
+> The two pedestrians `couple` `g` wanted to turn right.
+
+> A man `man` `n`, a woman `woman1` `n`, and a baby `baby` `n` were standing in the parking lot.
+> These people `family` `g` looked strange to me.
+
+
+> Okay, but how do I tag "the man" in the following situaiton? 
+> There were two people `couple` `n`  walking down the street.
+> The man `man` `???` was bouncing a ball.
+
+It's `n` because
 "two people" does not need to include a man, and one would not necessarily
 expect it to.
-It is unclear what 
+"The man" kind of appears out of nowhere so we tag it as `n`.
 
-> Example of "the man"
+Note that this rule only applies to "the man" or "the woman", not "the first person/the first one/ one of them"
+because "the man" and "the woman" are unexpected, while "the "the first person/the first one/ one of them" are fine.
 
-Only applies to "the man" or "the woman", not "the first person/the first one/ one of them"
+> There were two people `couple` `n`  walking down the street.
+> The woman `woman1` `n` had a stroller.
 
-> Example of "the first person"
-
-<!-- Find the controversial examples. -->
-
-> A red car and a blue car drove down the street.
-> The cars `g` were going way too fast.
-
-> Two cars were driving down the street.
-> The red one `g` was going slow.
-
-> One car’s driver got out.
-> Then the other car’s driver got out.
-> The drivers `g` started arguing.
-
-> The drivers got out of the car.
-> The first driver `g` looked very angry.
-
-> Two people were walking down the street.
-> One of them `g` was bouncing a ball.
-
-> A man and a woman were standing around.
-> The couple `b` was holding hands.
-
-> A couple was standing in the parking lot.
-> The husband `b` was looking around.
-
-> A man, a woman, and a baby were standing in the parking lot.
-> The family `b` looked happy.
-
-> A family was walking down the street.
-> The baby `b` was crying.
+> There were two people `couple` `n`  walking down the street.
+> The first person `woman1` `g` had a stroller.
 
 
 ## Phrases
@@ -655,15 +676,14 @@ the speaker moves to a different time in the story's narrative.
 > And a woman was unloading her groceries, she had a little dog.
 > And there were two cars which bumped into each other.
 
-This summarizes 
+The introduction in the example above summarizes the whole story,
+after which the speaker moves to the very beginning of the main story,
+and not to the events after the crash.
 
 Since introductions are separate from the main narrative,
-referents in the introduction are not tagged.
-
-> There is two cars,
-> a lady next to her parked car with her dog and groceries,
-> and a lady with a stroller accompanied by a boy bouncing a ball.
-> The boy’s ball rolled
+referents in the introduction are NOT tagged. If we tagged them, 
+we would have referents that are introduced twice - one time in the introduction, 
+and one time in the main story.
 
 In most cases, it is clear what is or is not an introduction. 
 If you hesitate, discuss with other annotators.
@@ -760,7 +780,7 @@ Tag both referents normally.
 > The car behind him - hit [it] also - hit [the car] - [the other car]
 
 The verb does not change, but the referent does.
-Tag only "the other car".
+Tag only "the other car", which was the speaker's final choice.
 
 > And the guy with [the ball] who accidentally dropped [the ball] ...
 
@@ -853,7 +873,7 @@ but to the action of holding a dog by any leash.
 
 > Both drivers got out of [the car]
 
-Untagged
+`untagged`
 
 "the car" is generic for the same reason,
 "get out of the car" just refers to getting out of any car.
