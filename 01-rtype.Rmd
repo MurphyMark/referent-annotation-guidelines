@@ -23,7 +23,7 @@ We use the following 9 labels:
 | 6 | Given | `g` |
 | 7 | Given-Displaced | `gd` |
 | (8) | Further-Explanation | `+fe` |
-| (9) | Predicative | `+pr` |
+| (9) | Predicative | `pr` |
 
 
 <!-- TODO: Standardize explanation style -->
@@ -47,8 +47,8 @@ Questions:
 
 > “Assigned to referring expressions which come with a sufficient amount of descriptive material to enable the hearer to create a new discourse referent without any previous knowledge” (p. 4).
 
-A new referent followed by explanation.
-The explanation must be a part of the noun phrase containing the referent, and must include a specific non-new referent.
+A new referent followed by an indentifying explanation.
+The explanation must be a part of the noun phrase containing the referent, and must include another given/bridging/unused-unknown referent.
 
 [More information on identifying explanations](#referent-explanations).
 
@@ -63,10 +63,10 @@ Untagged referents can appear in explanations.
 > I was standing in the parking lot.
 > The two cars `unused-unkown` [that were coming towards me `untagged` `g` very quickly] `explanation` stopped abruptly.
 
-Referents preceded by possessive pronouns are also unused-unknown.
+Referents preceded by possessive pronouns are also unused-unknown,
 as long as the possessor is given or bridging.
 
-> I saw a man `n` with his wife `u` and her baby `u`.
+> I saw a man `n` with his wife `u` and their baby `u`.
 
 Referents preceded by apostrophe-s possession are *also* unused-unknown -
 as long as the possessor is given or bridging.
@@ -79,15 +79,13 @@ as long as the possessor is given or bridging.
 
 Note:
 If a given referent is referred to in a way that appears
-bridging or unused-unknown, it should still be tagged `g`.
+unused-unknown, it should still be tagged `g` 
+because once the referent is given, it cannot go back to unused-unknown.
 
 > A man was walking down the street and bouncing a ball.
 > ...
-> The man `g` with the ball stopped bouncing it.
+> The man `g`, not `u` with the ball stopped bouncing it.
 
-> Two cars were driving down the street.
-> Each had one driver.
-> The driver `g` of the first car stopped suddenly.
 
 Questions:
 
@@ -100,7 +98,7 @@ Questions:
 
 > “This label is used for non-coreferential anaphoric expressions which are dependent on and unique with respect to a previously introduced scenario” (p. 8).
 
-In other words, we use this tag for referents that have not been explicitly introduced but are implied as an essential part of an already known referent (the anchor).
+We use this tag for referents that have not been explicitly introduced but are implied as an essential part of an already known referent (the anchor).
 
 When the anchor of a bridging referent has been introduced,
 the listener expects that referent to appear,
@@ -112,7 +110,10 @@ and would not be surprised if it was introduced without explanation.
 > There was a family `n` `anchor` walking down the street.
 > The father `b` was dribbling a ball.
 
-"Father" is bridging because we know that if there is a family, there must be a father.
+"Drivers" are bridging from "cars" because we know that cars normally have drivers.
+So, when you see "the drivers", you immediately understand that they are the drivers of the two cars.
+
+Similarly, "father" is bridging from "family" because we know that if there is a family, there must be a father.
 So, when "father" is introduced, you already implicitly know it's a member of that family.
 
 The anchor and the referent should have a 
@@ -123,15 +124,15 @@ Any bridging relationship is enough.
 > I saw [a car crash] `untagged` `anchor`!
 > The first car `b` stopped short, and the second `b` drove into it.
 
-Note:
+Note 1:
 The bridging referent can sometimes be directly introduced with a pronoun.
 This is very common with `drivers`.
 In this case, the pronoun should still be treated as bridging.
 
-> The first car `g` stopped suddenly.
-> The car behind didn’t brake in time and hit him `b`.
+> The first car `car1` `g` stopped suddenly.
+> The car behind didn’t brake in time and hit him `driver1` `b`.
 
-Note: 
+Note 2: 
 Bridging relationships do not *always* mean that
 referents should be tagged `b`.
 If referents are introduced 
@@ -145,12 +146,13 @@ they should be tagged as `g` instead.
 This happens commonly when referring to `couple` as "two people",
 or to `family` as "the three people".
 
-Note:
+Note 3:
 If an anchor is introduced 
 in a way that does not show a bridging relationship ("two people"),
 but then a referent is introduced 
 that only makes sense with a bridging relationship ("the husband"),
 that referent should be marked as new.
+Consider the following example:
 
 > Two people `couple` `n` were walking down the street.
 > The husband `man` `n` was bouncing a ball.
@@ -163,6 +165,15 @@ so it's not expected in the way that a bridging referent must be.
 
 Similar to "husband",
 there's no expectation that a group of two people includes a man.
+
+Note 4:
+If a given referent is referred to in a way that appears
+bridging, it should still be tagged `g` 
+because once the referent is given, it cannot go back to bridging.
+
+> Two cars were driving down the street.
+> The drivers were clearly speeding `b`.
+> The driver `g`, not `b` of the first car stopped suddenly.
 
 Questions
 
@@ -186,13 +197,11 @@ Examples:
 
 > The father `bc` of [the family] `anchor` ...
 
-> I saw a car crash!
-> The driver `bc` who was in [the car] `anchor` `b` got out.
+Since a car is expected to have a driver, and a family to have a father, 
+the driver and the father are bridging-contained.
 
-Since a car is expected to have a driver,
-the driver is bridging-contained.
-
-It is possible for the anchor of a bridging relationship to be the referent in a different bridging relationship:
+It is possible for the anchor of a bridging-contaied relationship to be the referent in a different bridging relationship
+with a different anchor:
 
 > I saw [a car crash] `untagged` `n` `anchor: car1`!
 > The man `driver1` `bc` who was in [the car] `car1` `anchor:driver1` `b` got out. 
@@ -218,7 +227,7 @@ A Bridging-Displaced referent is a Bridging referent with 5 non-empty CU's betwe
 > She was holding a dog on a leash.
 > The dog saw a ball that rolled into the street.
 > It barked and chased after the ball.
-> The man `man` `bd` yelled and tried to stop the dog.
+> The father `man` `bd` yelled and tried to stop the dog.
 
 Questions:
 
@@ -227,15 +236,17 @@ Questions:
 
 ## Given
 
-A given referent is one that has been previously introduced,
-either as itself,
-or as part of a conjoined referent without a [bridging relationship](#bridging-relationships).
+A given referent is one that has been previously introduced.
+It could be introduced either as itself (`man`),
+or as part of a conjoined referent without a [bridging relationship](#bridging-relationships) 
+(`two people` `n` - `first person` `g`, `two cars` `n` - `the first car` `g`), 
+or through the enumeration of its elements (`a man` `n` and `a woman` `n` - `the two people` `g`).
 
-> There was a man.
-> He `g` was dribbling a ball.
+> There was a man `man`.
+> He `man` `g` was dribbling a ball.
 
-> There were these two people walking.
-> One of them `g` had a ball.
+> There were these two people `couple` walking.
+> One of them `man` `g` had a ball.
 
 > There were two cars `cars` approaching the scene.
 > The first car `car1` `g` stopped, and the second car `car2` `g` bumped into it.
@@ -301,7 +312,7 @@ To resolve this, we use the `+fe` tag.
 
 Theoretically, `+fe` can attach to any r-type. In practice, it is usually attached to `n`.
 
-> A dog ran into the street. The first car `car1` `n` (the blue one `car1` `n+fe`) stopped suddenly.
+> A dog ran into the street. A car `car1` `n` (a blue one `car1` `n+fe`) stopped suddenly.
 
 > Two cars `cars` `n`,
 > [a blue] `car1` `n+fe` and [a white one] `car2` `n+fe`,
@@ -309,7 +320,7 @@ Theoretically, `+fe` can attach to any r-type. In practice, it is usually attach
 
 > Two cars `cars` `n` were driving down the road,
 > with just one driver in each.
-> The cars `cars` `n`,
+> The cars `cars` `g`,
 > [a blue] `car1` `g+fe` and [a white one] `car2` `g+fe`,
 > stopped suddenly.
 
@@ -327,15 +338,22 @@ Predicative referents generally come after one of these verbs:
 * It looked like
 * It seemed to be
 
-They attribute a certain characteristic to the subject of those verbs.
+Predicative referents do not introduce new referents, i.e. things or people; 
+instead, they attribute a new characteristic to already existing referents, which were introduced 
+before the verbs "to be", "to look like", "to seem like". Usually the already existing referents are 
+a subject of those verbs.
 
-Predicative referents are only tagged as `pr`
+Predicative referents are only tagged as `pr`.
 
 > There was a car `car1` `n`.
 > It `car2` `g` `subject` was a blue car `car1` `pr` `characteristic`.
 
+As we see here, no new thing/person was introduced by the phrase "a blue car", it just added a new characteristic to `car1`.
+
 > There were two cars `cars` `n`.
 > The first car `car1` `g` `subject` was a blue car `car1` `pr` `characteristic`.
+
+Similarly, "a blue car" does not introduce a new referent, but just adds a characteristic to an existing one.
 
 <!-- EXAMPLES -->
 
