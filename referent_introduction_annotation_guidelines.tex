@@ -79,7 +79,7 @@
 
 \title{Referent Introduction Annotation Guidelines}
 \author{}
-\date{\vspace{-2.5em}2020-06-08}
+\date{\vspace{-2.5em}2020-06-09}
 
 \begin{document}
 \maketitle
@@ -156,6 +156,10 @@ We have a list of 19 possible referents, and we count how many of these 20 refer
   drivers (driver1 + driver2) - \emph{conjoined referent}
 \end{enumerate}
 
+If there are \protect\hyperlink{identifying-repitions}{repitions} in the narrative,
+which change the referent the speaker produces,
+only referents in the final repetition should be tagged.
+
 See also:
 
 \begin{itemize}
@@ -228,9 +232,16 @@ Questions:
 A new referent followed by explanation.
 The explanation must be a part of the noun phrase containing the referent, and must include a specific non-new referent.
 
+\protect\hyperlink{referent-explanations}{More information on identifying explanations}.
+
+\begin{quote}
+Across the street, a dog was barking.
+The woman \texttt{u} {[}with the dog{]} \texttt{explanation} yelled at it.
+\end{quote}
+
 \begin{quote}
 I saw a man and a woman.
-The ball \texttt{unused-unknown} {[}that {[}the man{]} \texttt{g} was dribbling{]} \texttt{explanation} fell on the ground.
+The ball \texttt{u} {[}that {[}the man{]} \texttt{g} was dribbling{]} \texttt{explanation} fell on the ground.
 \end{quote}
 
 Untagged referents can appear in explanations.
@@ -240,7 +251,7 @@ I was standing in the parking lot.
 The two cars \texttt{unused-unkown} {[}that were coming towards me \texttt{untagged} \texttt{g} very quickly{]} \texttt{explanation} stopped abruptly.
 \end{quote}
 
-Referents preceded by possessive pronouns are also unused-unkown.
+Referents preceded by possessive pronouns are also unused-unknown.
 as long as the possessor is given or bridging.
 
 \begin{quote}
@@ -258,6 +269,22 @@ The man{[}'s wife{]} \texttt{u} was pushing a baby carriage.
 \begin{quote}
 There was a car on the other side of the parking lot.
 A woman{[}'s dog{]} \texttt{n} was barking loudly.
+\end{quote}
+
+Note:
+If a given referent is referred to in a way that appears
+bridging or unused-unknown, it should still be tagged \texttt{g}.
+
+\begin{quote}
+A man was walking down the street and bouncing a ball.
+\ldots{}
+The man \texttt{g} with the ball stopped bouncing it.
+\end{quote}
+
+\begin{quote}
+Two cars were driving down the street.
+Each had one driver.
+The driver \texttt{g} of the first car stopped suddenly.
 \end{quote}
 
 Questions:
@@ -281,6 +308,10 @@ Questions:
 
 In other words, we use this tag for referents that have not been explicitly introduced but are implied as an essential part of an already known referent (the anchor).
 
+When the anchor of a bridging referent has been introduced,
+the listener expects that referent to appear,
+and would not be surprised if it was introduced without explanation.
+
 \begin{quote}
 There were two cars \texttt{n} \texttt{anchor} coming, and they crashed into each other.
 The drivers \texttt{b} got out and called the police.
@@ -294,16 +325,64 @@ The father \texttt{b} was dribbling a ball.
 ``Father'' is bridging because we know that if there is a family, there must be a father.
 So, when ``father'' is introduced, you already implicitly know it's a member of that family.
 
-The anchor need not be a tagged referent.
-Any \protect\hyperlink{bridging-relationships}{bridging relationship} is enough.
+The anchor and the referent should have a
+\protect\hyperlink{bridgingux5cux2520relationship}{bridging relationship} between them.
+However, the anchor does not need to be a tagged referent.
+Any bridging relationship is enough.
 
 \begin{quote}
 I saw {[}a car crash{]} \texttt{untagged} \texttt{anchor}!
 The first car \texttt{b} stopped short, and the second \texttt{b} drove into it.
 \end{quote}
 
-If a referent was bridging, you would expect it to be there, and be surprised if it did not exist.
-For something that could be there, but isn't necessarily (e.g.~a woman's groceries), use the unused-unknown.
+Note:
+The bridging referent can sometimes be directly introduced with a pronoun.
+This is very common with \texttt{drivers}.
+In this case, the pronoun should still be treated as bridging.
+
+\begin{quote}
+The first car \texttt{g} stopped suddenly.
+The car behind didn't brake in time and hit him \texttt{b}.
+\end{quote}
+
+Note:
+Bridging relationships do not \emph{always} mean that
+referents should be tagged \texttt{b}.
+If referents are introduced
+in a way that does not reflect the relationship,
+they should be tagged as \texttt{g} instead.
+
+\begin{quote}
+A man \texttt{man} and a woman \texttt{woman1} were walking down the street.
+The two people \texttt{couple} \texttt{g}
+were pushing a baby carriage and bouncing a ball.
+\end{quote}
+
+This happens commonly when referring to \texttt{couple} as ``two people'',
+or to \texttt{family} as ``the three people''.
+
+Note:
+If an anchor is introduced
+in a way that does not show a bridging relationship (``two people''),
+but then a referent is introduced
+that only makes sense with a bridging relationship (``the husband''),
+that referent should be marked as new.
+
+\begin{quote}
+Two people \texttt{couple} \texttt{n} were walking down the street.
+The husband \texttt{man} \texttt{n} was bouncing a ball.
+\end{quote}
+
+There's no reason that ``two people'' must include a husband,
+so it's not expected in the way that a bridging referent must be.
+
+\begin{quote}
+Two people \texttt{couple} \texttt{n} were walking down the street.
+The man \texttt{man} \texttt{n} was bouncing a ball.
+\end{quote}
+
+Similar to ``husband'',
+there's no expectation that a group of two people includes a man.
 
 Questions
 
@@ -398,7 +477,9 @@ Questions:
 \hypertarget{given}{%
 \section{Given}\label{given}}
 
-A given referent is one that has been previously introduced, either as itself, or as part of a given-relationship conjoined referent.
+A given referent is one that has been previously introduced,
+either as itself,
+or as part of a conjoined referent without a \protect\hyperlink{bridging-relationships}{bridging relationship}.
 
 \begin{quote}
 There was a man.
@@ -407,17 +488,29 @@ He \texttt{g} was dribbling a ball.
 
 \begin{quote}
 There were these two people walking.
-One \texttt{g} of them had a ball.
+One of them \texttt{g} had a ball.
 \end{quote}
 
 \begin{quote}
-There was a man who was dribbling a ball and a woman with a stroller.
-The two people \texttt{g} were crossing the street.
+There was a man \texttt{man} who was dribbling a ball and a woman \texttt{woman1} with a stroller.
+The two people \texttt{couple} \texttt{g} were crossing the street.
 \end{quote}
 
 \begin{quote}
-There were two cars approaching the scene.
-The first car \texttt{g} stopped, and the second car \texttt{g} bumped into it.
+There were two people \texttt{couple} crossing the street.
+The first person \texttt{man} \texttt{g} was bouncing a ball,
+and the second \texttt{woman1} \texttt{g} was pushing a stroller.
+\end{quote}
+
+\begin{quote}
+There were two cars \texttt{cars} approaching the scene.
+The first car \texttt{car1} \texttt{g} stopped, and the second car \texttt{car2} \texttt{g} bumped into it.
+\end{quote}
+
+\begin{quote}
+The drivers \texttt{drivers} of the two cars stopped suddenly.
+The first one \texttt{driver1} \texttt{g} got out and called the police,
+and the second one \texttt{driver2} \texttt{g} started yelling.
 \end{quote}
 
 Questions:
@@ -485,11 +578,21 @@ To resolve this, we use the \texttt{+fe} tag.
 Theoretically, \texttt{+fe} can attach to any r-type. In practice, it is usually attached to \texttt{n}.
 
 \begin{quote}
-A dog ran into the street. The first car \texttt{n} (the blue one \texttt{n+fe}) stopped suddenly.
+A dog ran into the street. The first car \texttt{car1} \texttt{n} (the blue one \texttt{car1} \texttt{n+fe}) stopped suddenly.
 \end{quote}
 
 \begin{quote}
-Two cars \texttt{cars} \texttt{n}, {[}a blue{]} \texttt{car1} \texttt{n+fe} and {[}a white one{]} \texttt{car2} \texttt{n+fe} stopped suddenly.
+Two cars \texttt{cars} \texttt{n},
+{[}a blue{]} \texttt{car1} \texttt{n+fe} and {[}a white one{]} \texttt{car2} \texttt{n+fe},
+stopped suddenly.
+\end{quote}
+
+\begin{quote}
+Two cars \texttt{cars} \texttt{n} were driving down the road,
+with just one driver in each.
+The cars \texttt{cars} \texttt{n},
+{[}a blue{]} \texttt{car1} \texttt{g+fe} and {[}a white one{]} \texttt{car2} \texttt{g+fe},
+stopped suddenly.
 \end{quote}
 
 \hypertarget{predicative}{%
@@ -520,8 +623,13 @@ They attribute a certain characteristic to the subject of those verbs.
 Predicative referents are only tagged as \texttt{pr}
 
 \begin{quote}
-There were two cars.
-The first car \texttt{g} was a blue car \texttt{g+pr}.
+There was a car \texttt{car1} \texttt{n}.
+It \texttt{car2} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr} \texttt{characteristic}.
+\end{quote}
+
+\begin{quote}
+There were two cars \texttt{cars} \texttt{n}.
+The first car \texttt{car1} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr} \texttt{characteristic}.
 \end{quote}
 
 \hypertarget{answer-3-conjoined-referents}{%
@@ -592,7 +700,7 @@ There was a couple \texttt{couple} \texttt{n} \texttt{0}. The man was playing wi
 \subsection{Groceries}\label{groceries}}
 
 \begin{quote}
-What phrases should we tag as \texttt{groceries}? What phrases should we not?
+What noun phrases should we tag as \texttt{groceries}? What noun phrases should we not?
 \end{quote}
 
 Generally, \texttt{groceries} should be a mass noun.
@@ -626,22 +734,45 @@ Not Groceries:
   fruits
 \end{itemize}
 
+\hypertarget{grocery-consistency}{%
+\subsection{Grocery Consistency}\label{grocery-consistency}}
+
+\begin{quote}
+What if someone introduces \texttt{groceries} as ``fruits'' \texttt{untagged},
+but then later refers to ``her groceries'' \texttt{tagged}?
+Should we tag ``fruits''?
+\end{quote}
+
+Yes. The same is true of the reverse.
+If ``her groceries'' appears, and ``fruits'' follows, we should tag both.
+
 \hypertarget{family-vs.-couple}{%
 \subsection{Family vs.~Couple}\label{family-vs.-couple}}
 
 \begin{quote}
-Is this group of people \texttt{family} or \texttt{couple} ?
+Does the pronoun ``they'' refer to \texttt{family} or \texttt{couple}?
 \end{quote}
 
-Generally, if all the members of the family have been introduced, they refers to the family.
-If only man and woman1 (and maybe stroller) have been introduced, they refers to the couple, instead.
+Generally:
 
-Also: if there's a man and a woman \emph{with} a baby, we treat it as a couple, as the baby is just additional information about either the man or the woman.
+\begin{itemize}
+\tightlist
+\item
+  If all the members of the family have been introduced,
+  ``they'' refers to the family.
+\end{itemize}
 
 \begin{quote}
 There was a man, a woman, and a baby.
 They \texttt{family} crossed the street.
 \end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  If only man and woman1 (and maybe stroller) have been introduced,
+  ``they'' refers to the couple, instead.
+\end{itemize}
 
 \begin{quote}
 There was a man and a woman.
@@ -652,6 +783,11 @@ They \texttt{couple} crossed the street.
 There was a man and a woman and a stroller.
 They \texttt{couple} went across the street.
 \end{quote}
+
+However: If there's a man and a woman \emph{with} a baby,
+we treat it as a couple,
+as the baby is just additional information
+attached to the man or the woman.
 
 \begin{quote}
 There was a man and a woman with a baby.
@@ -673,75 +809,84 @@ Tag as \texttt{u} if:
 \begin{itemize}
 \tightlist
 \item
-  The predicate contains a \protect\hyperlink{phrases-containing-given-referents}{given referent}
+  The explanation that comes after \protect\hyperlink{explanation-given-referent}{contains a given referent}
 \item
-  The predicate contains a bridging or unused-unknown referent
+  The explanation that comes after \protect\hyperlink{explanation-bridging-or-unused-unknown-referent}{contains a bridging or unused-unknown referent}
+\item
+  The referent is possessed by a \protect\hyperlink{possessive-pronouns}{possessive pronoun}
+\item
+  The referent is possessed by an \protect\hyperlink{apostrophe-s}{apostrophe s}
 \end{itemize}
 
 Otherwise, tag as \texttt{n}.
 
-\hypertarget{phrases-containing-given-referents}{%
-\subsection{Phrases Containing Given Referents}\label{phrases-containing-given-referents}}
+\protect\hyperlink{referent-explanations}{More information on identifying explanations}.
+
+\hypertarget{explanation-given-referent}{%
+\subsection{Explanation Given Referent}\label{explanation-given-referent}}
 
 \begin{quote}
-Does this phrase contain a given referent?
+Does this explanation contain a given referent?
 \end{quote}
 
-A phrase contains a given referent if:
+An explanation contains a given referent if:
 
 \begin{itemize}
+\tightlist
 \item
-  There is an annotated referent marked \texttt{g}
+  It contains a tagged referent marked \texttt{g}
 \item
-  There is a non-annotated referent that has been previously introduced
+  It contains an untagged referent that has been previously introduced
 \end{itemize}
-
-Examples:
 
 \begin{quote}
 The man who was holding the ball \texttt{g} and talking to a woman dropped it.
 \end{quote}
 
-Phrase: ``who was holding the ball''
+Explanaition: ``who was holding the ball''
 
-``the ball'': Given
+``the ball'': \texttt{g}
 
-``a woman'': New
+``a woman'': \texttt{n}
 
-Phrase contains a given referent
+Explanation contains a given referent.
+Tag ``the man'' as \texttt{u}.
 
 \begin{quote}
 The man who was holding a ball \texttt{n} dropped it.
 \end{quote}
 
-Phrase: ``who was holding a ball''
+Explanation: ``who was holding a ball''
 
-``a ball'': New
+``a ball'': \texttt{n}
 
-Phrase does not contain a given referent
+Explanation does not contain a given referent.
+Tag ``the man'' as \texttt{n}.
 
 \begin{quote}
 The man with the woman \texttt{g} 's ball \texttt{u} dropped it.
 \end{quote}
 
-Phrase: ``with the woman's ball''
+Explanation: ``with the woman's ball''
 
-``the woman'': Given
+``the woman'': \texttt{g}
 
 ``'s ball'': Unused-Unknown
 
-Phrase contains a given referent
+Explanation contains a given referent.
+Tag ``the man'' as \texttt{u}.
 
 \begin{quote}
 A couple was walking down the road.
 A woman across the street was unloading groceries from her car.
 \end{quote}
 
-Phrase: ``across the street''
+Explanation: ``across the street''
 
-``the street'': Given
+``the street'': \texttt{g}
 
-Phrase contains a given referent
+Explanation contains a given referent.
+Tag ``a woman'' as \texttt{u}
 
 Note: Although ``the street'' is not annotated, it has been introduced in the narrative.
 So, it is considered a given referent.
@@ -751,11 +896,241 @@ A couple was walking with a stroller.
 A woman across the street was unloading groceries from her car.
 \end{quote}
 
-Phrase: ``across the street''
+Explanation: ``across the street''
 
-``the street'': New
+``the street'': \texttt{n}
 
-Phrase does not contain a given referent
+Explanation does not contain a given referent.
+Tag ``the woman'' as \texttt{n}.
+
+\hypertarget{explanation-bridging-or-unused-unknown-referent}{%
+\subsection{Explanation Bridging or Unused Unknown Referent}\label{explanation-bridging-or-unused-unknown-referent}}
+
+\begin{quote}
+Does this explanation contain a bridging referent?
+\end{quote}
+
+An explanation contains a Bridging referent if:
+
+\begin{itemize}
+\tightlist
+\item
+  It contains a tagged referent marked \texttt{b} or \texttt{bc}
+\item
+  It contains an untagged referent with a previously introduced anchor
+\end{itemize}
+
+\begin{quote}
+A woman was loading groceries into her car \texttt{u} \texttt{anchor:trunk}.
+The dog who was by {[}the trunk{]} \texttt{b} started barking.
+\end{quote}
+
+Explanation: ``who was by the truck''
+
+``the trunk'': \texttt{b}
+
+Explanation contains a bridging referent.
+Tag ``the trunk'' as \texttt{u}.
+
+\begin{quote}
+Across the street, a dog \texttt{anchor:leash} was barking wildly.
+The woman holding {[}the leash{]} started yelling, too.
+\end{quote}
+
+Explanation: ``holding the leash''
+
+``the leash'': \texttt{b}
+
+Explanation contains a bridging referent.
+Tag ``the woman'' as \texttt{u}.
+
+\begin{quote}
+Across the street, a dog \texttt{anchor:leash} was barking wildly.
+The woman holding {[}the dog{]} {[}'s leash{]} started yelling, too.
+\end{quote}
+
+Explanation: ``holding the dog's leash''
+
+``the dog'': \texttt{g} \texttt{anchor:leash}
+
+``'s leash'': \texttt{bc}
+
+Explanation contains a bridging-contained referent.
+Tag ``the woman'' as \texttt{u}.
+
+\begin{quote}
+Two cars \texttt{cars} \texttt{anchor:car\ crash} were driving down the street way too quickly.
+The woman who saw {[}the car crash{]} stopped putting groceries into her car.
+\end{quote}
+
+Explanation: ``who saw the car crash''
+
+``the car crash'': \texttt{untagged} \texttt{b}
+
+Explanation contains a bridging referent.
+Tag ``the woman'' as \texttt{u}.
+
+An explanation contains an Unused-Unknown referent if:
+
+\begin{itemize}
+\tightlist
+\item
+  It contains a tagged referent marked \texttt{u}
+\item
+  It contains an untagged referent with a previously introduced anchor
+\end{itemize}
+
+\begin{quote}
+A man was bouncing the ball.
+The woman who was holding {[}the dog{]} that was barking at {[}the ball{]}
+looked annoyed.
+\end{quote}
+
+Explanation: ``who was holding the dog that was barking at the ball''
+
+``the ball'': \texttt{ball} \texttt{g} \texttt{explanation:dog}
+
+``the dog'': \texttt{dog} \texttt{u}
+
+Explanation contains an unused-unknown referent.
+Tag ``the woman'' as \texttt{u}.
+
+\hypertarget{referent-explanations}{%
+\subsection{Referent Explanations}\label{referent-explanations}}
+
+\begin{quote}
+What qualifies as an explanation?
+How far does an explanation stretch?
+\end{quote}
+
+An explanation is the material following a referent,
+which explains how the referent is related to the narrative.
+
+The width of the explanation depends on the type of noun phrase headed by the referent:
+
+\begin{itemize}
+\tightlist
+\item
+  Simple - The noun phrase ends after the referent
+\end{itemize}
+
+If the noun phrase is simple, there is no explanation.
+
+\begin{quote}
+On the other side of the street,
+there was {[}a woman{]}.
+\end{quote}
+
+``a woman'' ends with the referent, and has no explanation.
+
+\begin{quote}
+On the other side of the street,
+there was {[}a big tall woman{]}.
+\end{quote}
+
+``a big tall woman'' ends with the referent, and has no explanation.
+
+\begin{quote}
+On the other side of the street,
+{[}a big tall woman{]}, while loading groceries into her car,
+also held back her dog.
+\end{quote}
+
+``a big tall woman'' ends with the referent, and has no explanation.
+``while loading groceries into her car'' might seem to explain the referent,
+but it is not a part of the noun phrase headed by \texttt{woman2},
+and could even be moved around in the sentence.
+
+\begin{itemize}
+\tightlist
+\item
+  Preposition - The noun phrase is extended with a prepositional phrase
+\end{itemize}
+
+If the noun phrase is extended by a prepositional phrase,
+the explanation continues until the end of the prepositional phrase.
+
+\begin{quote}
+Across the street,
+there was {[}a woman with a big, black, barking dog{]}.
+\end{quote}
+
+``with'' introduces a prepositional phrase,
+and the explanation continues until the end of that phrase.
+
+\begin{quote}
+Across the street,
+there was {[}a woman with a big blue car with an open trunk
+and a dog who was trying to pull away from her{]}.
+\end{quote}
+
+``with'' introduces a prepositional phrase,
+and everything else in the sentence
+is explaining the things that the woman is ``with''.
+So, everything else in the sentence is part of the explanation.
+
+\begin{quote}
+Across the street,
+{[}A woman with a big blue car whose trunk was open
+and a dog on a leash who was trying to pull away from her{]},
+while she was trying to hold onto the dog,
+was also putting groceries into her car.
+\end{quote}
+
+``with'' introduces a prepositional phrase,
+and everything through ``trying to pull away from her''
+is explaining the things that \texttt{woman2} is ``with''.
+
+However, ``while she was trying to hold onto the dog''
+is not part of the noun phrase,
+and could even be moved around in the sentence.
+
+\begin{itemize}
+\tightlist
+\item
+  Relative - The noun phrase is extended by a relative clause
+\end{itemize}
+
+If the noun phrase is extended by a relative clause,
+everything within that relative clause is part of the explanation.
+
+Relative clauses start with words like ``who'', ``that'', or ``which'',
+or could have them inserted before the start of the clause.
+
+\begin{quote}
+Across the street,
+there was {[}a woman who was pulling on her dog's leash{]}.
+\end{quote}
+
+Everything after ``a woman''
+is part of a relative clause introduced with ``who'',
+and is part of the explanation.
+
+\begin{quote}
+Across the street,
+there was {[}a woman pulling on her dog's leash{]}.
+\end{quote}
+
+Everything after ``a woman'' is part of a relative clause.
+Although it is not introduced with ``who'',
+``who'' could be inserted at the beginning of the clause.
+
+\begin{quote}
+Across the street,
+{[}A woman putting groceries in a big blue car whose trunk was open,
+and wrestling with a dog on a leash trying to pull away from her{]},
+while she was trying to hold onto the dog,
+was also putting groceries into her car.
+\end{quote}
+
+In this case, the relative clause starts with ``putting groceries \ldots{}'',
+and ends with ``\ldots{} away from her''.
+If we inserted ``who was'' at the start of the relative clause,
+it would still make sense.
+
+``while she \ldots{}'' is a subordinate clause, and not part of the noun phrase.
+While the relative clause cannot be moved around in the sentence,
+this subordinate clause can be.
 
 \hypertarget{bridging-relationships}{%
 \subsection{Bridging Relationships}\label{bridging-relationships}}
@@ -764,6 +1139,13 @@ Phrase does not contain a given referent
 What is a bridging relationship?
 What are some referents with bridging relationships?
 \end{quote}
+
+Two referents have a bridging relationship
+when introducing one implies the other.
+
+If all the referents on one side of a bridging relationship are introduced,
+you would expect the referents on the other side to exist also,
+and would not be surprised if they appeared in the narrative.
 
 A non-exhaustive list of bridging relationships:
 
@@ -774,14 +1156,48 @@ A non-exhaustive list of bridging relationships:
 \item
   man, woman, baby \textless-\textgreater{} family
 \item
+  baby \textless-\textgreater{} stroller
+\item
   drivers \textless-\textgreater{} cars
 \item
-  car \textless-\textgreater{} trunk
+  car3 \textless-\textgreater{} trunk
 \item
   dog \textless-\textgreater{} leash
 \item
   car crash \textless-\textgreater{} cars
 \end{itemize}
+
+\begin{quote}
+There was a woman next to her car \texttt{car3} \texttt{n} \texttt{anchor:trunk}.
+She was putting groceries into the trunk \texttt{trunk} \texttt{b}.
+\end{quote}
+
+\begin{quote}
+OMG, I saw a huge car crash \texttt{untagged} \texttt{anchor:cars}.
+The two cars \texttt{cars} \texttt{b} were going way too fast, IMO.
+\end{quote}
+
+\begin{quote}
+A woman was holding back her dog \texttt{dog} \texttt{u} \texttt{anchor:leash},
+but it kept pulling on the leash \texttt{leash} \texttt{b} she was using.
+\end{quote}
+
+We have made the decision that bridging relationships work in both directions.
+This decision can be reviewed in the future.
+
+\begin{quote}
+There was a woman putting groceries into her trunk \texttt{trunk} \texttt{n} \texttt{anchor:car3}.
+She was loading them very quickly into the back of {[}the car{]} \texttt{car3} \texttt{b}.
+\end{quote}
+
+\begin{quote}
+A woman was holding a bright pink leash \texttt{leash} \texttt{n} \texttt{anchor:dog} very tightly,
+but the dog \texttt{dog} \texttt{b} kept pulling anyway.
+\end{quote}
+
+However, bridging relationships do not \emph{always} mean that
+referents should be tagged \texttt{b}.
+See \protect\hyperlink{bridging}{the R-Type section on bridging} for more information.
 
 \hypertarget{bridging-vs.-bridging-contained}{%
 \subsection{Bridging vs.~Bridging-Contained}\label{bridging-vs.-bridging-contained}}
@@ -790,32 +1206,52 @@ A non-exhaustive list of bridging relationships:
 Should I tag this referent as Bridging or Bridging-Contained?
 \end{quote}
 
-Simalar to \protect\hyperlink{new-vs.-unused-unknown}{unused-unknown}, tag as \texttt{bc} if either:
+Similar to \protect\hyperlink{new-vs.-unused-unknown}{New vs.~Unused-Unknown},
+tag as \texttt{bc} if either:
 
 \begin{itemize}
 \tightlist
 \item
-  The anchor of the referent appears in the same phrase as the referent
+  The anchor of the referent appears in the same noun phrase as the referent
+\end{itemize}
+
+\begin{quote}
+A baby \texttt{baby} \texttt{n} was being walked down the street.
+The father \texttt{man} \texttt{bc} of the child \texttt{baby} \texttt{g} \texttt{anchor:man} was following close behind.
+\end{quote}
+
+\begin{quote}
+A baby \texttt{baby} \texttt{n} \texttt{anchor:man} was being walked down the street.
+The father \texttt{man} \texttt{b} was following close behind.
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  The referent is possessed by its anchor's possessive pronoun
+\end{itemize}
+
+\begin{quote}
+A car \texttt{car1} \texttt{n} was driving down the road.
+Its \texttt{car1} \texttt{g} \texttt{anchor:driver1} driver \texttt{driver1} \texttt{bc} suddenly stopped.
+\end{quote}
+
+\begin{itemize}
+\tightlist
 \item
   The referent is a part of a possessive phrase with the anchor
 \end{itemize}
 
 \begin{quote}
-A child was walking down the street.
-The father \texttt{bc} of the child was following close behind.
+Two cars \texttt{cars} \texttt{n} \texttt{anchor:car1} stopped in the street.
+{[}The first car{]} \texttt{car1} \texttt{b} \texttt{anchor:driver1}
+{[}'s driver{]} \texttt{driver1} \texttt{bc} got out angrily.
 \end{quote}
 
 \begin{quote}
-Two cars stopped in the street.
-The first car {[}'s driver{]} \texttt{bc} got out angrily.
+The first car \texttt{car1} \texttt{n} \texttt{anchor:driver1} stopped in the street.
+The driver \texttt{driver1} \texttt{b} got out angrily.
 \end{quote}
-
-\begin{quote}
-The first car stopped in the street.
-The driver \texttt{b} got out angrily.
-\end{quote}
-
-Since this example doesn't have ``the first car'' in the same phrase as ``the driver'', it is not Bridging-Contained.
 
 \hypertarget{unused-unknown-across-coordination}{%
 \subsection{Unused-Unknown Across Coordination}\label{unused-unknown-across-coordination}}
@@ -824,10 +1260,12 @@ Since this example doesn't have ``the first car'' in the same phrase as ``the dr
 Can a possessive pronoun give unused-unknown status to multiple coordinated referents?
 \end{quote}
 
-Yes, if the possessive pronoun applies to a coordinated noun phrase, all referents in that noun phrase are unused-unknown.
+Yes,
+if the possessive pronoun applies to a coordinated noun phrase,
+all referents in that noun phrase are unused-unknown.
 
 \begin{quote}
-There was a woman with {[}her dog{]} \texttt{u} and \protect\hyperlink{groceries}{groceries} \texttt{u}.
+There was a woman with {[}her dog{]} \texttt{u} and {[}groceries{]} \texttt{u}.
 \end{quote}
 
 \hypertarget{conjoined-referents}{%
@@ -837,7 +1275,8 @@ There was a woman with {[}her dog{]} \texttt{u} and \protect\hyperlink{groceries
 \subsection{Explaining Conjoined Referent Pronouns}\label{explaining-conjoined-referent-pronouns}}
 
 \begin{quote}
-If a pronoun refers to a conjoined referent (``The two cars stopped. {[}They{]} didn't stop fast enough''),
+If a conjoined referent is a pronoun
+(``The two cars stopped. {[}They{]} didn't stop fast enough''),
 should we mark whether or not it's explained?
 \end{quote}
 
@@ -885,6 +1324,37 @@ Bridging relationship conjoined referents:
 \item
   family
 \end{itemize}
+
+However, a conjoined referent is not always introduced with the words ``couple'' or ``family''.
+Sometimes they are introduced in a way that enumerates the members {[}EXAMPLE{]}.
+If the conjoined referent is introduced in this way, individual members are treated as given.
+If all the members are introduced, and then the conjoined referent is introduced in this way, the conjoined referent is treated as given.
+
+???
+
+\begin{quote}
+There were two people walking down the street.
+The man was bouncing a ball.
+\end{quote}
+
+\begin{quote}
+How do I tag ``the man''?
+\end{quote}
+
+It's \texttt{n}.
+``two people'' does not need to include a man, and one would not necessarily
+expect it to.
+It is unclear what
+
+\begin{quote}
+Example of ``the man''
+\end{quote}
+
+Only applies to ``the man'' or ``the woman'', not ``the first person/the first one/ one of them''
+
+\begin{quote}
+Example of ``the first person''
+\end{quote}
 
 \begin{quote}
 A red car and a blue car drove down the street.
@@ -939,7 +1409,7 @@ The baby \texttt{b} was crying.
 \subsection{One Behind The Other}\label{one-behind-the-other}}
 
 \begin{quote}
-Does thre phrase ``one behind the other'' have any referents?
+Does the phrase ``one behind the other'' have any referents?
 \end{quote}
 
 No.
@@ -956,16 +1426,23 @@ Here are some previous questions about ``everyone'', and our decisions:
 
 \begin{quote}
 The car hit into the back of another car.
-\protect\hyperlink{everyone}{Everyone} seemed fine.
+{[}Everyone{]} seemed fine.
 \end{quote}
 
-Untagged
+\texttt{untagged}
+
+``Everyone'' could refer to the drivers,
+but is also likely to refer to everyone in the parking lot,
+including the drivers.
+We have no tag for that, so we leave this untagged.
 
 \begin{quote}
-The man checked with \protect\hyperlink{everyone}{everyone} involved in the accident.
+The man checked with {[}everyone{]} involved in the accident.
 \end{quote}
 
 \texttt{drivers}
+
+Only the drivers were involved in the accident.
 
 \begin{quote}
 {[}Everybody{]} got out and {[}they{]} were talking.
@@ -973,20 +1450,31 @@ The man checked with \protect\hyperlink{everyone}{everyone} involved in the acci
 
 \texttt{drivers} for both
 
+The drivers were the people in the cars,
+and so they were the people who got out.
+From the video, we know that the two drivers were talking.
+
 \begin{quote}
-\ldots{} then {[}everybody{]} got out and was yelling.
+Two cars crashed into each other,
+and then {[}everybody{]} got out and was yelling.
 \end{quote}
 
 \texttt{drivers}
+
+The drivers were the people in the cars,
+and so they were the people who got out.
+From the video, we know that the two drivers were talking.
 
 \hypertarget{eitherneithernone-of-the}{%
 \subsection{Either/Neither/None of the}\label{eitherneithernone-of-the}}
 
 \begin{quote}
-What do we do with ``Either / Neither / None of the {[} conjoined referent {]}'' ?
+What do we do with
+``Either / Neither / None of the {[} conjoined referent {]}'' ?
 \end{quote}
 
-Since either, neither, and none don't really refer to a concrete referent, we will not tag the phrase,
+Since either, neither, and none don't really refer to a concrete referent,
+we will not tag the phrase,
 and we will not tag any referents within the phrase.
 
 \begin{quote}
@@ -1014,6 +1502,7 @@ The two cars stopped.
 \end{quote}
 
 \begin{quote}
+Two cars crashed in the middle of the street.
 {[}Both of the people{]} \texttt{couple} \texttt{u} who had been walking down the street looked shocked.
 \end{quote}
 
@@ -1031,7 +1520,7 @@ If there is no evidence to the identity of the referent, treat it like other amb
 
 \begin{quote}
 The white car \texttt{g} crashed into the blue car \texttt{g}.
-One of the drivers \texttt{driver} \texttt{b} got out and called the police.
+One of the drivers \texttt{driver1} \texttt{b} got out and called the police.
 \end{quote}
 
 We know that the referent is driver1, because driver1 is the one who calls the police in this scenario.
@@ -1065,6 +1554,7 @@ How do we count the 5 CU's between a referent and its most recent co-referent/an
 \end{quote}
 
 An r-type is \texttt{-Displaced} if there are 5 CU's \emph{between} the CU containing the referent and the CU containing its most recent co-referent/anchor.
+The CU containing the referent and the CU containing the most recent co-referent/anchor are not counted.
 
 The count of CU's should exclude \href{empty-cu's}{empty CU's}.
 
@@ -1100,8 +1590,30 @@ Introductions can identified by two main factors:
   the speaker moves to a different time in the story's narrative.
 \end{itemize}
 
-\hypertarget{aposotrophe-s}{%
-\subsection{Aposotrophe S}\label{aposotrophe-s}}
+\begin{quote}
+I saw a car crash involving a little dog. \texttt{introduction}
+So, I was in the parking lot, and a man and a woman were walking,
+And a woman was unloading her groceries, she had a little dog.
+And there were two cars which bumped into each other.
+\end{quote}
+
+This summarizes
+
+Since introductions are separate from the main narrative,
+referents in the introduction are not tagged.
+
+\begin{quote}
+There is two cars,
+a lady next to her parked car with her dog and groceries,
+and a lady with a stroller accompanied by a boy bouncing a ball.
+The boy's ball rolled
+\end{quote}
+
+In most cases, it is clear what is or is not an introduction.
+If you hesitate, discuss with other annotators.
+
+\hypertarget{apostrophe-s}{%
+\subsection{Apostrophe S}\label{apostrophe-s}}
 
 \begin{quote}
 What do we do with 's phrases, like ``the man's ball''?
@@ -1125,11 +1637,20 @@ The car \texttt{g} {[}`s driver{]} \texttt{bc} got out, and started yelling.
 Additionally, if the possessor of the phrase is New,
 the possessed referent is also New.
 
+\begin{quote}
+On the other side of the street, a woman{[}'s dog{]} \texttt{n} was barking.
+\end{quote}
+
+\begin{quote}
+On the other side of the street,
+{[}A woman{]} \texttt{n} {[}'s dog{]} \texttt{n} {[}'s leash{]} \texttt{n} was being pulled apart.
+\end{quote}
+
 \hypertarget{possessive-pronouns}{%
 \subsection{Possessive Pronouns}\label{possessive-pronouns}}
 
 \begin{quote}
-What do we do with phrases containing possessive pronouns (his ball)?
+What do we do with phrases containing possessive pronouns (``his ball'')?
 \end{quote}
 
 Possessive pronoun phrases are either unused-unknown or bridging (never bridging-contained).
@@ -1142,8 +1663,17 @@ A woman was in the parking lot.
 
 \begin{quote}
 One of the drivers stopped suddenly.
-{[} Their car {]} \texttt{b} screeched really loud.
+{[}Their car{]} \texttt{b} screeched really loud.
 \end{quote}
+
+In some rare cases, a referent with a possessive pronoun can be new,
+if the speaker failed to introduce the possessor.
+
+\begin{quote}
+On the other side of the street, {[}her dog{]} \texttt{n} barked.
+\end{quote}
+
+Since \texttt{woman2} has never been introduced, we tag ``her dog'' as \texttt{n}.
 
 \hypertarget{possessive-pronoun-whose}{%
 \subsection{Possessive Pronoun ``whose''}\label{possessive-pronoun-whose}}
@@ -1165,7 +1695,8 @@ There was a woman {[}whose car{]} \texttt{u} was very spacious.
 Should we tag wh-words or possessive pronouns that are not attached to a referent?
 \end{quote}
 
-Nope! Only personal pronouns and referent phrases should be tagged.
+Nope!
+We tag only noun phrases that are headed by nouns and personal pronouns.
 
 \begin{quote}
 A man \texttt{n} was in the parking lot.
@@ -1182,8 +1713,8 @@ There was a woman.
 The man \texttt{u} who \texttt{untagged} was with her looked confused.
 \end{quote}
 
-\hypertarget{repititions}{%
-\subsection{Repititions}\label{repititions}}
+\hypertarget{repetitions}{%
+\subsection{Repetitions}\label{repetitions}}
 
 \begin{quote}
 What do we do with repeated references (``A ball - a ball was rolling \ldots{}'')?
@@ -1195,39 +1726,42 @@ If a referent was repeated, tag only the last referent - the one the speaker eve
 A man \texttt{untagged} was, a man \texttt{n} was walking down the street.
 \end{quote}
 
-\hypertarget{identifying-repititions}{%
-\subsection{Identifying Repititions}\label{identifying-repititions}}
+\hypertarget{identifying-repetitions}{%
+\subsection{Identifying Repetitions}\label{identifying-repetitions}}
 
 \begin{quote}
-Does this example contain a repitition?
+Does this example contain a repetition?
 \end{quote}
 
-Here are some previous questions about repitions, and our decisions.
+Here are some previous questions about repetitions, and our decisions.
 The referents in question are marked with \texttt{{[}{]}} brackets:
 
 \begin{quote}
 A woman was closing {[}her trunk{]}, opening {[}it{]}, and \ldots{}
 \end{quote}
 
+The speaker changed the verb but not the referent.
 Tag both referents normally.
 
 \begin{quote}
 The car behind him - hit {[}it{]} also - hit {[}the car{]} - {[}the other car{]}
 \end{quote}
 
+The verb does not change, but the referent does.
 Tag only ``the other car''.
 
 \begin{quote}
 And the guy with {[}the ball{]} who accidentally dropped {[}the ball{]} \ldots{}
 \end{quote}
 
+The whole prepositional phrase is replaced by a relative clause.
 Tag only the second ``the ball''.
 
 \hypertarget{tagging-unclear-referents}{%
 \subsection{Tagging Unclear Referents}\label{tagging-unclear-referents}}
 
 \begin{quote}
-How confusing can a description be before we decide not to tag the referent?
+How confusing can a referent be before we decide not to tag the it?
 \end{quote}
 
 Here are some examples, and our decisions.
@@ -1239,17 +1773,26 @@ I saw a lady, and {[}a boy{]} next to her bouncing a ball.
 
 \texttt{man} - \texttt{u}
 
+``a boy'' is slightly confusing,
+but we can still understand that the speaker meant \texttt{man},
+and it would disrupt the narrative not to include it.
+
 \begin{quote}
 \ldots{} so the {[}owner{]} of {[}the cars{]} called 911.
 \end{quote}
 
-Neither is tagged, because there is no single owner of two cars.
+Neither is tagged.
+
+There is no single owner of two cars.
 
 \begin{quote}
 The two people came out of their cars and {[}a man{]} with the white shirt called the police.
 \end{quote}
 
 \texttt{driver} - \texttt{g}
+
+We know that driver1 called the police,
+so we can assume that's who they were referring to.
 
 \begin{quote}
 {[}They{]} both came out, and {[}one of them{]} called the police
@@ -1263,7 +1806,7 @@ The two people came out of their cars and {[}a man{]} with the white shirt calle
 I think {[}someone{]} like called 911
 \end{quote}
 
-\texttt{drivers}
+\texttt{driver1}
 
 \begin{quote}
 The man helped the woman. Uh, {[}she{]} helped her pick up her groceries.
@@ -1271,11 +1814,17 @@ The man helped the woman. Uh, {[}she{]} helped her pick up her groceries.
 
 \texttt{man}
 
+This is likely to be a slip of the tongue,
+and in the actual narrative, the man helps the woman.
+
 \begin{quote}
 \ldots{} which distracted a dog that was in the road behind {[}a car{]}.
 \end{quote}
 
 Untagged
+
+``a car'' is unlikely to be \texttt{car3},
+and no other car in the parking lot is tagged.
 
 \begin{quote}
 {[}The passengers{]} got out and called the police.
@@ -1283,11 +1832,19 @@ Untagged
 
 Untagged
 
+There were no passengers in the cars.
+
 \begin{quote}
-The car behind him was coming after him, so {[}he{]} crashed into {[}that car{]} too.
+The car behind him was coming after him,
+so {[}he{]} crashed into {[}that car{]} too.
 \end{quote}
 
 Both untagged
+
+``that car'' has to refer to ``the car behind him'', which is \texttt{car2}.
+Because of this, ``he'' must refer to \texttt{driver1},
+but \texttt{driver1} and \texttt{car1} were crashed into by \texttt{driver2} and \texttt{car2}.
+So, this sentence doesn't make sense.
 
 \hypertarget{generic-referents}{%
 \subsection{Generic Referents}\label{generic-referents}}
@@ -1302,13 +1859,21 @@ Here are some examples, and our decisions:
 The woman was holding her dog by {[}the leash{]}.
 \end{quote}
 
-\texttt{leash} - \texttt{b}
+\texttt{untagged}
+
+``the leash'' is generic.
+We feel that ``by the leash'' is a set phrase,
+that does not refer to the specific leash the dog was held by,
+but to the action of holding a dog by any leash.
 
 \begin{quote}
 Both drivers got out of {[}the car{]}
 \end{quote}
 
 Untagged
+
+``the car'' is generic for the same reason,
+``get out of the car'' just refers to getting out of any car.
 
 \hypertarget{technical}{%
 \section{Technical}\label{technical}}

@@ -4,7 +4,7 @@
 
 ### Groceries
 
-> What phrases should we tag as `groceries`? What phrases should we not?
+> What noun phrases should we tag as `groceries`? What noun phrases should we not?
 
 Generally, `groceries` should be a mass noun.
 Here's a list of things we've decided to tag as `groceries`, and a list of things we've decided not to.
@@ -23,23 +23,40 @@ Not Groceries:
 * baggage
 * fruits
 
+### Grocery Consistency
+
+> What if someone introduces `groceries` as "fruits" `untagged`,
+> but then later refers to "her groceries" `tagged`?
+> Should we tag "fruits"?
+
+Yes. The same is true of the reverse.
+If "her groceries" appears, and "fruits" follows, we should tag both.
+
 ### Family vs. Couple
 
-> Is this group of people `family` or `couple` ?
+> Does the pronoun "they" refer to `family` or `couple`?
 
-Generally, if all the members of the family have been introduced, they refers to the family.
-If only man and woman1 (and maybe stroller) have been introduced, they refers to the couple, instead.
+Generally:
 
-Also: if there’s a man and a woman *with* a baby, we treat it as a couple, as the baby is just additional information about either the man or the woman.
+* If all the members of the family have been introduced,
+"they" refers to the family.
 
 > There was a man, a woman, and a baby.
 > They `family` crossed the street.
+
+* If only man and woman1 (and maybe stroller) have been introduced,
+"they" refers to the couple, instead.
 
 > There was a man and a woman.
 > They `couple` crossed the street.
 
 > There was a man and a woman and a stroller.
 > They `couple` went across the street.
+
+However: If there’s a man and a woman *with* a baby,
+we treat it as a couple,
+as the baby is just additional information
+attached to the man or the woman.
 
 > There was a man and a woman with a baby.
 > They `couple` crossed the street. 
@@ -52,32 +69,23 @@ Also: if there’s a man and a woman *with* a baby, we treat it as a couple, as 
 
 Tag as `u` if:
 
-<!-- TODO: predicate? How to call the other parts of NP? -->
-<!-- TODO: How to call previously-introduced referents? -->
-* The predicate contains a [given referent](#phrases-containing-given-referents)
-* The predicate contains a bridging or unused-unknown referent
-
-<!-- TODO: tag 'the back of the car' as u -->
-<!-- TODO: Tag "the woman's dog" as u -->
+* The explanation that comes after [contains a given referent](#explanation-given-referent)
+* The explanation that comes after [contains a bridging or unused-unknown referent](#explanation-bridging-or-unused-unknown-referent)
+* The referent is possessed by a [possessive pronoun](#possessive-pronouns)
+* The referent is possessed by an [apostrophe s](#apostrophe-s)
 
 Otherwise, tag as `n`.
 
-<!-- TODO: Examples -->
+[More information on identifying explanations](#referent-explanations).
 
+### Explanation Given Referent
 
-### Phrases Containing Given Referents
+> Does this explanation contain a given referent?
 
-<!-- TODO: Name, update links -->
+An explanation contains a given referent if:
 
-> Does this phrase contain a given referent?
-
-A phrase contains a given referent if:
-
-* There is an annotated referent marked `g`
-
-* There is a non-annotated referent that has been previously introduced
-
-Examples:
+* It contains a tagged referent marked `g`
+* It contains an untagged referent that has been previously introduced
 
 <!--
 * `g` referent => Y
@@ -91,47 +99,47 @@ Phrase types:
 * prepositional phrase
 -->
 
-<!-- TODO: Other phrase types ? -->
-
 > The man who was holding the ball `g` and talking to a woman dropped it.
 
-Phrase: "who was holding the ball"
+Explanaition: "who was holding the ball"
 
-"the ball": Given
+"the ball": `g`
 
-"a woman": New
+"a woman": `n`
 
-Phrase contains a given referent
+Explanation contains a given referent.
+Tag "the man" as `u`.
 
 > The man who was holding a ball `n` dropped it.
 
-Phrase: "who was holding a ball"
+Explanation: "who was holding a ball"
 
-"a ball": New
+"a ball": `n`
 
-Phrase does not contain a given referent
+Explanation does not contain a given referent.
+Tag "the man" as `n`.
 
 <!-- TODO: "The man who was holding the woman's ball -->
 > The man with the woman `g` 's ball `u` dropped it.
 
-Phrase: "with the woman's ball"
+Explanation: "with the woman's ball"
 
-"the woman": Given
+"the woman": `g`
 
 "'s ball": Unused-Unknown
 
-Phrase contains a given referent
-
-<!-- TODO: Does sidewalk == street? -->
+Explanation contains a given referent.
+Tag "the man" as `u`.
 
 > A couple was walking down the road.
 > A woman across the street was unloading groceries from her car.
 
-Phrase: "across the street"
+Explanation: "across the street"
 
-"the street": Given
+"the street": `g`
 
-Phrase contains a given referent
+Explanation contains a given referent.
+Tag "a woman" as `u`
 
 Note: Although "the street" is not annotated, it has been introduced in the narrative.
 So, it is considered a given referent.
@@ -139,69 +147,275 @@ So, it is considered a given referent.
 > A couple was walking with a stroller.
 > A woman across the street was unloading groceries from her car.
 
-Phrase: "across the street"
+Explanation: "across the street"
 
-"the street": New
+"the street": `n`
 
-Phrase does not contain a given referent
+Explanation does not contain a given referent.
+Tag "the woman" as `n`.
+
+### Explanation Bridging or Unused Unknown Referent
+
+> Does this explanation contain a bridging referent?
+
+An explanation contains a Bridging referent if:
+
+* It contains a tagged referent marked `b` or `bc`
+* It contains an untagged referent with a previously introduced anchor
+
+> A woman was loading groceries into her car `u` `anchor:trunk`.
+> The dog who was by [the trunk] `b` started barking.
+
+Explanation: "who was by the truck"
+
+"the trunk": `b`
+
+Explanation contains a bridging referent.
+Tag "the trunk" as `u`.
+
+> Across the street, a dog `anchor:leash` was barking wildly.
+> The woman holding [the leash] started yelling, too.
+
+Explanation: "holding the leash"
+
+"the leash": `b`
+
+Explanation contains a bridging referent.
+Tag "the woman" as `u`.
+
+> Across the street, a dog `anchor:leash` was barking wildly.
+> The woman holding \[the dog] \['s leash] started yelling, too.
+
+Explanation: "holding the dog's leash"
+
+"the dog": `g` `anchor:leash`
+
+"'s leash": `bc`
+
+Explanation contains a bridging-contained referent.
+Tag "the woman" as `u`.
+
+> Two cars `cars` `anchor:car crash` were driving down the street way too quickly.
+> The woman who saw [the car crash] stopped putting groceries into her car.
+
+Explanation: "who saw the car crash"
+
+"the car crash": `untagged` `b`
+
+Explanation contains a bridging referent.
+Tag "the woman" as `u`.
+
+An explanation contains an Unused-Unknown referent if:
+
+* It contains a tagged referent marked `u`
+* It contains an untagged referent with a previously introduced anchor
+
+> A man was bouncing the ball.
+> The woman who was holding [the dog] that was barking at [the ball]
+> looked annoyed.
+
+Explanation: "who was holding the dog that was barking at the ball"
+
+"the ball": `ball` `g` `explanation:dog`
+
+"the dog": `dog` `u`
+
+Explanation contains an unused-unknown referent.
+Tag "the woman" as `u`.
+
+### Referent Explanations
+
+> What qualifies as an explanation?
+> How far does an explanation stretch?
+
+An explanation is the material following a referent,
+which explains how the referent is related to the narrative.
+
+The width of the explanation depends on the type of noun phrase headed by the referent:
+
+* Simple - The noun phrase ends after the referent
+
+If the noun phrase is simple, there is no explanation.
+
+> On the other side of the street,
+> there was [a woman].
+
+"a woman" ends with the referent, and has no explanation.
+
+> On the other side of the street,
+> there was [a big tall woman].
+
+"a big tall woman" ends with the referent, and has no explanation.
+
+> On the other side of the street,
+> [a big tall woman], while loading groceries into her car,
+> also held back her dog.
+
+"a big tall woman" ends with the referent, and has no explanation.
+"while loading groceries into her car" might seem to explain the referent,
+but it is not a part of the noun phrase headed by `woman2`,
+and could even be moved around in the sentence.
+
+* Preposition - The noun phrase is extended with a prepositional phrase
+
+If the noun phrase is extended by a prepositional phrase,
+the explanation continues until the end of the prepositional phrase.
+
+> Across the street,
+> there was [a woman with a big, black, barking dog].
+
+"with" introduces a prepositional phrase,
+and the explanation continues until the end of that phrase.
+
+> Across the street,
+> there was [a woman with a big blue car with an open trunk
+> and a dog who was trying to pull away from her].
+
+"with" introduces a prepositional phrase,
+and everything else in the sentence 
+is explaining the things that the woman is "with".
+So, everything else in the sentence is part of the explanation.
+
+> Across the street,
+> [A woman with a big blue car whose trunk was open
+> and a dog on a leash who was trying to pull away from her],
+> while she was trying to hold onto the dog,
+> was also putting groceries into her car.
+
+"with" introduces a prepositional phrase,
+and everything through "trying to pull away from her"
+is explaining the things that `woman2` is "with".
+
+However, "while she was trying to hold onto the dog" 
+is not part of the noun phrase,
+and could even be moved around in the sentence.
+
+* Relative - The noun phrase is extended by a relative clause
+
+If the noun phrase is extended by a relative clause,
+everything within that relative clause is part of the explanation.
+
+Relative clauses start with words like "who", "that", or "which",
+or could have them inserted before the start of the clause.
+
+> Across the street,
+> there was [a woman who was pulling on her dog's leash].
+
+Everything after "a woman" 
+is part of a relative clause introduced with "who",
+and is part of the explanation.
+
+> Across the street,
+> there was [a woman pulling on her dog's leash].
+
+Everything after "a woman" is part of a relative clause.
+Although it is not introduced with "who", 
+"who" could be inserted at the beginning of the clause.
+
+> Across the street,
+> [A woman putting groceries in a big blue car whose trunk was open,
+> and wrestling with a dog on a leash trying to pull away from her],
+> while she was trying to hold onto the dog,
+> was also putting groceries into her car.
+
+In this case, the relative clause starts with "putting groceries ...",
+and ends with "... away from her".
+If we inserted "who was" at the start of the relative clause,
+it would still make sense.
+
+"while she ..." is a subordinate clause, and not part of the noun phrase.
+While the relative clause cannot be moved around in the sentence,
+this subordinate clause can be.
 
 ### Bridging Relationships
 
 > What is a bridging relationship?
 > What are some referents with bridging relationships?
 
-<!-- TODO: What is a bridging relationship? -->
+Two referents have a bridging relationship
+when introducing one implies the other.
+
+If all the referents on one side of a bridging relationship are introduced,
+you would expect the referents on the other side to exist also,
+and would not be surprised if they appeared in the narrative.
 
 A non-exhaustive list of bridging relationships:
 
 * man, woman <-> couple
 * man, woman, baby <-> family
+* baby <-> stroller
 * drivers <-> cars
-* car <-> trunk
+* car3 <-> trunk
 * dog <-> leash
 * car crash <-> cars
+
+> There was a woman next to her car `car3` `n` `anchor:trunk`.
+> She was putting groceries into the trunk `trunk` `b`.
+
+> OMG, I saw a huge car crash `untagged` `anchor:cars`.
+> The two cars `cars` `b` were going way too fast, IMO.
+
+> A woman was holding back her dog `dog` `u` `anchor:leash`,
+> but it kept pulling on the leash `leash` `b` she was using.
+
+We have made the decision that bridging relationships work in both directions.
+This decision can be reviewed in the future.
+
+> There was a woman putting groceries into her trunk `trunk` `n` `anchor:car3`.
+> She was loading them very quickly into the back of [the car] `car3` `b`.
+
+> A woman was holding a bright pink leash `leash` `n` `anchor:dog` very tightly,
+> but the dog `dog` `b` kept pulling anyway.
+
+However, bridging relationships do not *always* mean that
+referents should be tagged `b`.
+See [the R-Type section on bridging](#bridging) for more information.
 
 ### Bridging vs. Bridging-Contained
 
 > Should I tag this referent as Bridging or Bridging-Contained?
 
-<!-- TODO: Link `anchor` -->
-<!-- TODO: Possessive phrase phrasing -->
-Simalar to [unused-unknown](#new-vs.-unused-unknown), tag as `bc` if either:
+Similar to [New vs. Unused-Unknown](#new-vs.-unused-unknown),
+tag as `bc` if either:
 
-* The anchor of the referent appears in the same phrase as the referent
+* The anchor of the referent appears in the same noun phrase as the referent
+
+> A baby `baby` `n` was being walked down the street.
+> The father `man` `bc` of the child `baby` `g` `anchor:man` was following close behind.
+
+> A baby `baby` `n` `anchor:man` was being walked down the street.
+> The father `man` `b` was following close behind.
+
+* The referent is possessed by its anchor's possessive pronoun
+
+> A car `car1` `n` was driving down the road.
+> Its `car1` `g` `anchor:driver1` driver `driver1` `bc` suddenly stopped.
+
 * The referent is a part of a possessive phrase with the anchor
 
-> A child was walking down the street.
-> The father `bc` of the child was following close behind.
+> Two cars `cars` `n` `anchor:car1` stopped in the street.
+> [The first car] `car1` `b` `anchor:driver1` 
+> ['s driver] `driver1` `bc` got out angrily.
 
-> Two cars stopped in the street.
-> The first car ['s driver] `bc` got out angrily.
-
-> The first car stopped in the street.
-> The driver `b` got out angrily.
-
-Since this example doesn't have "the first car" in the same phrase as "the driver", it is not Bridging-Contained.
-
-<!-- TODO: Examples -->
+> The first car `car1` `n` `anchor:driver1` stopped in the street.
+> The driver `driver1` `b` got out angrily.
 
 ### Unused-Unknown Across Coordination
 
-<!-- link possessive-pronoun & unused-unknown -->
 > Can a possessive pronoun give unused-unknown status to multiple coordinated referents?
 
-Yes, if the possessive pronoun applies to a coordinated noun phrase, all referents in that noun phrase are unused-unknown.
+Yes,
+if the possessive pronoun applies to a coordinated noun phrase,
+all referents in that noun phrase are unused-unknown.
 
-> There was a woman with [her dog] `u` and [groceries] `u`.
-
-
-
+> There was a woman with [her dog] `u` and \[groceries] `u`.
 
 ## Conjoined Referents
 
 ### Explaining Conjoined Referent Pronouns
 
-> If a pronoun refers to a conjoined referent ("The two cars stopped. [They] didn't stop fast enough"),
+> If a conjoined referent is a pronoun 
+> ("The two cars stopped. [They] didn't stop fast enough"),
 > should we mark whether or not it’s explained?
 
 Yep.
@@ -233,6 +447,29 @@ Bridging relationship conjoined referents:
 
 * couple
 * family
+
+However, a conjoined referent is not always introduced with the words "couple" or "family". 
+Sometimes they are introduced in a way that enumerates the members [EXAMPLE].
+If the conjoined referent is introduced in this way, individual members are treated as given.
+If all the members are introduced, and then the conjoined referent is introduced in this way, the conjoined referent is treated as given.
+
+???
+
+> There were two people walking down the street.
+> The man was bouncing a ball.
+
+> How do I tag "the man"? 
+
+It's `n`. 
+"two people" does not need to include a man, and one would not necessarily
+expect it to.
+It is unclear what 
+
+> Example of "the man"
+
+Only applies to "the man" or "the woman", not "the first person/the first one/ one of them"
+
+> Example of "the first person"
 
 <!-- Find the controversial examples. -->
 
@@ -269,7 +506,7 @@ Bridging relationship conjoined referents:
 
 ### One Behind The Other
 
-> Does thre phrase "one behind the other" have any referents?
+> Does the phrase "one behind the other" have any referents?
 
 No.
 We are treating "one behind the other" as an idiom, so it has no referents.
@@ -281,30 +518,47 @@ We are treating "one behind the other" as an idiom, so it has no referents.
 Here are some previous questions about "everyone", and our decisions:
 
 > The car hit into the back of another car. 
-> [Everyone] seemed fine.
+> \[Everyone] seemed fine.
 
-Untagged
+`untagged`
 
-> The man checked with [everyone] involved in the accident.
+"Everyone" could refer to the drivers,
+but is also likely to refer to everyone in the parking lot,
+including the drivers.
+We have no tag for that, so we leave this untagged.
+
+> The man checked with \[everyone] involved in the accident.
 
 `drivers`
 
+Only the drivers were involved in the accident.
+
 <!-- Get context -->
-> [Everybody] got out and [they] were talking.
+> \[Everybody] got out and [they] were talking.
 
 `drivers` for both
 
-<!-- Get context -->
-> ... then [everybody] got out and was yelling.
+The drivers were the people in the cars,
+and so they were the people who got out.
+From the video, we know that the two drivers were talking.
+
+> Two cars crashed into each other, 
+> and then [everybody] got out and was yelling.
 
 `drivers`
 
+The drivers were the people in the cars,
+and so they were the people who got out.
+From the video, we know that the two drivers were talking.
+
 ### Either/Neither/None of the
 
-> What do we do with "Either / Neither / None of the [ conjoined referent ]" ?
+> What do we do with 
+> "Either / Neither / None of the [ conjoined referent ]" ?
 
 
-Since either, neither, and none don’t really refer to a concrete referent, we will not tag the phrase,
+Since either, neither, and none don’t really refer to a concrete referent,
+we will not tag the phrase,
 and we will not tag any referents within the phrase.
 
 
@@ -323,6 +577,7 @@ This phrase refers to the conjoined referent. Tag the whole phrase, and tag it w
 > The two cars stopped.
 > [Both of the drivers] `drivers` `b` got out.
 
+> Two cars crashed in the middle of the street.
 > [Both of the people] `couple` `u` who had been walking down the street looked shocked.
 
 ### One of the
@@ -335,7 +590,7 @@ If the context gives evidence that it is one or the other of the members, tag th
 If there is no evidence to the identity of the referent, treat it like other ambiguous referents, and do not tag it.
 
 > The white car `g` crashed into the blue car `g`.
-> One of the drivers `driver` `b` got out and called the police.
+> One of the drivers `driver1` `b` got out and called the police.
 
 We know that the referent is driver1, because driver1 is the one who calls the police in this scenario.
 We know that the referent is bridging, because driver1 has a bridging relationship with the blue car.
@@ -360,6 +615,7 @@ Nope.
 > How do we count the 5 CU's between a referent and its most recent co-referent/anchor
 
 An r-type is `-Displaced` if there are 5 CU's *between* the CU containing the referent and the CU containing its most recent co-referent/anchor.
+The CU containing the referent and the CU containing the most recent co-referent/anchor are not counted.
 
 The count of CU's should exclude [empty CU's](empty-cu's).
 
@@ -389,7 +645,25 @@ Introductions can identified by two main factors:
 * They are temporally displaced - after the introduction,
 the speaker moves to a different time in the story's narrative.
 
-### Aposotrophe S
+> I saw a car crash involving a little dog. `introduction`
+> So, I was in the parking lot, and a man and a woman were walking,
+> And a woman was unloading her groceries, she had a little dog.
+> And there were two cars which bumped into each other.
+
+This summarizes 
+
+Since introductions are separate from the main narrative,
+referents in the introduction are not tagged.
+
+> There is two cars,
+> a lady next to her parked car with her dog and groceries,
+> and a lady with a stroller accompanied by a boy bouncing a ball.
+> The boy’s ball rolled
+
+In most cases, it is clear what is or is not an introduction. 
+If you hesitate, discuss with other annotators.
+
+### Apostrophe S
 
 > What do we do with 's phrases, like "the man's ball"?
 
@@ -406,10 +680,15 @@ This requires a bridging relationship, though, and most apostrophe s’s will be
 
 Additionally, if the possessor of the phrase is New,
 the possessed referent is also New.
+
+> On the other side of the street, a woman['s dog] `n` was barking.
+
+> On the other side of the street,
+> [A woman] `n` ['s dog] `n` ['s leash] `n` was being pulled apart.
         
 ### Possessive Pronouns
 
-> What do we do with phrases containing possessive pronouns (his ball)?
+> What do we do with phrases containing possessive pronouns ("his ball")?
 
 Possessive pronoun phrases are either unused-unknown or bridging (never bridging-contained).
 If there is a bridging relationship, then bridging. Otherwise unused-unknown.
@@ -418,7 +697,14 @@ If there is a bridging relationship, then bridging. Otherwise unused-unknown.
 > [Her groceries] `u` fell.
 
 > One of the drivers stopped suddenly.
-> [ Their car ] `b` screeched really loud.
+> [Their car] `b` screeched really loud.
+
+In some rare cases, a referent with a possessive pronoun can be new,
+if the speaker failed to introduce the possessor.
+
+> On the other side of the street, [her dog] `n` barked.
+
+Since `woman2` has never been introduced, we tag "her dog" as `n`.
 
 ### Possessive Pronoun "whose"
 
@@ -433,7 +719,8 @@ Tag "whose" as part of the referent that comes after.
 
 > Should we tag wh-words or possessive pronouns that are not attached to a referent?
 
-Nope! Only personal pronouns and referent phrases should be tagged.
+Nope!
+We tag only noun phrases that are headed by nouns and personal pronouns.
 
 > A man `n` was in the parking lot.
 > He `g` was happy.
@@ -444,7 +731,7 @@ Nope! Only personal pronouns and referent phrases should be tagged.
 > There was a woman.
 > The man `u` who `untagged` was with her looked confused.
 
-### Repititions
+### Repetitions
 
 > What do we do with repeated references ("A ball - a ball was rolling ...")?
 
@@ -452,30 +739,33 @@ If a referent was repeated, tag only the last referent - the one the speaker eve
 
 > A man `untagged` was, a man `n` was walking down the street.
 
-### Identifying Repititions
+### Identifying Repetitions
 
 <!-- Add to 00-referents -->
-> Does this example contain a repitition?
+> Does this example contain a repetition?
 
-Here are some previous questions about repitions, and our decisions.
+Here are some previous questions about repetitions, and our decisions.
 The referents in question are marked with `[]` brackets:
 
 > A woman was closing [her trunk], opening [it], and ...
 
+The speaker changed the verb but not the referent.
 Tag both referents normally.
 
 > The car behind him - hit [it] also - hit [the car] - [the other car]
 
+The verb does not change, but the referent does.
 Tag only "the other car".
 
 > And the guy with [the ball] who accidentally dropped [the ball] ...
 
+The whole prepositional phrase is replaced by a relative clause.
 Tag only the second "the ball".
 
 ### Tagging Unclear Referents
 
 <!-- Add to 00-referents -->
-> How confusing can a description be before we decide not to tag the referent?
+> How confusing can a referent be before we decide not to tag the it?
 
 Here are some examples, and our decisions.
 The referents in question are marked with `[]` brackets:
@@ -484,13 +774,22 @@ The referents in question are marked with `[]` brackets:
 
 `man` - `u`
 
+"a boy" is slightly confusing,
+but we can still understand that the speaker meant `man`,
+and it would disrupt the narrative not to include it.
+
 > ... so the [owner] of [the cars] called 911.
 
-Neither is tagged, because there is no single owner of two cars.
+Neither is tagged.
+
+There is no single owner of two cars.
 
 > The two people came out of their cars and [a man] with the white shirt called the police.
 
 `driver` - `g`
+
+We know that driver1 called the police,
+so we can assume that's who they were referring to.
 
 > [They] both came out, and [one of them] called the police
 
@@ -500,23 +799,37 @@ Neither is tagged, because there is no single owner of two cars.
 
 > I think [someone] like called 911
 
-`drivers`
+`driver1`
 
 > The man helped the woman. Uh, [she] helped her pick up her groceries.
 
 `man`
 
+This is likely to be a slip of the tongue,
+and in the actual narrative, the man helps the woman.
+
 > ... which distracted a dog that was in the road behind [a car].
 
 Untagged
+
+"a car" is unlikely to be `car3`,
+and no other car in the parking lot is tagged.
 
 > [The passengers] got out and called the police.
 
 Untagged
 
-> The car behind him was coming after him, so [he] crashed into [that car] too.
+There were no passengers in the cars.
+
+> The car behind him was coming after him,
+> so [he] crashed into [that car] too.
 
 Both untagged
+
+"that car" has to refer to "the car behind him", which is `car2`.
+Because of this, "he" must refer to `driver1`,
+but `driver1` and `car1` were crashed into by `driver2` and `car2`.
+So, this sentence doesn't make sense.
 
 ### Generic Referents
 
@@ -524,15 +837,21 @@ Both untagged
 
 Here are some examples, and our decisions:
 
-<!-- Copy to dog => leash bridging -->
 > The woman was holding her dog by [the leash].
 
-`leash` - `b`
+`untagged`
+
+"the leash" is generic.
+We feel that "by the leash" is a set phrase,
+that does not refer to the specific leash the dog was held by,
+but to the action of holding a dog by any leash.
 
 > Both drivers got out of [the car]
 
 Untagged
 
+"the car" is generic for the same reason,
+"get out of the car" just refers to getting out of any car.
 
 
 ## Technical
@@ -553,22 +872,3 @@ Yes! To hide tiers in Exmaralda, without deleting them:
 Yes.
 If you use the merge-cells button, you have to click on the merged cell to type into it.
 However, if you instead use the merge-cells shortcut (ctrl-1 on Windows), you can immediately begin typing in the merged cell.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
