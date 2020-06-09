@@ -1,5 +1,5 @@
 ---
-title: "Referent Introduction Annotation Guidelines"
+title: "Referent Annotation Guidelines"
 author: ""
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
