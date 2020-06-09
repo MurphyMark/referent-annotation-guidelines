@@ -71,10 +71,15 @@ Tag as `u` if:
 
 * The explanation that comes after [contains a given referent](#explanation-given-referent)
 * The explanation that comes after [contains a bridging or unused-unknown referent](#explanation-bridging-or-unused-unknown-referent)
-* The referent is possessed by a [possessive pronoun](#possessive-pronouns)
-* The referent is possessed by an [apostrophe s](#apostrophe-s)
+* The referent is possessed by a given/bridging/unused referent represented by [possessive pronoun](#possessive-pronouns)
+> There was a woman, and [her dog] `u` ran.
+* The referent is possessed by a given/bridging referent represented by [apostrophe s](#apostrophe-s)
+> There were a man with his family. The man `g` ['s ball] `u` rolled away.
+> There was a family. The father `b` ['s ball] `u` rolled away.
+The possessing referent could theortically be unused-unknown too but we haven't seen such cases.
 
 Otherwise, tag as `n`.
+> I was standing in a parking lot. A woman `n` ['s dog] `n` suddenly ran in front of two cars.
 
 [More information on identifying explanations](#referent-explanations).
 
@@ -126,7 +131,7 @@ Explanation: "with the woman's ball"
 
 "the woman": `g`
 
-"'s ball": Unused-Unknown
+"'s ball": `u`
 
 Explanation contains a given referent.
 Tag "the man" as `u`.
@@ -145,11 +150,11 @@ Note: Although "the street" is not annotated, it has been introduced in the narr
 So, it is considered a given referent.
 
 > A couple was walking with a stroller.
-> A woman across the street was unloading groceries from her car.
+> A woman with a dog was unloading groceries from her car.
 
-Explanation: "across the street"
+Explanation: "with a dog"
 
-"the street": `n`
+"a dog": `n`
 
 Explanation does not contain a given referent.
 Tag "the woman" as `n`.
