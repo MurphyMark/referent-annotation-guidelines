@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Referent Introduction Annotation Guidelines},
+  pdftitle={Referent Annotation Guidelines},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -77,9 +77,9 @@
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
-\title{Referent Introduction Annotation Guidelines}
+\title{Referent Annotation Guidelines}
 \author{}
-\date{\vspace{-2.5em}2020-06-09}
+\date{\vspace{-2.5em}2020-06-10}
 
 \begin{document}
 \maketitle
@@ -111,7 +111,7 @@
 Annotated on tier \texttt{norm{[}referent{]}} in ExMARALDA
 \end{quote}
 
-We have a list of 19 possible referents, and we count how many of these 20 referents each speaker introduces:
+We have a list of 19 possible referents, and we count how many of these 19 referents each speaker introduces:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -156,7 +156,7 @@ We have a list of 19 possible referents, and we count how many of these 20 refer
   drivers (driver1 + driver2) - \emph{conjoined referent}
 \end{enumerate}
 
-If there are \protect\hyperlink{identifying-repitions}{repitions} in the narrative,
+If there are \protect\hyperlink{identifying-repitions}{repetitions} in the narrative,
 which change the referent the speaker produces,
 only referents in the final repetition should be tagged.
 
@@ -167,7 +167,7 @@ See also:
 \item
   \protect\hyperlink{referents-1}{Referent Questions}
 \item
-  \protect\hyperlink{phrases}{Phrase Questions}
+  \protect\hyperlink{phrases}{Phrase Questions (e.g.~``each other'', ``one of the'')}
 \end{itemize}
 
 \hypertarget{answer-2-r-type}{%
@@ -198,7 +198,7 @@ We use the following 9 labels:
 6 & Given & \texttt{g}\tabularnewline
 7 & Given-Displaced & \texttt{gd}\tabularnewline
 (8) & Further-Explanation & \texttt{+fe}\tabularnewline
-(9) & Predicative & \texttt{+pr}\tabularnewline
+(9) & Predicative & \texttt{pr}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -231,8 +231,8 @@ Questions:
 ``Assigned to referring expressions which come with a sufficient amount of descriptive material to enable the hearer to create a new discourse referent without any previous knowledge'' (p.~4).
 \end{quote}
 
-A new referent followed by explanation.
-The explanation must be a part of the noun phrase containing the referent, and must include a specific non-new referent.
+A new referent followed by an indentifying explanation.
+The explanation must be a part of the noun phrase containing the referent, and must include another given/bridging/unused-unknown referent.
 
 \protect\hyperlink{referent-explanations}{More information on identifying explanations}.
 
@@ -253,11 +253,11 @@ I was standing in the parking lot.
 The two cars \texttt{unused-unkown} {[}that were coming towards me \texttt{untagged} \texttt{g} very quickly{]} \texttt{explanation} stopped abruptly.
 \end{quote}
 
-Referents preceded by possessive pronouns are also unused-unknown.
+Referents preceded by possessive pronouns are also unused-unknown,
 as long as the possessor is given or bridging.
 
 \begin{quote}
-I saw a man \texttt{n} with his wife \texttt{u} and her baby \texttt{u}.
+I saw a man \texttt{n} with his wife \texttt{u} and their baby \texttt{u}.
 \end{quote}
 
 Referents preceded by apostrophe-s possession are \emph{also} unused-unknown -
@@ -275,18 +275,13 @@ A woman{[}'s dog{]} \texttt{n} was barking loudly.
 
 Note:
 If a given referent is referred to in a way that appears
-bridging or unused-unknown, it should still be tagged \texttt{g}.
+unused-unknown, it should still be tagged \texttt{g}
+because once the referent is given, it cannot go back to unused-unknown.
 
 \begin{quote}
 A man was walking down the street and bouncing a ball.
 \ldots{}
-The man \texttt{g} with the ball stopped bouncing it.
-\end{quote}
-
-\begin{quote}
-Two cars were driving down the street.
-Each had one driver.
-The driver \texttt{g} of the first car stopped suddenly.
+The man \texttt{g}, not \texttt{u} with the ball stopped bouncing it.
 \end{quote}
 
 Questions:
@@ -310,7 +305,7 @@ Questions:
 ``This label is used for non-coreferential anaphoric expressions which are dependent on and unique with respect to a previously introduced scenario'' (p.~8).
 \end{quote}
 
-In other words, we use this tag for referents that have not been explicitly introduced but are implied as an essential part of an already known referent (the anchor).
+We use this tag for referents that have not been explicitly introduced but are implied as an essential part of an already known referent (the anchor).
 
 When the anchor of a bridging referent has been introduced,
 the listener expects that referent to appear,
@@ -326,7 +321,10 @@ There was a family \texttt{n} \texttt{anchor} walking down the street.
 The father \texttt{b} was dribbling a ball.
 \end{quote}
 
-``Father'' is bridging because we know that if there is a family, there must be a father.
+``Drivers'' are bridging from ``cars'' because we know that cars normally have drivers.
+So, when you see ``the drivers'', you immediately understand that they are the drivers of the two cars.
+
+Similarly, ``father'' is bridging from ``family'' because we know that if there is a family, there must be a father.
 So, when ``father'' is introduced, you already implicitly know it's a member of that family.
 
 The anchor and the referent should have a
@@ -339,17 +337,17 @@ I saw {[}a car crash{]} \texttt{untagged} \texttt{anchor}!
 The first car \texttt{b} stopped short, and the second \texttt{b} drove into it.
 \end{quote}
 
-Note:
+Note 1:
 The bridging referent can sometimes be directly introduced with a pronoun.
 This is very common with \texttt{drivers}.
 In this case, the pronoun should still be treated as bridging.
 
 \begin{quote}
-The first car \texttt{g} stopped suddenly.
-The car behind didn't brake in time and hit him \texttt{b}.
+The first car \texttt{car1} \texttt{g} stopped suddenly.
+The car behind didn't brake in time and hit him \texttt{driver1} \texttt{b}.
 \end{quote}
 
-Note:
+Note 2:
 Bridging relationships do not \emph{always} mean that
 referents should be tagged \texttt{b}.
 If referents are introduced
@@ -365,12 +363,13 @@ were pushing a baby carriage and bouncing a ball.
 This happens commonly when referring to \texttt{couple} as ``two people'',
 or to \texttt{family} as ``the three people''.
 
-Note:
+Note 3:
 If an anchor is introduced
 in a way that does not show a bridging relationship (``two people''),
 but then a referent is introduced
 that only makes sense with a bridging relationship (``the husband''),
 that referent should be marked as new.
+Consider the following example:
 
 \begin{quote}
 Two people \texttt{couple} \texttt{n} were walking down the street.
@@ -387,6 +386,17 @@ The man \texttt{man} \texttt{n} was bouncing a ball.
 
 Similar to ``husband'',
 there's no expectation that a group of two people includes a man.
+
+Note 4:
+If a given referent is referred to in a way that appears
+bridging, it should still be tagged \texttt{g}
+because once the referent is given, it cannot go back to bridging.
+
+\begin{quote}
+Two cars were driving down the street.
+The drivers were clearly speeding \texttt{b}.
+The driver \texttt{g}, not \texttt{b} of the first car stopped suddenly.
+\end{quote}
 
 Questions
 
@@ -421,15 +431,11 @@ The driver \texttt{bc} of {[}the closer car{]} \texttt{anchor} \ldots{}
 The father \texttt{bc} of {[}the family{]} \texttt{anchor} \ldots{}
 \end{quote}
 
-\begin{quote}
-I saw a car crash!
-The driver \texttt{bc} who was in {[}the car{]} \texttt{anchor} \texttt{b} got out.
-\end{quote}
+Since a car is expected to have a driver, and a family to have a father,
+the driver and the father are bridging-contained.
 
-Since a car is expected to have a driver,
-the driver is bridging-contained.
-
-It is possible for the anchor of a bridging relationship to be the referent in a different bridging relationship:
+It is possible for the anchor of a bridging-contaied relationship to be the referent in a different bridging relationship
+with a different anchor:
 
 \begin{quote}
 I saw {[}a car crash{]} \texttt{untagged} \texttt{n} \texttt{anchor:\ car1}!
@@ -465,7 +471,7 @@ She was taking groceries out of her car.
 She was holding a dog on a leash.
 The dog saw a ball that rolled into the street.
 It barked and chased after the ball.
-The man \texttt{man} \texttt{bd} yelled and tried to stop the dog.
+The father \texttt{man} \texttt{bd} yelled and tried to stop the dog.
 \end{quote}
 
 Questions:
@@ -481,18 +487,20 @@ Questions:
 \hypertarget{given}{%
 \section{Given}\label{given}}
 
-A given referent is one that has been previously introduced,
-either as itself,
-or as part of a conjoined referent without a \protect\hyperlink{bridging-relationships}{bridging relationship}.
+A given referent is one that has been previously introduced.
+It could be introduced either as itself (\texttt{man}),
+or as part of a conjoined referent without a \protect\hyperlink{bridging-relationships}{bridging relationship}
+(\texttt{two\ people} \texttt{n} - \texttt{first\ person} \texttt{g}, \texttt{two\ cars} \texttt{n} - \texttt{the\ first\ car} \texttt{g}),
+or through the enumeration of its elements (\texttt{a\ man} \texttt{n} and \texttt{a\ woman} \texttt{n} - \texttt{the\ two\ people} \texttt{g}).
 
 \begin{quote}
-There was a man.
-He \texttt{g} was dribbling a ball.
+There was a man \texttt{man}.
+He \texttt{man} \texttt{g} was dribbling a ball.
 \end{quote}
 
 \begin{quote}
-There were these two people walking.
-One of them \texttt{g} had a ball.
+There were these two people \texttt{couple} walking.
+One of them \texttt{man} \texttt{g} had a ball.
 \end{quote}
 
 \begin{quote}
@@ -592,7 +600,7 @@ To resolve this, we use the \texttt{+fe} tag.
 Theoretically, \texttt{+fe} can attach to any r-type. In practice, it is usually attached to \texttt{n}.
 
 \begin{quote}
-A dog ran into the street. The first car \texttt{car1} \texttt{n} (the blue one \texttt{car1} \texttt{n+fe}) stopped suddenly.
+A dog ran into the street. A car \texttt{car1} \texttt{n} (a blue one \texttt{car1} \texttt{n+fe}) stopped suddenly.
 \end{quote}
 
 \begin{quote}
@@ -604,7 +612,7 @@ stopped suddenly.
 \begin{quote}
 Two cars \texttt{cars} \texttt{n} were driving down the road,
 with just one driver in each.
-The cars \texttt{cars} \texttt{n},
+The cars \texttt{cars} \texttt{g},
 {[}a blue{]} \texttt{car1} \texttt{g+fe} and {[}a white one{]} \texttt{car2} \texttt{g+fe},
 stopped suddenly.
 \end{quote}
@@ -632,19 +640,26 @@ Predicative referents generally come after one of these verbs:
   It seemed to be
 \end{itemize}
 
-They attribute a certain characteristic to the subject of those verbs.
+Predicative referents do not introduce new referents, i.e.~things or people;
+instead, they attribute a new characteristic to already existing referents, which were introduced
+before the verbs ``to be'', ``to look like'', ``to seem like''. Usually the already existing referents are
+a subject of those verbs.
 
-Predicative referents are only tagged as \texttt{pr}
+Predicative referents are only tagged as \texttt{pr}.
 
 \begin{quote}
 There was a car \texttt{car1} \texttt{n}.
 It \texttt{car2} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr} \texttt{characteristic}.
 \end{quote}
 
+As we see here, no new thing/person was introduced by the phrase ``a blue car'', it just added a new characteristic to \texttt{car1}.
+
 \begin{quote}
 There were two cars \texttt{cars} \texttt{n}.
 The first car \texttt{car1} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr} \texttt{characteristic}.
 \end{quote}
+
+Similarly, ``a blue car'' does not introduce a new referent, but just adds a characteristic to an existing one.
 
 \hypertarget{answer-3-conjoined-referents}{%
 \chapter{Answer 3: Conjoined Referents}\label{answer-3-conjoined-referents}}
@@ -680,7 +695,8 @@ For each conjoined referent, we want to mark whether or not it is explained:
 
 An explanation is an enumeration of conjoined referent elements with indefinite articles/possessive pronouns.
 The enumeration has to come right after the conjoined referent.
-Normally the explanation is separated by a comma or is in brackets.
+The elements in the enumeration are tagged as \texttt{n} if the conjoined referent was \texttt{n}, and as \texttt{g} if the conjoined referent was \texttt{g}.
+Normally in writing the explanation is separated by a comma or is in brackets.
 
 Such explanations do not appear often, so the majority of conjoined referents will be unexplained.
 
@@ -695,13 +711,17 @@ There was a family \texttt{family} \texttt{n} \texttt{1}, a mom \texttt{woman1} 
 \end{quote}
 
 \begin{quote}
+There was a family \texttt{family} \texttt{n} \texttt{0} walking down the street. The family \texttt{family} \texttt{g} \texttt{1} (a mom \texttt{woman1} \texttt{g+fe}, a dad \texttt{man} \texttt{g+fe} and a baby \texttt{baby} \texttt{g+fe}) looked happy.
+\end{quote}
+
+\begin{quote}
 There was a couple \texttt{couple} \texttt{n} \texttt{0} who was crossing the road.
 \end{quote}
 
-Please note that the elements that are enumerated in the explanation should have indefinite articles. Also, the explanation should not provide any additional info about what the elements were doing. So, the following example is not an explanation:
+Please note that the elements of the explanation can not be subjects of finite main clauses that follow the clause with the conjoined referent. So, the following example is not an explanation:
 
 \begin{quote}
-There was a couple \texttt{couple} \texttt{n} \texttt{0}. The man was playing with a ball.
+There was a couple \texttt{couple} \texttt{n} \texttt{0}. The man was playing with a ball. The woman was holding a baby.
 \end{quote}
 
 \hypertarget{questions-answers}{%
@@ -827,17 +847,22 @@ Tag as \texttt{u} if:
 \item
   The explanation that comes after \protect\hyperlink{explanation-bridging-or-unused-unknown-referent}{contains a bridging or unused-unknown referent}
 \item
-  The referent is possessed by a \protect\hyperlink{possessive-pronouns}{possessive pronoun}
+  The referent is possessed by a given/bridging/unused referent represented by \protect\hyperlink{possessive-pronouns}{possessive pronoun}
+  \textgreater{} There was a woman, and {[}her dog{]} \texttt{u} ran.
 \item
-  The referent is possessed by an \protect\hyperlink{apostrophe-s}{apostrophe s}
+  The referent is possessed by a given/bridging referent represented by \protect\hyperlink{apostrophe-s}{apostrophe s}
+  \textgreater{} There were a man with his family. The man \texttt{g} {[}'s ball{]} \texttt{u} rolled away.
+  \textgreater{} There was a family. The father \texttt{b} {[}'s ball{]} \texttt{u} rolled away.
+  The possessing referent could theortically be unused-unknown too but we haven't seen such cases.
 \end{itemize}
 
 Otherwise, tag as \texttt{n}.
+\textgreater{} I was standing in a parking lot. A woman \texttt{n} {[}'s dog{]} \texttt{n} suddenly ran in front of two cars.
 
 \protect\hyperlink{referent-explanations}{More information on identifying explanations}.
 
-\hypertarget{explanation-given-referent}{%
-\subsection{Explanation Given Referent}\label{explanation-given-referent}}
+\hypertarget{explanation-containing-given-referent}{%
+\subsection{Explanation containing Given Referent}\label{explanation-containing-given-referent}}
 
 \begin{quote}
 Does this explanation contain a given referent?
@@ -885,7 +910,7 @@ Explanation: ``with the woman's ball''
 
 ``the woman'': \texttt{g}
 
-``'s ball'': Unused-Unknown
+``'s ball'': \texttt{u}
 
 Explanation contains a given referent.
 Tag ``the man'' as \texttt{u}.
@@ -907,18 +932,18 @@ So, it is considered a given referent.
 
 \begin{quote}
 A couple was walking with a stroller.
-A woman across the street was unloading groceries from her car.
+A woman with a dog was unloading groceries from her car.
 \end{quote}
 
-Explanation: ``across the street''
+Explanation: ``with a dog''
 
-``the street'': \texttt{n}
+``a dog'': \texttt{n}
 
 Explanation does not contain a given referent.
 Tag ``the woman'' as \texttt{n}.
 
-\hypertarget{explanation-bridging-or-unused-unknown-referent}{%
-\subsection{Explanation Bridging or Unused Unknown Referent}\label{explanation-bridging-or-unused-unknown-referent}}
+\hypertarget{explanation-containing-bridging-or-unused-unknown-referent}{%
+\subsection{Explanation containing Bridging or Unused Unknown Referent}\label{explanation-containing-bridging-or-unused-unknown-referent}}
 
 \begin{quote}
 Does this explanation contain a bridging referent?
@@ -931,7 +956,7 @@ An explanation contains a Bridging referent if:
 \item
   It contains a tagged referent marked \texttt{b} or \texttt{bc}
 \item
-  It contains an untagged referent with a previously introduced anchor
+  It contains an untagged bridging referent with a previously introduced anchor
 \end{itemize}
 
 \begin{quote}
@@ -939,16 +964,16 @@ A woman was loading groceries into her car \texttt{u} \texttt{anchor:trunk}.
 The dog who was by {[}the trunk{]} \texttt{b} started barking.
 \end{quote}
 
-Explanation: ``who was by the truck''
+Explanation: ``who was by the trunk''
 
 ``the trunk'': \texttt{b}
 
 Explanation contains a bridging referent.
-Tag ``the trunk'' as \texttt{u}.
+Tag ``the dog'' as \texttt{u}.
 
 \begin{quote}
 Across the street, a dog \texttt{anchor:leash} was barking wildly.
-The woman holding {[}the leash{]} started yelling, too.
+The woman holding {[}the leash{]} \texttt{b} started yelling, too.
 \end{quote}
 
 Explanation: ``holding the leash''
@@ -969,20 +994,20 @@ Explanation: ``holding the dog's leash''
 
 ``'s leash'': \texttt{bc}
 
-Explanation contains a bridging-contained referent.
+Explanation contains a bridging-contained referent (and a given referent).
 Tag ``the woman'' as \texttt{u}.
 
 \begin{quote}
-Two cars \texttt{cars} \texttt{anchor:car\ crash} were driving down the street way too quickly.
-The woman who saw {[}the car crash{]} stopped putting groceries into her car.
+A woman \texttt{anchor:leg} was unloading groceries.
+The dog standing at her feet started barking.
 \end{quote}
 
-Explanation: ``who saw the car crash''
+Explanation: ``standing at her feet''
 
-``the car crash'': \texttt{untagged} \texttt{b}
+``her legs'': \texttt{untagged} \texttt{b}
 
 Explanation contains a bridging referent.
-Tag ``the woman'' as \texttt{u}.
+Tag ``the dog'' as \texttt{u}.
 
 An explanation contains an Unused-Unknown referent if:
 
@@ -991,11 +1016,11 @@ An explanation contains an Unused-Unknown referent if:
 \item
   It contains a tagged referent marked \texttt{u}
 \item
-  It contains an untagged referent with a previously introduced anchor
+  It contains an untagged unused-unknown referent with a previously introduced anchor
 \end{itemize}
 
 \begin{quote}
-A man was bouncing the ball.
+A man was bouncing a ball.
 The woman who was holding {[}the dog{]} that was barking at {[}the ball{]}
 looked annoyed.
 \end{quote}
@@ -1018,7 +1043,7 @@ How far does an explanation stretch?
 \end{quote}
 
 An explanation is the material following a referent,
-which explains how the referent is related to the narrative.
+which explains how the referent is related to the rest of the narrative.
 
 The width of the explanation depends on the type of noun phrase headed by the referent:
 
@@ -1053,7 +1078,7 @@ also held back her dog.
 ``a big tall woman'' ends with the referent, and has no explanation.
 ``while loading groceries into her car'' might seem to explain the referent,
 but it is not a part of the noun phrase headed by \texttt{woman2},
-and could even be moved around in the sentence.
+because it can be moved around in the sentence.
 
 \begin{itemize}
 \tightlist
@@ -1178,7 +1203,7 @@ A non-exhaustive list of bridging relationships:
 \item
   dog \textless-\textgreater{} leash
 \item
-  car crash \textless-\textgreater{} cars
+  car crash -\textgreater{} cars
 \end{itemize}
 
 \begin{quote}
@@ -1196,8 +1221,9 @@ A woman was holding back her dog \texttt{dog} \texttt{u} \texttt{anchor:leash},
 but it kept pulling on the leash \texttt{leash} \texttt{b} she was using.
 \end{quote}
 
-We have made the decision that bridging relationships work in both directions.
-This decision can be reviewed in the future.
+We have made the decision that bridging relationships work in both directions,
+for everything except for ``car crash'' to ``cars'' since introducing cars does not imply their crash.
+The decision concerning the bi-directionality of the other referent pairs can be reviewed in the future.
 
 \begin{quote}
 There was a woman putting groceries into her trunk \texttt{trunk} \texttt{n} \texttt{anchor:car3}.
@@ -1323,11 +1349,29 @@ Given relationship conjoined referents:
   drivers
 \end{itemize}
 
+\begin{quote}
+Two cars were driving down the street.
+The red one \texttt{g} was going slow.
+\end{quote}
+
+\begin{quote}
+A red car and a blue car drove down the street.
+The cars \texttt{g} were going way too fast.
+\end{quote}
+
+\begin{quote}
+The drivers got out of the car.
+The first driver \texttt{g} looked very angry.
+\end{quote}
+
+\begin{quote}
+One car's driver got out.
+Then the other car's driver got out.
+The drivers \texttt{g} started arguing.
+\end{quote}
+
 If the conjoined referent has some inferred bridging relationship between it and its members, members are treated as bridging.
 If all members have been previously listed, the conjoined referent is bridging.
-
-However, if the conjoined referent is introduced in a way that enumerates the members (``Two people were walking down the street''),
-introduced members are treated as Given.
 
 Bridging relationship conjoined referents:
 
@@ -1339,81 +1383,75 @@ Bridging relationship conjoined referents:
   family
 \end{itemize}
 
+\begin{quote}
+A couple \texttt{couple} \texttt{n} was walking down the street.
+The husband \texttt{man} \texttt{b} was bouncing a ball.
+\end{quote}
+
+\begin{quote}
+A family \texttt{family} \texttt{n} was ready to cross the street.
+The father \texttt{man} \texttt{b} wearing a white shirt had a ball.
+\end{quote}
+
+\begin{quote}
+I saw a guy \texttt{man} \texttt{n} with a ball and a woman \texttt{woman1} \texttt{n} with a stroller walking across the parking lot.
+The couple \texttt{couple} \texttt{b} wanted to turn right.
+\end{quote}
+
+\begin{quote}
+A man \texttt{man}, a woman \texttt{woman1}, and a baby \texttt{baby} were standing in the parking lot.
+The family \texttt{family} \texttt{b} looked strange to me.
+\end{quote}
+
 However, a conjoined referent is not always introduced with the words ``couple'' or ``family''.
-Sometimes they are introduced in a way that enumerates the members {[}EXAMPLE{]}.
+Sometimes they are introduced in a way that enumerates the members, e.g.~``two pedestrians'', ``three people'', ``these people''.
 If the conjoined referent is introduced in this way, individual members are treated as given.
 If all the members are introduced, and then the conjoined referent is introduced in this way, the conjoined referent is treated as given.
 
-???
+Note how the examples below are exactly the same as the examples above, except for the words that introduce ``couple'' and ``family''. These words change the relationship between the conjoined referent and its members from new-bridging to new-given.
 
 \begin{quote}
-There were two people walking down the street.
-The man was bouncing a ball.
+Two pedestrians \texttt{couple} \texttt{n} were walking down the street.
+One of them \texttt{man} \texttt{g} was bouncing a ball.
 \end{quote}
 
 \begin{quote}
-How do I tag ``the man''?
+Three people \texttt{family} \texttt{n} were ready to cross the street.
+One person \texttt{man} \texttt{g} wearing a white shirt had a ball.
 \end{quote}
 
-It's \texttt{n}.
+\begin{quote}
+I saw a guy \texttt{man} \texttt{n} with a ball and a woman \texttt{woman1} \texttt{n} with a stroller walking across the parking lot.
+The two pedestrians \texttt{couple} \texttt{g} wanted to turn right.
+\end{quote}
+
+\begin{quote}
+A man \texttt{man} \texttt{n}, a woman \texttt{woman1} \texttt{n}, and a baby \texttt{baby} \texttt{n} were standing in the parking lot.
+These people \texttt{family} \texttt{g} looked strange to me.
+\end{quote}
+
+\begin{quote}
+Okay, but how do I tag ``the man'' in the following situaiton?
+There were two people \texttt{couple} \texttt{n} walking down the street.
+The man \texttt{man} \texttt{???} was bouncing a ball.
+\end{quote}
+
+It's \texttt{n} because
 ``two people'' does not need to include a man, and one would not necessarily
 expect it to.
-It is unclear what
+``The man'' kind of appears out of nowhere so we tag it as \texttt{n}.
+
+Note that this rule only applies to ``the man'' or ``the woman'', not ``the first person/the first one/ one of them''
+because ``the man'' and ``the woman'' are unexpected, while ``the''the first person/the first one/ one of them" are fine.
 
 \begin{quote}
-Example of ``the man''
-\end{quote}
-
-Only applies to ``the man'' or ``the woman'', not ``the first person/the first one/ one of them''
-
-\begin{quote}
-Example of ``the first person''
-\end{quote}
-
-\begin{quote}
-A red car and a blue car drove down the street.
-The cars \texttt{g} were going way too fast.
+There were two people \texttt{couple} \texttt{n} walking down the street.
+The woman \texttt{woman1} \texttt{n} had a stroller.
 \end{quote}
 
 \begin{quote}
-Two cars were driving down the street.
-The red one \texttt{g} was going slow.
-\end{quote}
-
-\begin{quote}
-One car's driver got out.
-Then the other car's driver got out.
-The drivers \texttt{g} started arguing.
-\end{quote}
-
-\begin{quote}
-The drivers got out of the car.
-The first driver \texttt{g} looked very angry.
-\end{quote}
-
-\begin{quote}
-Two people were walking down the street.
-One of them \texttt{g} was bouncing a ball.
-\end{quote}
-
-\begin{quote}
-A man and a woman were standing around.
-The couple \texttt{b} was holding hands.
-\end{quote}
-
-\begin{quote}
-A couple was standing in the parking lot.
-The husband \texttt{b} was looking around.
-\end{quote}
-
-\begin{quote}
-A man, a woman, and a baby were standing in the parking lot.
-The family \texttt{b} looked happy.
-\end{quote}
-
-\begin{quote}
-A family was walking down the street.
-The baby \texttt{b} was crying.
+There were two people \texttt{couple} \texttt{n} walking down the street.
+The first person \texttt{woman1} \texttt{g} had a stroller.
 \end{quote}
 
 \hypertarget{phrases}{%
@@ -1611,17 +1649,14 @@ And a woman was unloading her groceries, she had a little dog.
 And there were two cars which bumped into each other.
 \end{quote}
 
-This summarizes
+The introduction in the example above summarizes the whole story,
+after which the speaker moves to the very beginning of the main story,
+and not to the events after the crash.
 
 Since introductions are separate from the main narrative,
-referents in the introduction are not tagged.
-
-\begin{quote}
-There is two cars,
-a lady next to her parked car with her dog and groceries,
-and a lady with a stroller accompanied by a boy bouncing a ball.
-The boy's ball rolled
-\end{quote}
+referents in the introduction are NOT tagged. If we tagged them,
+we would have referents that are introduced twice - one time in the introduction,
+and one time in the main story.
 
 In most cases, it is clear what is or is not an introduction.
 If you hesitate, discuss with other annotators.
@@ -1762,7 +1797,7 @@ The car behind him - hit {[}it{]} also - hit {[}the car{]} - {[}the other car{]}
 \end{quote}
 
 The verb does not change, but the referent does.
-Tag only ``the other car''.
+Tag only ``the other car'', which was the speaker's final choice.
 
 \begin{quote}
 And the guy with {[}the ball{]} who accidentally dropped {[}the ball{]} \ldots{}
@@ -1884,7 +1919,7 @@ but to the action of holding a dog by any leash.
 Both drivers got out of {[}the car{]}
 \end{quote}
 
-Untagged
+\texttt{untagged}
 
 ``the car'' is generic for the same reason,
 ``get out of the car'' just refers to getting out of any car.
