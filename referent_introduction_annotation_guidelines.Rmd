@@ -77,7 +77,7 @@ See also:
 We use the ReFlex annotation scheme to give each new referent a referential label.
 The original ReFlex paper can be found at https://elib.uni-stuttgart.de/handle/11682/9028.
 
-We use the following 9 labels:
+We use the following 10 labels:
 
 | | R-Type | Abbreviation
 |:-|-|-|
@@ -92,9 +92,6 @@ We use the following 9 labels:
 | (9) | Predicative | `pr` |
 | (10) | Generic | `gen` |
 
-
-<!-- TODO: Standardize explanation style -->
-<!-- TODO: Standardize examples - tagging non-target r-types -->
 
 ## New
 
@@ -466,7 +463,7 @@ with the two referents reversed
 
 This does not work with `pr+gen` referents.
 
-> * There was a car.
+> \* There was a car.
 > A blue car was it.
 
 * Defnite Article: If an article is used 
@@ -474,7 +471,7 @@ with the predicative referent (`referent2`),
 it must be definite.
 An indefinite article implies a generic predicative.
 
-> * In fact, the driver of the first car was a bald guy.
+> \* In fact, the driver of the first car was a bald guy.
 
 With an indefinite article,
 the listener has no reason to believe that the driver of the first car 
@@ -1011,7 +1008,7 @@ A non-exhaustive list of bridging relationships:
 * drivers <-> cars
 * car3 <-> trunk
 * dog <-> leash
-* car crash -> cars
+* car crash <-> cars
 
 > There was a woman next to her car `car3` `n` `anchor:trunk`.
 > She was putting groceries into the trunk `trunk` `b`.
