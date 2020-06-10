@@ -364,32 +364,81 @@ Predicative referents are one of:
 
 Generic predicatives assign a characteristic to a referent,
 as described above.
+Almost all predicatives are generic.
 
-Predicative referents are only tagged as `pr`.
+Generic predicative referents are tagged as `pr+gen`.
 
 > There was a car `car1` `n`.
-> It `car2` `g` `subject` was a blue car `car1` `pr` `characteristic`.
+> It `car2` `g` `subject` was a blue car `car1` `pr+gen` `characteristic`.
 
 As we see here, no new thing/person was introduced by the phrase "a blue car", it just added a new characteristic to `car1`.
 
 > There were two cars `cars` `n`.
-> The first car `car1` `g` `subject` was a blue car `car1` `pr` `characteristic`.
+> The first car `car1` `g` `subject` was a blue car `car1` `pr+gen` `characteristic`.
 
 Similarly, "a blue car" does not introduce a new referent, but just adds a characteristic to an existing one.
 
+Non-Generic predicatives link two existing referents.
+These predicatives are annotated with `pr`
+
+> There was a cocker spaniel walking down the street.
+> It reminded me of my dog who was at home.
+> Suddenly I realized:
+> The cocker spaniel `referent1` was my dog `pr` `referent2`!
+
+> Two cars crashed.
+> A bald guy called the police.
+> In fact, the bald guy `referent1` 
+> was the driver of the first car `pr` `referent2`.
+
+There are two ways to identify non-generic predicatives:
+
+* Reversal: A non-generic predicative remains grammatical 
+with the two referents reversed
+
+> In fact, the driver of the first car was the bald guy.
+
+This does not work with `pr+gen` referents.
+
+> * There was a car.
+> A blue car was it.
+
+* Defnite Article: If an article is used 
+with the predicative referent (`referent2`),
+it must be definite.
+An indefinite article implies a generic predicative.
+
+> * In fact, the driver of the first car was a bald guy.
+
+With an indefinite article,
+the listener has no reason to believe that the driver of the first car 
+is the same bald guy refereced earlier.
+
 ## Generic
 
-Refers to a gerneric referent, doesn't name a particular thing/character, but referst o a class of things in general.
+Refers to a gerneric referent,
+doesn't name a particular thing/character in the narrative,
+but refers to a class of things in general.
 
 > The dog jumped at the ball.
-> You know, because it's a dog, and dogs jump at balls.
+> You know, because it's a dog `pr+gen`,
+> and a dog `gen` is always gonna want to jump at a ball.
 
-We only want to tag things that might be confused for real refererents, and so they must agree in number and refer to the same "thing" as the referents they are generic of.
+The majority of generic referents that appeared in the data are [predicatives](#predicative). These are tagged as `pr+gen`.
 
+However,
+there are cases where a "referent" is generic, but not predicative.
+In the example above, "it's a dog" is generic and predicative,
+but "a dog is always ..." is only generic.
+These non-predicative generics are tagged as `gen`.
 
+We do not want to tag *all* generics that occur in the narrative.
+We only want to tag generics that might be confused for annotated referents.
+So, tagged generic referents must:
 
+* Refer to the class of things containing the referent they might be confused with
 
+* Agree in number with the referent they might be confused with
 
-
-
-
+> The dog jumped at a ball.
+> You know, dogs `untagged` are always gonna want to jump at a ball.

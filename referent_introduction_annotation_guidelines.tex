@@ -677,34 +677,122 @@ Predicative referents are one of:
 
 Generic predicatives assign a characteristic to a referent,
 as described above.
+Almost all predicatives are generic.
 
-Predicative referents are only tagged as \texttt{pr}.
+Generic predicative referents are tagged as \texttt{pr+gen}.
 
 \begin{quote}
 There was a car \texttt{car1} \texttt{n}.
-It \texttt{car2} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr} \texttt{characteristic}.
+It \texttt{car2} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr+gen} \texttt{characteristic}.
 \end{quote}
 
 As we see here, no new thing/person was introduced by the phrase ``a blue car'', it just added a new characteristic to \texttt{car1}.
 
 \begin{quote}
 There were two cars \texttt{cars} \texttt{n}.
-The first car \texttt{car1} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr} \texttt{characteristic}.
+The first car \texttt{car1} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr+gen} \texttt{characteristic}.
 \end{quote}
 
 Similarly, ``a blue car'' does not introduce a new referent, but just adds a characteristic to an existing one.
 
+Non-Generic predicatives link two existing referents.
+These predicatives are annotated with \texttt{pr}
+
+\begin{quote}
+There was a cocker spaniel walking down the street.
+It reminded me of my dog who was at home.
+Suddenly I realized:
+The cocker spaniel \texttt{referent1} was my dog \texttt{pr} \texttt{referent2}!
+\end{quote}
+
+\begin{quote}
+Two cars crashed.
+A bald guy called the police.
+In fact, the bald guy \texttt{referent1}
+was the driver of the first car \texttt{pr} \texttt{referent2}.
+\end{quote}
+
+There are two ways to identify non-generic predicatives:
+
+\begin{itemize}
+\tightlist
+\item
+  Reversal: A non-generic predicative remains grammatical
+  with the two referents reversed
+\end{itemize}
+
+\begin{quote}
+In fact, the driver of the first car was the bald guy.
+\end{quote}
+
+This does not work with \texttt{pr+gen} referents.
+
+\begin{quote}
+\begin{itemize}
+\tightlist
+\item
+  There was a car.
+  A blue car was it.
+\end{itemize}
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  Defnite Article: If an article is used
+  with the predicative referent (\texttt{referent2}),
+  it must be definite.
+  An indefinite article implies a generic predicative.
+\end{itemize}
+
+\begin{quote}
+\begin{itemize}
+\tightlist
+\item
+  In fact, the driver of the first car was a bald guy.
+\end{itemize}
+\end{quote}
+
+With an indefinite article,
+the listener has no reason to believe that the driver of the first car
+is the same bald guy refereced earlier.
+
 \hypertarget{generic}{%
 \section{Generic}\label{generic}}
 
-Refers to a gerneric referent, doesn't name a particular thing/character, but referst o a class of things in general.
+Refers to a gerneric referent,
+doesn't name a particular thing/character in the narrative,
+but refers to a class of things in general.
 
 \begin{quote}
 The dog jumped at the ball.
-You know, because it's a dog, and dogs jump at balls.
+You know, because it's a dog \texttt{pr+gen},
+and a dog \texttt{gen} is always gonna want to jump at a ball.
 \end{quote}
 
-We only want to tag things that might be confused for real refererents, and so they must agree in number and refer to the same ``thing'' as the referents they are generic of.
+The majority of generic referents that appeared in the data are \protect\hyperlink{predicative}{predicatives}. These are tagged as \texttt{pr+gen}.
+
+However,
+there are cases where a ``referent'' is generic, but not predicative.
+In the example above, ``it's a dog'' is generic and predicative,
+but ``a dog is always \ldots{}'' is only generic.
+These non-predicative generics are tagged as \texttt{gen}.
+
+We do not want to tag \emph{all} generics that occur in the narrative.
+We only want to tag generics that might be confused for annotated referents.
+So, tagged generic referents must:
+
+\begin{itemize}
+\item
+  Refer to the class of things containing the referent they might be confused with
+\item
+  Agree in number with the referent they might be confused with
+\end{itemize}
+
+\begin{quote}
+The dog jumped at a ball.
+You know, dogs \texttt{untagged} are always gonna want to jump at a ball.
+\end{quote}
 
 \hypertarget{answer-3-conjoined-referents}{%
 \chapter{Answer 3: Conjoined Referents}\label{answer-3-conjoined-referents}}
@@ -818,18 +906,31 @@ I saw {[}the older woman{]} \texttt{woman} with {[}a barking dog{]} \texttt{dog}
 \end{quote}
 
 \begin{quote}
-{[}A big tall man{]} \texttt{man} who was bouncing a ball walked down the street.
+{[}A big tall man{]} \texttt{man}
+who was bouncing {[}a ball{]} \texttt{ball} walked down the street.
 \end{quote}
 
-If the speaker makes errors or repitions
-between the initial determiner and the final referent noun,
-tag everything between the two.
+If errors or repeitions occur after the determiner,
+but before the final referent noun,
+and the determiner is not repeated,
+we treat the repition as intervening material,
+and tag everything between the two.
 
 \begin{quote}
 While I was watching,
 {[}a big - er well not really that big - man{]} \texttt{man}
 who was bouncing a ball started walking down the street.
 \end{quote}
+
+\begin{quote}
+On the other side of the street,
+There was {[}a boy - uh not boy - man{]} \texttt{man} bouncing a ball.
+\end{quote}
+
+Note:
+If the determiner \emph{was} repeated (``a boy - uh not a boy - a man''),
+we would tag only the last instance of the referent.
+See: \protect\hyperlink{repititions}{Repititions}
 
 \hypertarget{groceries}{%
 \subsection{Groceries}\label{groceries}}

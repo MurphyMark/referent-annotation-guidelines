@@ -578,27 +578,90 @@ It <code>referent</code> was [a blue car] <code>characteristic</code>.</p>
 <li>Non-Generic</li>
 </ul>
 <p>Generic predicatives assign a characteristic to a referent,
-as described above.</p>
-<p>Predicative referents are only tagged as <code>pr</code>.</p>
+as described above.
+Almost all predicatives are generic.</p>
+<p>Generic predicative referents are tagged as <code>pr+gen</code>.</p>
 <blockquote>
 <p>There was a car <code>car1</code> <code>n</code>.
-It <code>car2</code> <code>g</code> <code>subject</code> was a blue car <code>car1</code> <code>pr</code> <code>characteristic</code>.</p>
+It <code>car2</code> <code>g</code> <code>subject</code> was a blue car <code>car1</code> <code>pr+gen</code> <code>characteristic</code>.</p>
 </blockquote>
 <p>As we see here, no new thing/person was introduced by the phrase “a blue car”, it just added a new characteristic to <code>car1</code>.</p>
 <blockquote>
 <p>There were two cars <code>cars</code> <code>n</code>.
-The first car <code>car1</code> <code>g</code> <code>subject</code> was a blue car <code>car1</code> <code>pr</code> <code>characteristic</code>.</p>
+The first car <code>car1</code> <code>g</code> <code>subject</code> was a blue car <code>car1</code> <code>pr+gen</code> <code>characteristic</code>.</p>
 </blockquote>
 <p>Similarly, “a blue car” does not introduce a new referent, but just adds a characteristic to an existing one.</p>
+<p>Non-Generic predicatives link two existing referents.
+These predicatives are annotated with <code>pr</code></p>
+<blockquote>
+<p>There was a cocker spaniel walking down the street.
+It reminded me of my dog who was at home.
+Suddenly I realized:
+The cocker spaniel <code>referent1</code> was my dog <code>pr</code> <code>referent2</code>!</p>
+</blockquote>
+<blockquote>
+<p>Two cars crashed.
+A bald guy called the police.
+In fact, the bald guy <code>referent1</code>
+was the driver of the first car <code>pr</code> <code>referent2</code>.</p>
+</blockquote>
+<p>There are two ways to identify non-generic predicatives:</p>
+<ul>
+<li>Reversal: A non-generic predicative remains grammatical
+with the two referents reversed</li>
+</ul>
+<blockquote>
+<p>In fact, the driver of the first car was the bald guy.</p>
+</blockquote>
+<p>This does not work with <code>pr+gen</code> referents.</p>
+<blockquote>
+<ul>
+<li>There was a car.
+A blue car was it.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Defnite Article: If an article is used
+with the predicative referent (<code>referent2</code>),
+it must be definite.
+An indefinite article implies a generic predicative.</li>
+</ul>
+<blockquote>
+<ul>
+<li>In fact, the driver of the first car was a bald guy.</li>
+</ul>
+</blockquote>
+<p>With an indefinite article,
+the listener has no reason to believe that the driver of the first car
+is the same bald guy refereced earlier.</p>
 </div>
 <div id="generic" class="section level2">
 <h2><span class="header-section-number">3.8</span> Generic</h2>
-<p>Refers to a gerneric referent, doesn’t name a particular thing/character, but referst o a class of things in general.</p>
+<p>Refers to a gerneric referent,
+doesn’t name a particular thing/character in the narrative,
+but refers to a class of things in general.</p>
 <blockquote>
 <p>The dog jumped at the ball.
-You know, because it’s a dog, and dogs jump at balls.</p>
+You know, because it’s a dog <code>pr+gen</code>,
+and a dog <code>gen</code> is always gonna want to jump at a ball.</p>
 </blockquote>
-<p>We only want to tag things that might be confused for real refererents, and so they must agree in number and refer to the same “thing” as the referents they are generic of.</p>
+<p>The majority of generic referents that appeared in the data are <a href="answer-2-r-type.html#predicative">predicatives</a>. These are tagged as <code>pr+gen</code>.</p>
+<p>However,
+there are cases where a “referent” is generic, but not predicative.
+In the example above, “it’s a dog” is generic and predicative,
+but “a dog is always …” is only generic.
+These non-predicative generics are tagged as <code>gen</code>.</p>
+<p>We do not want to tag <em>all</em> generics that occur in the narrative.
+We only want to tag generics that might be confused for annotated referents.
+So, tagged generic referents must:</p>
+<ul>
+<li><p>Refer to the class of things containing the referent they might be confused with</p></li>
+<li><p>Agree in number with the referent they might be confused with</p></li>
+</ul>
+<blockquote>
+<p>The dog jumped at a ball.
+You know, dogs <code>untagged</code> are always gonna want to jump at a ball.</p>
+</blockquote>
 
 </div>
 </div>
