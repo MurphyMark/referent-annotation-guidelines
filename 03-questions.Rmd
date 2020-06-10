@@ -458,7 +458,7 @@ A non-exhaustive list of bridging relationships:
 * drivers <-> cars
 * car3 <-> trunk
 * dog <-> leash
-* car crash -> cars
+* car crash <-> cars
 
 > There was a woman next to her car `car3` `n` `anchor:trunk`.
 > She was putting groceries into the trunk `trunk` `b`.
