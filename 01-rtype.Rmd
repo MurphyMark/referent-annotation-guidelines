@@ -24,6 +24,7 @@ We use the following 9 labels:
 | 7 | Given-Displaced | `gd` |
 | (8) | Further-Explanation | `+fe` |
 | (9) | Predicative | `pr` |
+| (10) | Generic | `gen` |
 
 
 <!-- TODO: Standardize explanation style -->
@@ -48,7 +49,15 @@ Questions:
 > “Assigned to referring expressions which come with a sufficient amount of descriptive material to enable the hearer to create a new discourse referent without any previous knowledge” (p. 4).
 
 A new referent followed by an indentifying explanation.
-The explanation must be a part of the noun phrase containing the referent, and must include another given/bridging/unused-unknown referent.
+
+The explanation must be a part of the noun phrase containing the referent.
+This explanation must also connect the referent to an existing referent in the narrative. 
+So, one must be true:
+
+* The explanation contains a given/bridging/unused-unknown referent.
+* If no such referent can be found,
+the explanation must contain a locative phrase 
+that connects the referent to another existing referent.
 
 [More information on identifying explanations](#referent-explanations).
 
@@ -57,6 +66,9 @@ The explanation must be a part of the noun phrase containing the referent, and m
 
 > I saw a man and a woman.
 > The ball `u` [that [the man] `g` was dribbling] `explanation` fell on the ground.
+
+> I saw a man and a woman walking down the street.
+> The dog `u` [that was nearby] `explanation` started barking.
 
 Untagged referents can appear in explanations.
 
@@ -330,18 +342,28 @@ Similar to Further Explanation, Predicative solves the issue with:
 
 > There was a car `car1` `n`. It looked like a blue one `car1` `???`.
 
-"a blue one" is tagged as `car1` `pr`.
+In this example, it is unclear what r-type "a blue one" should receive.
+We answer this question with the predicative tag.
 
-Predicative referents generally come after one of these verbs:
+Predicative referents do not introduce new things or people.
+Instead,
+they attribute a new characteristic to an already-existing referent.
 
-* It was
-* It looked like
-* It seemed to be
+These already-existing referents are introduced
+before the verbs "to be", "to look like", "to seem like", etc.
+Usually,
+the already-existing referent is the subject of one of these verbs.
 
-Predicative referents do not introduce new referents, i.e. things or people; 
-instead, they attribute a new characteristic to already existing referents, which were introduced 
-before the verbs "to be", "to look like", "to seem like". Usually the already existing referents are 
-a subject of those verbs.
+> There was a car.
+> It `referent` was [a blue car] `characteristic`.
+
+Predicative referents are one of:
+
+* Generic
+* Non-Generic
+
+Generic predicatives assign a characteristic to a referent,
+as described above.
 
 Predicative referents are only tagged as `pr`.
 
@@ -355,7 +377,16 @@ As we see here, no new thing/person was introduced by the phrase "a blue car", i
 
 Similarly, "a blue car" does not introduce a new referent, but just adds a characteristic to an existing one.
 
-<!-- EXAMPLES -->
+## Generic
+
+Refers to a gerneric referent, doesn't name a particular thing/character, but referst o a class of things in general.
+
+> The dog jumped at the ball.
+> You know, because it's a dog, and dogs jump at balls.
+
+We only want to tag things that might be confused for real refererents, and so they must agree in number and refer to the same "thing" as the referents they are generic of.
+
+
 
 
 

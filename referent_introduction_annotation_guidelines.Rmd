@@ -50,6 +50,9 @@ We have a list of 19 possible referents, and we count how many of these 19 refer
 18. driver2 (white car)
 19. drivers (driver1 + driver2) - *conjoined referent*
 
+Referents should be tagged 
+[starting with the beginning determiner, and ending with the last word of the referent noun](#span-of-referent-annotations).
+
 If there are [repetitions](#identifying-repitions) in the narrative,
 which change the referent the speaker produces, 
 only referents in the final repetition should be tagged.
@@ -87,6 +90,7 @@ We use the following 9 labels:
 | 7 | Given-Displaced | `gd` |
 | (8) | Further-Explanation | `+fe` |
 | (9) | Predicative | `pr` |
+| (10) | Generic | `gen` |
 
 
 <!-- TODO: Standardize explanation style -->
@@ -111,7 +115,15 @@ Questions:
 > “Assigned to referring expressions which come with a sufficient amount of descriptive material to enable the hearer to create a new discourse referent without any previous knowledge” (p. 4).
 
 A new referent followed by an indentifying explanation.
-The explanation must be a part of the noun phrase containing the referent, and must include another given/bridging/unused-unknown referent.
+
+The explanation must be a part of the noun phrase containing the referent.
+This explanation must also connect the referent to an existing referent in the narrative. 
+So, one must be true:
+
+* The explanation contains a given/bridging/unused-unknown referent.
+* If no such referent can be found,
+the explanation must contain a locative phrase 
+that connects the referent to another existing referent.
 
 [More information on identifying explanations](#referent-explanations).
 
@@ -120,6 +132,9 @@ The explanation must be a part of the noun phrase containing the referent, and m
 
 > I saw a man and a woman.
 > The ball `u` [that [the man] `g` was dribbling] `explanation` fell on the ground.
+
+> I saw a man and a woman walking down the street.
+> The dog `u` [that was nearby] `explanation` started barking.
 
 Untagged referents can appear in explanations.
 
@@ -393,18 +408,28 @@ Similar to Further Explanation, Predicative solves the issue with:
 
 > There was a car `car1` `n`. It looked like a blue one `car1` `???`.
 
-"a blue one" is tagged as `car1` `pr`.
+In this example, it is unclear what r-type "a blue one" should receive.
+We answer this question with the predicative tag.
 
-Predicative referents generally come after one of these verbs:
+Predicative referents do not introduce new things or people.
+Instead,
+they attribute a new characteristic to an already-existing referent.
 
-* It was
-* It looked like
-* It seemed to be
+These already-existing referents are introduced
+before the verbs "to be", "to look like", "to seem like", etc.
+Usually,
+the already-existing referent is the subject of one of these verbs.
 
-Predicative referents do not introduce new referents, i.e. things or people; 
-instead, they attribute a new characteristic to already existing referents, which were introduced 
-before the verbs "to be", "to look like", "to seem like". Usually the already existing referents are 
-a subject of those verbs.
+> There was a car.
+> It `referent` was [a blue car] `characteristic`.
+
+Predicative referents are one of:
+
+* Generic
+* Non-Generic
+
+Generic predicatives assign a characteristic to a referent,
+as described above.
 
 Predicative referents are only tagged as `pr`.
 
@@ -418,7 +443,16 @@ As we see here, no new thing/person was introduced by the phrase "a blue car", i
 
 Similarly, "a blue car" does not introduce a new referent, but just adds a characteristic to an existing one.
 
-<!-- EXAMPLES -->
+## Generic
+
+Refers to a gerneric referent, doesn't name a particular thing/character, but referst o a class of things in general.
+
+> The dog jumped at the ball.
+> You know, because it's a dog, and dogs jump at balls.
+
+We only want to tag things that might be confused for real refererents, and so they must agree in number and refer to the same "thing" as the referents they are generic of.
+
+
 
 
 
@@ -471,6 +505,42 @@ Please note that the elements of the explanation can not be subjects of finite m
 # Questions & Answers
 
 ## Referents
+
+### Span of Referent Annotations
+
+When tagging referents,
+we want to include both the determiner and the referent noun.
+
+However,
+we do not want to include prepositional phrases or relative clauses 
+that may be attached to the referent noun.
+If we did, we would obscure other referents 
+contained within those phrases and clauses.
+
+So, when tagging referents:
+
+* Start with the first determiner of the referent noun phrase
+* End with the last word of the referent noun
+
+> I saw [a man] `man` and [a woman] `woman1`.
+
+> I saw [a big tall man] `man`.
+
+> I saw [two very fast cars] `cars`.
+
+> I saw [all of the car drivers] `drivers` get out of the car.
+
+> I saw [the older woman] `woman` with [a barking dog] `dog`.
+
+> [A big tall man] `man` who was bouncing a ball walked down the street.
+
+If the speaker makes errors or repitions 
+between the initial determiner and the final referent noun,
+tag everything between the two.
+
+> While I was watching,
+> [a big - er well not really that big - man] `man` 
+> who was bouncing a ball started walking down the street.
 
 ### Groceries
 
@@ -540,15 +610,28 @@ attached to the man or the woman.
 Tag as `u` if:
 
 * The explanation that comes after [contains a given referent](#explanation-given-referent)
+
 * The explanation that comes after [contains a bridging or unused-unknown referent](#explanation-bridging-or-unused-unknown-referent)
+
 * The referent is possessed by a given/bridging/unused referent represented by [possessive pronoun](#possessive-pronouns)
+
 > There was a woman, and [her dog] `u` ran.
+
 * The referent is possessed by a given/bridging referent represented by [apostrophe s](#apostrophe-s)
+
 > There were a man with his family. The man `g` ['s ball] `u` rolled away.
 > There was a family. The father `b` ['s ball] `u` rolled away.
+
 The possessing referent could theortically be unused-unknown too but we haven't seen such cases.
 
+* The explanation contains a [locative phrase]
+connecting the referent to another existing referent.
+
+> I saw a man and a woman walking down the street.
+> The dog `u` [that was nearby] `explanation` started barking.
+
 Otherwise, tag as `n`.
+
 > I was standing in a parking lot. A woman `n` ['s dog] `n` suddenly ran in front of two cars.
 
 [More information on identifying explanations](#referent-explanations).
@@ -710,7 +793,41 @@ Explanation: "who was holding the dog that was barking at the ball"
 Explanation contains an unused-unknown referent.
 Tag "the woman" as `u`.
 
-### Referent Explanations
+### Explanation Containing Locative Phrase
+
+> Does this explanation contain a locative phrase
+> that connects it to an existing referent?
+
+We start looking for a locative phrase if
+the explanation does not contain a given/bridging/unused-unknown referent.
+
+A locative phrase must clearly connect the referent in question
+to a specific existing referent - tagged or untagged.
+
+> I saw a man and a woman walking down the street.
+> The dog `u` [that was nearby] `explanation` started barking.
+
+> Then, I saw a blue car `car1` `n` stopping abruptly.
+> The car `car2` `u` [behind] `explanation` couldn't stop in time.
+
+> Then, I saw a white car `car2` `n` crash.
+> The car `car1` `u` [in front] `explanation` had stopped abruptly.
+
+Locative phrases conecting the referent in question to a new referent
+do *not* qualify as unused-unknown explanations.
+
+> There was a man walking down the street.
+> The dog `n` 
+[that was standing next to a woman `n`] `non-explanation` started barking.
+
+Sometimes an explanation contains neither
+a bridging/given/unused-unknown referent nor a locative phrase.
+These referents are still tagged as new.
+
+> A man was walking down the street, and dropped his ball.
+> The dog `n` [who got scared] `non-explanation` started barking.
+
+### Span of Referent Explanations
 
 > What qualifies as an explanation?
 > How far does an explanation stretch?
@@ -1329,6 +1446,7 @@ So, this sentence doesn't make sense.
 ### Generic Referents
 
 > Is this referent generic, and should we tag it?
+
 
 Here are some examples, and our decisions:
 

@@ -156,6 +156,9 @@ We have a list of 19 possible referents, and we count how many of these 19 refer
   drivers (driver1 + driver2) - \emph{conjoined referent}
 \end{enumerate}
 
+Referents should be tagged
+\protect\hyperlink{span-of-referent-annotations}{starting with the beginning determiner, and ending with the last word of the referent noun}.
+
 If there are \protect\hyperlink{identifying-repitions}{repetitions} in the narrative,
 which change the referent the speaker produces,
 only referents in the final repetition should be tagged.
@@ -199,6 +202,7 @@ We use the following 9 labels:
 7 & Given-Displaced & \texttt{gd}\tabularnewline
 (8) & Further-Explanation & \texttt{+fe}\tabularnewline
 (9) & Predicative & \texttt{pr}\tabularnewline
+(10) & Generic & \texttt{gen}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -232,7 +236,20 @@ Questions:
 \end{quote}
 
 A new referent followed by an indentifying explanation.
-The explanation must be a part of the noun phrase containing the referent, and must include another given/bridging/unused-unknown referent.
+
+The explanation must be a part of the noun phrase containing the referent.
+This explanation must also connect the referent to an existing referent in the narrative.
+So, one must be true:
+
+\begin{itemize}
+\tightlist
+\item
+  The explanation contains a given/bridging/unused-unknown referent.
+\item
+  If no such referent can be found,
+  the explanation must contain a locative phrase
+  that connects the referent to another existing referent.
+\end{itemize}
 
 \protect\hyperlink{referent-explanations}{More information on identifying explanations}.
 
@@ -244,6 +261,11 @@ The woman \texttt{u} {[}with the dog{]} \texttt{explanation} yelled at it.
 \begin{quote}
 I saw a man and a woman.
 The ball \texttt{u} {[}that {[}the man{]} \texttt{g} was dribbling{]} \texttt{explanation} fell on the ground.
+\end{quote}
+
+\begin{quote}
+I saw a man and a woman walking down the street.
+The dog \texttt{u} {[}that was nearby{]} \texttt{explanation} started barking.
 \end{quote}
 
 Untagged referents can appear in explanations.
@@ -626,24 +648,35 @@ Similar to Further Explanation, Predicative solves the issue with:
 There was a car \texttt{car1} \texttt{n}. It looked like a blue one \texttt{car1} \texttt{???}.
 \end{quote}
 
-``a blue one'' is tagged as \texttt{car1} \texttt{pr}.
+In this example, it is unclear what r-type ``a blue one'' should receive.
+We answer this question with the predicative tag.
 
-Predicative referents generally come after one of these verbs:
+Predicative referents do not introduce new things or people.
+Instead,
+they attribute a new characteristic to an already-existing referent.
+
+These already-existing referents are introduced
+before the verbs ``to be'', ``to look like'', ``to seem like'', etc.
+Usually,
+the already-existing referent is the subject of one of these verbs.
+
+\begin{quote}
+There was a car.
+It \texttt{referent} was {[}a blue car{]} \texttt{characteristic}.
+\end{quote}
+
+Predicative referents are one of:
 
 \begin{itemize}
 \tightlist
 \item
-  It was
+  Generic
 \item
-  It looked like
-\item
-  It seemed to be
+  Non-Generic
 \end{itemize}
 
-Predicative referents do not introduce new referents, i.e.~things or people;
-instead, they attribute a new characteristic to already existing referents, which were introduced
-before the verbs ``to be'', ``to look like'', ``to seem like''. Usually the already existing referents are
-a subject of those verbs.
+Generic predicatives assign a characteristic to a referent,
+as described above.
 
 Predicative referents are only tagged as \texttt{pr}.
 
@@ -660,6 +693,18 @@ The first car \texttt{car1} \texttt{g} \texttt{subject} was a blue car \texttt{c
 \end{quote}
 
 Similarly, ``a blue car'' does not introduce a new referent, but just adds a characteristic to an existing one.
+
+\hypertarget{generic}{%
+\section{Generic}\label{generic}}
+
+Refers to a gerneric referent, doesn't name a particular thing/character, but referst o a class of things in general.
+
+\begin{quote}
+The dog jumped at the ball.
+You know, because it's a dog, and dogs jump at balls.
+\end{quote}
+
+We only want to tag things that might be confused for real refererents, and so they must agree in number and refer to the same ``thing'' as the referents they are generic of.
 
 \hypertarget{answer-3-conjoined-referents}{%
 \chapter{Answer 3: Conjoined Referents}\label{answer-3-conjoined-referents}}
@@ -729,6 +774,62 @@ There was a couple \texttt{couple} \texttt{n} \texttt{0}. The man was playing wi
 
 \hypertarget{referents-1}{%
 \section{Referents}\label{referents-1}}
+
+\hypertarget{span-of-referent-annotations}{%
+\subsection{Span of Referent Annotations}\label{span-of-referent-annotations}}
+
+When tagging referents,
+we want to include both the determiner and the referent noun.
+
+However,
+we do not want to include prepositional phrases or relative clauses
+that may be attached to the referent noun.
+If we did, we would obscure other referents
+contained within those phrases and clauses.
+
+So, when tagging referents:
+
+\begin{itemize}
+\tightlist
+\item
+  Start with the first determiner of the referent noun phrase
+\item
+  End with the last word of the referent noun
+\end{itemize}
+
+\begin{quote}
+I saw {[}a man{]} \texttt{man} and {[}a woman{]} \texttt{woman1}.
+\end{quote}
+
+\begin{quote}
+I saw {[}a big tall man{]} \texttt{man}.
+\end{quote}
+
+\begin{quote}
+I saw {[}two very fast cars{]} \texttt{cars}.
+\end{quote}
+
+\begin{quote}
+I saw {[}all of the car drivers{]} \texttt{drivers} get out of the car.
+\end{quote}
+
+\begin{quote}
+I saw {[}the older woman{]} \texttt{woman} with {[}a barking dog{]} \texttt{dog}.
+\end{quote}
+
+\begin{quote}
+{[}A big tall man{]} \texttt{man} who was bouncing a ball walked down the street.
+\end{quote}
+
+If the speaker makes errors or repitions
+between the initial determiner and the final referent noun,
+tag everything between the two.
+
+\begin{quote}
+While I was watching,
+{[}a big - er well not really that big - man{]} \texttt{man}
+who was bouncing a ball started walking down the street.
+\end{quote}
 
 \hypertarget{groceries}{%
 \subsection{Groceries}\label{groceries}}
@@ -841,23 +942,48 @@ Should I tag this referent as New or Unused-Unknown?
 Tag as \texttt{u} if:
 
 \begin{itemize}
-\tightlist
 \item
   The explanation that comes after \protect\hyperlink{explanation-given-referent}{contains a given referent}
 \item
   The explanation that comes after \protect\hyperlink{explanation-bridging-or-unused-unknown-referent}{contains a bridging or unused-unknown referent}
 \item
   The referent is possessed by a given/bridging/unused referent represented by \protect\hyperlink{possessive-pronouns}{possessive pronoun}
-  \textgreater{} There was a woman, and {[}her dog{]} \texttt{u} ran.
-\item
-  The referent is possessed by a given/bridging referent represented by \protect\hyperlink{apostrophe-s}{apostrophe s}
-  \textgreater{} There were a man with his family. The man \texttt{g} {[}'s ball{]} \texttt{u} rolled away.
-  \textgreater{} There was a family. The father \texttt{b} {[}'s ball{]} \texttt{u} rolled away.
-  The possessing referent could theortically be unused-unknown too but we haven't seen such cases.
 \end{itemize}
 
+\begin{quote}
+There was a woman, and {[}her dog{]} \texttt{u} ran.
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  The referent is possessed by a given/bridging referent represented by \protect\hyperlink{apostrophe-s}{apostrophe s}
+\end{itemize}
+
+\begin{quote}
+There were a man with his family. The man \texttt{g} {[}'s ball{]} \texttt{u} rolled away.
+There was a family. The father \texttt{b} {[}'s ball{]} \texttt{u} rolled away.
+\end{quote}
+
+The possessing referent could theortically be unused-unknown too but we haven't seen such cases.
+
+\begin{itemize}
+\tightlist
+\item
+  The explanation contains a {[}locative phrase{]}
+  connecting the referent to another existing referent.
+\end{itemize}
+
+\begin{quote}
+I saw a man and a woman walking down the street.
+The dog \texttt{u} {[}that was nearby{]} \texttt{explanation} started barking.
+\end{quote}
+
 Otherwise, tag as \texttt{n}.
-\textgreater{} I was standing in a parking lot. A woman \texttt{n} {[}'s dog{]} \texttt{n} suddenly ran in front of two cars.
+
+\begin{quote}
+I was standing in a parking lot. A woman \texttt{n} {[}'s dog{]} \texttt{n} suddenly ran in front of two cars.
+\end{quote}
 
 \protect\hyperlink{referent-explanations}{More information on identifying explanations}.
 
@@ -1034,8 +1160,55 @@ Explanation: ``who was holding the dog that was barking at the ball''
 Explanation contains an unused-unknown referent.
 Tag ``the woman'' as \texttt{u}.
 
-\hypertarget{referent-explanations}{%
-\subsection{Referent Explanations}\label{referent-explanations}}
+\hypertarget{explanation-containing-locative-phrase}{%
+\subsection{Explanation Containing Locative Phrase}\label{explanation-containing-locative-phrase}}
+
+\begin{quote}
+Does this explanation contain a locative phrase
+that connects it to an existing referent?
+\end{quote}
+
+We start looking for a locative phrase if
+the explanation does not contain a given/bridging/unused-unknown referent.
+
+A locative phrase must clearly connect the referent in question
+to a specific existing referent - tagged or untagged.
+
+\begin{quote}
+I saw a man and a woman walking down the street.
+The dog \texttt{u} {[}that was nearby{]} \texttt{explanation} started barking.
+\end{quote}
+
+\begin{quote}
+Then, I saw a blue car \texttt{car1} \texttt{n} stopping abruptly.
+The car \texttt{car2} \texttt{u} {[}behind{]} \texttt{explanation} couldn't stop in time.
+\end{quote}
+
+\begin{quote}
+Then, I saw a white car \texttt{car2} \texttt{n} crash.
+The car \texttt{car1} \texttt{u} {[}in front{]} \texttt{explanation} had stopped abruptly.
+\end{quote}
+
+Locative phrases conecting the referent in question to a new referent
+do \emph{not} qualify as unused-unknown explanations.
+
+\begin{quote}
+There was a man walking down the street.
+The dog \texttt{n}
+{[}that was standing next to a woman \texttt{n}{]} \texttt{non-explanation} started barking.
+\end{quote}
+
+Sometimes an explanation contains neither
+a bridging/given/unused-unknown referent nor a locative phrase.
+These referents are still tagged as new.
+
+\begin{quote}
+A man was walking down the street, and dropped his ball.
+The dog \texttt{n} {[}who got scared{]} \texttt{non-explanation} started barking.
+\end{quote}
+
+\hypertarget{span-of-referent-explanations}{%
+\subsection{Span of Referent Explanations}\label{span-of-referent-explanations}}
 
 \begin{quote}
 What qualifies as an explanation?

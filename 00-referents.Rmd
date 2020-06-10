@@ -26,6 +26,9 @@ We have a list of 19 possible referents, and we count how many of these 19 refer
 18. driver2 (white car)
 19. drivers (driver1 + driver2) - *conjoined referent*
 
+Referents should be tagged 
+[starting with the beginning determiner, and ending with the last word of the referent noun](#span-of-referent-annotations).
+
 If there are [repetitions](#identifying-repitions) in the narrative,
 which change the referent the speaker produces, 
 only referents in the final repetition should be tagged.
