@@ -79,7 +79,7 @@
 
 \title{Referent Annotation Guidelines}
 \author{}
-\date{\vspace{-2.5em}2020-06-10}
+\date{\vspace{-2.5em}2020-06-24}
 
 \begin{document}
 \maketitle
@@ -201,8 +201,9 @@ We use the following 10 labels:
 6 & Given & \texttt{g}\tabularnewline
 7 & Given-Displaced & \texttt{gd}\tabularnewline
 (8) & Further-Explanation & \texttt{+fe}\tabularnewline
-(9) & Predicative & \texttt{pr}\tabularnewline
+(9) & Predicative & \texttt{+pr}\tabularnewline
 (10) & Generic & \texttt{gen}\tabularnewline
+(11) & Introduction & \texttt{+intro}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -619,7 +620,7 @@ To resolve this, we use the \texttt{+fe} tag.
   \texttt{car2} \texttt{n+fe}
 \end{itemize}
 
-Theoretically, \texttt{+fe} can attach to any r-type. In practice, it is usually attached to \texttt{n}.
+When a referent is annotated as \texttt{+fe}, it repeats the most recent r-type, plus \texttt{+fe}.
 
 \begin{quote}
 A dog ran into the street. A car \texttt{car1} \texttt{n} (a blue one \texttt{car1} \texttt{n+fe}) stopped suddenly.
@@ -679,18 +680,18 @@ Generic predicatives assign a characteristic to a referent,
 as described above.
 Almost all predicatives are generic.
 
-Generic predicative referents are tagged as \texttt{pr+gen}.
+Generic predicative referents are tagged as \texttt{gen+pr}.
 
 \begin{quote}
 There was a car \texttt{car1} \texttt{n}.
-It \texttt{car2} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr+gen} \texttt{characteristic}.
+It \texttt{car2} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{gen+pr} \texttt{characteristic}.
 \end{quote}
 
 As we see here, no new thing/person was introduced by the phrase ``a blue car'', it just added a new characteristic to \texttt{car1}.
 
 \begin{quote}
 There were two cars \texttt{cars} \texttt{n}.
-The first car \texttt{car1} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{pr+gen} \texttt{characteristic}.
+The first car \texttt{car1} \texttt{g} \texttt{subject} was a blue car \texttt{car1} \texttt{gen+pr} \texttt{characteristic}.
 \end{quote}
 
 Similarly, ``a blue car'' does not introduce a new referent, but just adds a characteristic to an existing one.
@@ -725,7 +726,7 @@ There are two ways to identify non-generic predicatives:
 In fact, the driver of the first car was the bald guy.
 \end{quote}
 
-This does not work with \texttt{pr+gen} referents.
+This does not work with \texttt{gen+pr} referents.
 
 \begin{quote}
 * There was a car.
@@ -758,11 +759,11 @@ but refers to a class of things in general.
 
 \begin{quote}
 The dog jumped at the ball.
-You know, because it's a dog \texttt{pr+gen},
+You know, because it's a dog \texttt{gen+pr},
 and a dog \texttt{gen} is always gonna want to jump at a ball.
 \end{quote}
 
-The majority of generic referents that appeared in the data are \protect\hyperlink{predicative}{predicatives}. These are tagged as \texttt{pr+gen}.
+The majority of generic referents that appeared in the data are \protect\hyperlink{predicative}{predicatives}. These are tagged as \texttt{gen+pr}.
 
 However,
 there are cases where a ``referent'' is generic, but not predicative.
@@ -785,6 +786,62 @@ So, tagged generic referents must:
 The dog jumped at a ball.
 You know, dogs \texttt{untagged} are always gonna want to jump at a ball.
 \end{quote}
+
+\hypertarget{introductions}{%
+\section{Introductions}\label{introductions}}
+
+Introductions appear at the beginning of narratives.
+The speaker introduces the main events of the narrative,
+before going back and explaining more in-depth.
+
+\begin{quote}
+Oh my gosh I just saw this car crash!
+A man and a woman were walking\ldots{}
+\end{quote}
+
+Introductions can identified by two main factors:
+
+\begin{itemize}
+\tightlist
+\item
+  They summarize a portion of the later narrative
+\item
+  They are temporally displaced - after the introduction,
+  the speaker moves to a different time in the story's narrative.
+\end{itemize}
+
+\begin{quote}
+I saw a car crash involving a little dog. \texttt{introduction}
+So, I was in the parking lot, and a man and a woman were walking,
+And a woman was unloading her groceries, she had a little dog.
+And there were two cars which bumped into each other.
+\end{quote}
+
+The introduction in the example above summarizes the whole story,
+after which the speaker moves to the very beginning of the main story,
+and not to the events after the crash.
+
+Since introductions are separate from the main narrative,
+referents in the introduction are NOT tagged. If we tagged them,
+we would have referents that are introduced twice - one time in the introduction,
+and one time in the main story.
+
+In most cases, it is clear what is or is not an introduction.
+If you hesitate, discuss with other annotators.
+
+Referents that occur in introductions are tagged as their base r-type \texttt{+intro},
+and are not counted for any given/bridging/unused-unknown determinations
+outside the introduction.
+
+\begin{quote}
+I just saw a car crash, where a dog \texttt{dog} \texttt{n+intro} almost got hit!
+So, a man and a woman were walking, and a car \texttt{car1} \texttt{n\ (not\ b)} stopped suddenly \ldots{}
+\end{quote}
+
+Since \texttt{dog} appears in the intro, its r-type is tagged as \texttt{n+intro}.
+
+Although there is a \texttt{car\ crash\ \textless{}-\textgreater{}\ car1} bridging relationship,
+the car crash appears in the intro, and so is not counted for later bridging.
 
 \hypertarget{answer-3-conjoined-referents}{%
 \chapter{Answer 3: Conjoined Referents}\label{answer-3-conjoined-referents}}
@@ -1024,6 +1081,25 @@ They \texttt{couple} crossed the street.
 
 \hypertarget{r-types}{%
 \section{R-Types}\label{r-types}}
+
+\hypertarget{r-type-hierarchy}{%
+\subsection{R-Type Hierarchy}\label{r-type-hierarchy}}
+
+\begin{quote}
+Multiple r-types apply to this referent. Which shall I choose?
+\end{quote}
+
+If multiple r-types apply,
+choose the highest ranking r-type in the r-type hierarchy:
+
+\texttt{g(d)\ \textgreater{}\ bc\ \textgreater{}\ b(d)\ \textgreater{}\ u\ \textgreater{}\ n}
+
+\begin{quote}
+The driver \texttt{driver2} \texttt{b} who was behind the guy \texttt{driver1} \texttt{bc}
+in the blue car \texttt{car1} \texttt{g}
+\end{quote}
+
+Both \texttt{bc} and \texttt{u} apply to \texttt{driver2}, but \texttt{bc} ranks higher.
 
 \hypertarget{new-vs.-unused-unknown}{%
 \subsection{New vs.~Unused-Unknown}\label{new-vs.-unused-unknown}}
@@ -1470,6 +1546,8 @@ A non-exhaustive list of bridging relationships:
   dog \textless-\textgreater{} leash
 \item
   car crash \textless-\textgreater{} cars
+\item
+  car crash \textless-\textgreater{} drivers
 \end{itemize}
 
 \begin{quote}
@@ -1488,7 +1566,8 @@ but it kept pulling on the leash \texttt{leash} \texttt{b} she was using.
 \end{quote}
 
 We have made the decision that bridging relationships work in both directions,
-for everything except for ``car crash'' to ``cars'' since introducing cars does not imply their crash.
+for everything except for ``car crash'' to ``cars'' and ``drivers'',
+since introducing cars does not imply their crash.
 The decision concerning the bi-directionality of the other referent pairs can be reviewed in the future.
 
 \begin{quote}
@@ -1504,6 +1583,9 @@ but the dog \texttt{dog} \texttt{b} kept pulling anyway.
 However, bridging relationships do not \emph{always} mean that
 referents should be tagged \texttt{b}.
 See \protect\hyperlink{bridging}{the R-Type section on bridging} for more information.
+
+Additionally, ``car accident'' frequently appears in introductions,
+and so it often will not be counted for bridging relationships.
 
 \hypertarget{bridging-vs.-bridging-contained}{%
 \subsection{Bridging vs.~Bridging-Contained}\label{bridging-vs.-bridging-contained}}
@@ -1885,48 +1967,6 @@ Which CU's are empty CU's?
 
 Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
 
-\hypertarget{introductions}{%
-\subsection{Introductions}\label{introductions}}
-
-Introductions appear at the beginning of narratives.
-The speaker introduces the main events of the narrative,
-before going back and explaining more in-depth.
-
-\begin{quote}
-Oh my gosh I just saw this car crash!
-A man and a woman were walking\ldots{}
-\end{quote}
-
-Introductions can identified by two main factors:
-
-\begin{itemize}
-\tightlist
-\item
-  They summarize a portion of the later narrative
-\item
-  They are temporally displaced - after the introduction,
-  the speaker moves to a different time in the story's narrative.
-\end{itemize}
-
-\begin{quote}
-I saw a car crash involving a little dog. \texttt{introduction}
-So, I was in the parking lot, and a man and a woman were walking,
-And a woman was unloading her groceries, she had a little dog.
-And there were two cars which bumped into each other.
-\end{quote}
-
-The introduction in the example above summarizes the whole story,
-after which the speaker moves to the very beginning of the main story,
-and not to the events after the crash.
-
-Since introductions are separate from the main narrative,
-referents in the introduction are NOT tagged. If we tagged them,
-we would have referents that are introduced twice - one time in the introduction,
-and one time in the main story.
-
-In most cases, it is clear what is or is not an introduction.
-If you hesitate, discuss with other annotators.
-
 \hypertarget{apostrophe-s}{%
 \subsection{Apostrophe S}\label{apostrophe-s}}
 
@@ -2035,10 +2075,19 @@ The man \texttt{u} who \texttt{untagged} was with her looked confused.
 What do we do with repeated references (``A ball - a ball was rolling \ldots{}'')?
 \end{quote}
 
-If a referent was repeated, tag only the last referent - the one the speaker eventually decided on.
+If a referent is repeated without additional information,
+tag only the last referent - the one the speaker eventually decided on.
 
 \begin{quote}
 A man \texttt{untagged} was, a man \texttt{n} was walking down the street.
+\end{quote}
+
+However,
+if the repetition results in a phrase that can be interpreted as \texttt{+fe},
+tag it as such.
+
+\begin{quote}
+And the car \texttt{g} um (-) the blue car \texttt{g+fe} um (-) stopped\ldots{}
 \end{quote}
 
 \hypertarget{identifying-repetitions}{%
@@ -2174,7 +2223,7 @@ Here are some examples, and our decisions:
 The woman was holding her dog by {[}the leash{]}.
 \end{quote}
 
-\texttt{untagged}
+\texttt{gen}
 
 ``the leash'' is generic.
 We feel that ``by the leash'' is a set phrase,
@@ -2185,10 +2234,18 @@ but to the action of holding a dog by any leash.
 Both drivers got out of {[}the car{]}
 \end{quote}
 
-\texttt{untagged}
+\texttt{gen}
 
 ``the car'' is generic for the same reason,
 ``get out of the car'' just refers to getting out of any car.
+
+\begin{quote}
+Both drivers got out of {[}the vehicle{]}
+\end{quote}
+
+\texttt{gen}
+
+As with ``car'', so with ``vehicle''.
 
 \hypertarget{technical}{%
 \section{Technical}\label{technical}}
