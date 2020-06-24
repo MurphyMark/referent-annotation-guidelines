@@ -110,6 +110,20 @@ attached to the man or the woman.
 
 ## R-Types
 
+### R-Type Hierarchy
+
+> Multiple r-types apply to this referent. Which shall I choose?
+
+If multiple r-types apply,
+choose the highest ranking r-type in the r-type hierarchy:
+
+`g(d) > bc > b(d) > u > n`
+
+> The driver `driver2` `b` who was behind the guy `driver1` `bc` 
+> in the blue car `car1` `g`
+  
+Both `bc` and `u` apply to `driver2`, but `bc` ranks higher.
+
 ### New vs. Unused-Unknown
 
 > Should I tag this referent as New or Unused-Unknown?
@@ -459,6 +473,7 @@ A non-exhaustive list of bridging relationships:
 * car3 <-> trunk
 * dog <-> leash
 * car crash <-> cars
+* car crash <-> drivers
 
 > There was a woman next to her car `car3` `n` `anchor:trunk`.
 > She was putting groceries into the trunk `trunk` `b`.
@@ -470,7 +485,8 @@ A non-exhaustive list of bridging relationships:
 > but it kept pulling on the leash `leash` `b` she was using.
 
 We have made the decision that bridging relationships work in both directions, 
-for everything except for "car crash" to "cars" since introducing cars does not imply their crash.
+for everything except for "car crash" to "cars" and "drivers",
+since introducing cars does not imply their crash.
 The decision concerning the bi-directionality of the other referent pairs can be reviewed in the future.  
 
 > There was a woman putting groceries into her trunk `trunk` `n` `anchor:car3`.
@@ -482,6 +498,9 @@ The decision concerning the bi-directionality of the other referent pairs can be
 However, bridging relationships do not *always* mean that
 referents should be tagged `b`.
 See [the R-Type section on bridging](#bridging) for more information.
+
+Additionally, "car accident" frequently appears in introductions,
+and so it often will not be counted for bridging relationships.
 
 ### Bridging vs. Bridging-Contained
 
@@ -748,40 +767,6 @@ Empty CU's are those without words - pauses, tongue clicks, gulping, etc.
 <!-- TODO: Add examples -->
 <!-- TODO: What about "hmm" -->
 
-### Introductions
-
-<!-- Add section in 00-rtype -->
-<!-- Explain more about introductions -->
-Introductions appear at the beginning of narratives.
-The speaker introduces the main events of the narrative,
-before going back and explaining more in-depth.
-
-> Oh my gosh I just saw this car crash!
-> A man and a woman were walking...
-
-Introductions can identified by two main factors:
-
-* They summarize a portion of the later narrative
-* They are temporally displaced - after the introduction,
-the speaker moves to a different time in the story's narrative.
-
-> I saw a car crash involving a little dog. `introduction`
-> So, I was in the parking lot, and a man and a woman were walking,
-> And a woman was unloading her groceries, she had a little dog.
-> And there were two cars which bumped into each other.
-
-The introduction in the example above summarizes the whole story,
-after which the speaker moves to the very beginning of the main story,
-and not to the events after the crash.
-
-Since introductions are separate from the main narrative,
-referents in the introduction are NOT tagged. If we tagged them, 
-we would have referents that are introduced twice - one time in the introduction, 
-and one time in the main story.
-
-In most cases, it is clear what is or is not an introduction. 
-If you hesitate, discuss with other annotators.
-
 ### Apostrophe S
 
 > What do we do with 's phrases, like "the man's ball"?
@@ -851,12 +836,18 @@ We tag only noun phrases that are headed by nouns and personal pronouns.
 > The man `u` who `untagged` was with her looked confused.
 
 ### Repetitions
-
 > What do we do with repeated references ("A ball - a ball was rolling ...")?
 
-If a referent was repeated, tag only the last referent - the one the speaker eventually decided on.
+If a referent is repeated without additional information,
+tag only the last referent - the one the speaker eventually decided on.
 
 > A man `untagged` was, a man `n` was walking down the street.
+
+However,
+if the repetition results in a phrase that can be interpreted as `+fe`,
+tag it as such.
+
+> And the car `g` um (-) the blue car `g+fe` um (-) stopped...
 
 ### Identifying Repetitions
 
@@ -959,7 +950,7 @@ Here are some examples, and our decisions:
 
 > The woman was holding her dog by [the leash].
 
-`untagged`
+`gen`
 
 "the leash" is generic.
 We feel that "by the leash" is a set phrase,
@@ -968,10 +959,16 @@ but to the action of holding a dog by any leash.
 
 > Both drivers got out of [the car]
 
-`untagged`
+`gen`
 
 "the car" is generic for the same reason,
 "get out of the car" just refers to getting out of any car.
+
+> Both drivers got out of [the vehicle]
+
+`gen`
+
+As with "car", so with "vehicle".
 
 
 ## Technical
