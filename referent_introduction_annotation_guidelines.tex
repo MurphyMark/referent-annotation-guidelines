@@ -79,7 +79,7 @@
 
 \title{Referent Annotation Guidelines}
 \author{}
-\date{\vspace{-2.5em}2020-06-26}
+\date{\vspace{-2.5em}2020-07-03}
 
 \begin{document}
 \maketitle
@@ -227,6 +227,8 @@ Questions:
 \tightlist
 \item
   \protect\hyperlink{new-vs.-unused-unknown}{New vs.~Unused-Unknown}
+\item
+  \protect\hyperlink{referent-explanation-test}{Explanation Test}
 \end{itemize}
 
 \hypertarget{unused-unknown}{%
@@ -252,7 +254,7 @@ So, one must be true:
   that connects the referent to another existing referent.
 \end{itemize}
 
-\protect\hyperlink{referent-explanations}{More information on identifying explanations}.
+\protect\hyperlink{referent-explanation-test}{More information on identifying explanations}.
 
 \begin{quote}
 Across the street, a dog was barking.
@@ -315,6 +317,8 @@ Questions:
   \protect\hyperlink{new-vs.-unused-unknown}{New vs.~Unused-Unknown}
 \item
   \protect\hyperlink{referent-explanations}{Referent Explanations}
+\item
+  \protect\hyperlink{referent-explanation-test}{Explanation Test}
 \end{itemize}
 
 \hypertarget{bridging}{%
@@ -467,6 +471,76 @@ The man \texttt{driver1} \texttt{bc} who was in {[}the car{]} \texttt{car1} \tex
 
 In this example, ``a car crash'' acts as an anchor for ``the car'',
 which in turn acts as an anchor for ``the man''.
+
+Two types of anchors are possible.
+The first type is the new anchor. This occurs rarely - mostly with driver - car, trunk - car, father - family
+
+\begin{quote}
+The driver \texttt{bc} of this red car \texttt{n} stopped suddenly.
+\end{quote}
+
+Another type of anchor is a non-new anchor.
+Non-new anchors can be \texttt{g}, \texttt{u}, or \texttt{b}.
+If the non-new anchor is \texttt{u} or \texttt{b},
+it must be connected to a referent that appears before the \texttt{bc} referent in question.
+
+\begin{quote}
+There were two cars. The driver \texttt{bc} of the red car \texttt{g} stopped suddenly.
+\end{quote}
+
+The bridging referent and the anchor can be linked by either the prepisition ``of'',
+or another preposition (``in'', ``on'', etc.).
+If the preposition is ``of'', the anchor can be new or non-new.
+
+Examples
+
+\begin{quote}
+There was a family. The backpack \texttt{bc} of the father \texttt{b} was blue.
+\end{quote}
+
+\begin{quote}
+I saw the driver \texttt{bc} of this red car \texttt{n} stop suddenly.
+\end{quote}
+
+\begin{quote}
+There was a woman across the street. The trunk \texttt{bc} of the woman's car \texttt{u} was open.
+\end{quote}
+
+If the preposition is not ``of'',
+only anchors which are non-new can be used for bridging-contained.
+
+\begin{quote}
+There was a woman. A dog \texttt{n} on a leash \texttt{n} was barking.
+\end{quote}
+
+\begin{quote}
+There was a woman. The dog \texttt{n} on a leash \texttt{n} was barking.
+\end{quote}
+
+\begin{quote}
+There was a lady with her dog \texttt{u} on a leash \texttt{b}.
+\end{quote}
+
+`leash' is \texttt{b}, because \texttt{dog} is the anchor.
+However, this anchor does not appear before `her dog',
+and so it does not qualify as a non-new anchor for \texttt{bc}.
+
+\begin{quote}
+A driver \texttt{n} in a car \texttt{n} slammed on the breaks.
+\end{quote}
+
+\begin{quote}
+The driver \texttt{n} in a car \texttt{n} stopped suddenly.
+\end{quote}
+
+\begin{quote}
+There were two cars. I saw the driver \texttt{bc} in the red car \texttt{g} stop suddenly.
+\end{quote}
+
+\begin{quote}
+A woman was unloading groceries.
+The dog \texttt{bc} on the leash \texttt{u} the woman was holding started barking.
+\end{quote}
 
 Questions:
 
@@ -697,20 +771,27 @@ The first car \texttt{car1} \texttt{g} \texttt{subject} was a blue car \texttt{c
 Similarly, ``a blue car'' does not introduce a new referent, but just adds a characteristic to an existing one.
 
 Non-Generic predicatives link two existing referents.
-These predicatives are annotated with \texttt{pr}
+These predicatives are annotated with \texttt{+pr} (\texttt{n+pr}, \texttt{b+pr}, \texttt{u+pr}, \texttt{g+pr}).
 
 \begin{quote}
 There was a cocker spaniel walking down the street.
 It reminded me of my dog who was at home.
 Suddenly I realized:
-The cocker spaniel \texttt{referent1} was my dog \texttt{pr} \texttt{referent2}!
+The cocker spaniel \texttt{referent1} was my dog \texttt{g+pr} \texttt{referent2}!
 \end{quote}
 
 \begin{quote}
 Two cars crashed.
 A bald guy called the police.
 In fact, the bald guy \texttt{referent1}
-was the driver of the first car \texttt{pr} \texttt{referent2}.
+was the driver \texttt{referent2} \texttt{bc+pr} of the first car.
+\end{quote}
+
+\begin{quote}
+A dog ran in front of a car, and
+that car and another crashed together.
+A bald guy called the police.
+In fact bald guy was the one \texttt{u+pr} who stopped for the dog.
 \end{quote}
 
 There are two ways to identify non-generic predicatives:
@@ -1149,7 +1230,7 @@ Otherwise, tag as \texttt{n}.
 I was standing in a parking lot. A woman \texttt{n} {[}'s dog{]} \texttt{n} suddenly ran in front of two cars.
 \end{quote}
 
-\protect\hyperlink{referent-explanations}{More information on identifying explanations}.
+\protect\hyperlink{referent-explanation-test}{More information on identifying explanations}.
 
 \hypertarget{explanation-containing-given-referent}{%
 \subsection{Explanation containing Given Referent}\label{explanation-containing-given-referent}}
@@ -1507,6 +1588,20 @@ it would still make sense.
 ``while she \ldots{}'' is a subordinate clause, and not part of the noun phrase.
 While the relative clause cannot be moved around in the sentence,
 this subordinate clause can be.
+
+\hypertarget{referent-explanation-test}{%
+\subsection{Referent Explanation Test}\label{referent-explanation-test}}
+
+Abigail suggested using the following test:
+If you can move the phrase/clause within the sentence, it refers to the verb and DOES NOT COUNT as an explanation for unused unknown.
+If you cannot move the phrase/clause within the sentence, it refers to the referent and COUNTS as an explanation for unused unknown.
+
+Ex.:
+She had a dog {[}with her{]} - {[}with her{]} is the phrase in question
+{[}With her{]}, she had a dog - sounds a bit funny, but it's still grammatical --\textgreater{} it means you can move it, so the phrase {[}with her{]} refers to the verb and does not count as an unused unknown explanation
+
+She had a dog, {[}who ran after the ball{]} - {[}who ran after the ball{]} is the clause in question
+{[}Who ran after the ball{]} she had a dog - this is ungrammatical → it means you cannot move it, so the clause {[}who ran after the ball{]} refers to the referent ``dog'' and counts as an unused unknown explanation
 
 \hypertarget{bridging-relationships}{%
 \subsection{Bridging Relationships}\label{bridging-relationships}}

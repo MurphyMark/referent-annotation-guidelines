@@ -155,7 +155,7 @@ Otherwise, tag as `n`.
 
 > I was standing in a parking lot. A woman `n` ['s dog] `n` suddenly ran in front of two cars.
 
-[More information on identifying explanations](#referent-explanations).
+[More information on identifying explanations](#referent-explanation-test).
 
 ### Explanation containing Given Referent
 
@@ -451,6 +451,20 @@ it would still make sense.
 "while she ..." is a subordinate clause, and not part of the noun phrase.
 While the relative clause cannot be moved around in the sentence,
 this subordinate clause can be.
+
+### Referent Explanation Test
+
+Abigail suggested using the following test: 
+If you can move the phrase/clause within the sentence, it refers to the verb and DOES NOT COUNT as an explanation for unused unknown. 
+If you cannot move the phrase/clause within the sentence, it refers to the referent and COUNTS as an explanation for unused unknown.
+      
+Ex.: 
+She had a dog [with her] - [with her] is the phrase in question
+[With her], she had a dog - sounds a bit funny, but it’s still grammatical -->           it means you can move it, so the phrase [with her] refers to the verb and does not count as an unused unknown explanation
+
+She had a dog, [who ran after the ball] - [who ran after the ball] is the clause in question
+[Who ran after the ball] she had a dog - this is ungrammatical →  it means you cannot move it, so the clause [who ran after the ball] refers to the referent “dog” and counts as an unused unknown explanation
+
 
 ### Bridging Relationships
 

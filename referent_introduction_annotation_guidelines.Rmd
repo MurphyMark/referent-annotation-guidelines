@@ -107,6 +107,7 @@ A regular new referent, normally introduced with an indefinite article, referent
 Questions:
 
 * [New vs. Unused-Unknown](#new-vs.-unused-unknown)
+* [Explanation Test](#referent-explanation-test)
 
 ## Unused-Unknown
 
@@ -123,7 +124,7 @@ So, one must be true:
 the explanation must contain a locative phrase 
 that connects the referent to another existing referent.
 
-[More information on identifying explanations](#referent-explanations).
+[More information on identifying explanations](#referent-explanation-test).
 
 > Across the street, a dog was barking.
 > The woman `u` [with the dog] `explanation` yelled at it.
@@ -167,6 +168,7 @@ Questions:
 
 * [New vs. Unused-Unknown](#new-vs.-unused-unknown)
 * [Referent Explanations](#referent-explanations)
+* [Explanation Test](#referent-explanation-test)
 
 ## Bridging
 
@@ -284,6 +286,52 @@ with a different anchor:
 
 In this example, "a car crash" acts as an anchor for "the car",
 which in turn acts as an anchor for "the man".
+
+Two types of anchors are possible.
+The first type is the new anchor. This occurs rarely - mostly with driver - car, trunk - car, father - family
+
+> The driver `bc` of this red car `n` stopped suddenly.
+
+Another type of anchor is a non-new anchor.
+Non-new anchors can be `g`, `u`, or `b`.
+If the non-new anchor is `u` or `b`, 
+it must be connected to a referent that appears before the `bc` referent in question.
+
+> There were two cars. The driver `bc` of the red car `g` stopped suddenly.
+
+The bridging referent and the anchor can be linked by either the prepisition "of",
+or another preposition ("in", "on", etc.).
+If the preposition is "of", the anchor can be new or non-new.
+
+Examples
+
+> There was a family. The backpack `bc` of the father `b` was blue.
+
+> I saw the driver `bc` of this red car `n` stop suddenly.
+
+> There was a woman across the street. The trunk `bc` of the woman's car `u` was open.
+
+If the preposition is not "of",
+only anchors which are non-new can be used for bridging-contained.
+
+> There was a woman. A dog `n` on a leash `n` was barking.
+
+> There was a woman. The dog `n` on a leash `n` was barking.
+
+> There was a lady with her dog `u` on a leash `b`.
+
+'leash' is `b`, because `dog` is the anchor.
+However, this anchor does not appear before 'her dog',
+and so it does not qualify as a non-new anchor for `bc`.
+
+> A driver `n` in a car `n` slammed on the breaks.
+
+> The driver `n` in a car `n` stopped suddenly.
+
+> There were two cars. I saw the driver `bc` in the red car `g` stop suddenly.
+
+> A woman was unloading groceries.
+> The dog `bc` on the leash `u` the woman was holding started barking.
 
 Questions:
 
@@ -443,17 +491,22 @@ As we see here, no new thing/person was introduced by the phrase "a blue car", i
 Similarly, "a blue car" does not introduce a new referent, but just adds a characteristic to an existing one.
 
 Non-Generic predicatives link two existing referents.
-These predicatives are annotated with `pr`
+These predicatives are annotated with `+pr` (`n+pr`, `b+pr`, `u+pr`, `g+pr`).
 
 > There was a cocker spaniel walking down the street.
 > It reminded me of my dog who was at home.
 > Suddenly I realized:
-> The cocker spaniel `referent1` was my dog `pr` `referent2`!
+> The cocker spaniel `referent1` was my dog `g+pr` `referent2`!
 
 > Two cars crashed.
 > A bald guy called the police.
 > In fact, the bald guy `referent1` 
-> was the driver of the first car `pr` `referent2`.
+> was the driver `referent2` `bc+pr` of the first car.
+
+> A dog ran in front of a car, and
+> that car and another crashed together.
+> A bald guy called the police.
+> In fact bald guy was the one `u+pr` who stopped for the dog.
 
 There are two ways to identify non-generic predicatives:
 
@@ -745,7 +798,7 @@ Otherwise, tag as `n`.
 
 > I was standing in a parking lot. A woman `n` ['s dog] `n` suddenly ran in front of two cars.
 
-[More information on identifying explanations](#referent-explanations).
+[More information on identifying explanations](#referent-explanation-test).
 
 ### Explanation containing Given Referent
 
@@ -1041,6 +1094,20 @@ it would still make sense.
 "while she ..." is a subordinate clause, and not part of the noun phrase.
 While the relative clause cannot be moved around in the sentence,
 this subordinate clause can be.
+
+### Referent Explanation Test
+
+Abigail suggested using the following test: 
+If you can move the phrase/clause within the sentence, it refers to the verb and DOES NOT COUNT as an explanation for unused unknown. 
+If you cannot move the phrase/clause within the sentence, it refers to the referent and COUNTS as an explanation for unused unknown.
+      
+Ex.: 
+She had a dog [with her] - [with her] is the phrase in question
+[With her], she had a dog - sounds a bit funny, but it’s still grammatical -->           it means you can move it, so the phrase [with her] refers to the verb and does not count as an unused unknown explanation
+
+She had a dog, [who ran after the ball] - [who ran after the ball] is the clause in question
+[Who ran after the ball] she had a dog - this is ungrammatical →  it means you cannot move it, so the clause [who ran after the ball] refers to the referent “dog” and counts as an unused unknown explanation
+
 
 ### Bridging Relationships
 
