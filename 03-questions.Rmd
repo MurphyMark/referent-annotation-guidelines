@@ -879,7 +879,7 @@ Tag both referents normally.
 > The car behind him - hit [it] also - hit [the car] - [the other car]
 
 The verb does not change, but the referent does.
-Tag only "the other car", which was the speaker's final choice.
+Tag "it" `g`, "the car" `g+fe`and "the other car" `g+fe`.
 
 > And the guy with [the ball] who accidentally dropped [the ball] ...
 
