@@ -199,7 +199,8 @@ Questions
 <!-- TODO: Link to Anchor -->
 <!-- TODO: Link bridging relationship -->
 
-Bridging-Contained is similar to Bridging, except that it requires the bridging referent to be in the same noun phrase as its anchor.
+Bridging-Contained is similar to Bridging, except that the anchor must be in the same noun phrase as the bridging referent. In the majority of cases, the anchor must be non-new, i.e. `given`, `unused-unknown`, or `bridging`, except for the cases when the bridging referent and its anchor are linked with the preposition *of* (see below).
+
 
 Examples:
 
@@ -248,14 +249,14 @@ Examples
 If the preposition is not "of",
 only anchors which are non-new can be used for bridging-contained.
 
-> There was a woman. A dog `n` on a leash `n` was barking.
+> There was a woman. A dog `n` on a leash `b` was barking.
 
-> There was a woman. The dog `n` on a leash `n` was barking.
+> There was a woman. The dog `n` on a leash `b` was barking.
 
 > There was a lady with her dog `u` on a leash `b`.
 
-'leash' is `b`, because `dog` is the anchor.
-However, this anchor does not appear before 'her dog',
+In the three examples above, 'leash' is `b`, because `dog` is the anchor.
+However, this anchor does not appear before 'a/the/her dog',
 and so it does not qualify as a non-new anchor for `bc`.
 
 > A driver `n` in a car `n` slammed on the breaks.
