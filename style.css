@@ -1,14 +1,16 @@
-p.caption {
-  color: #777;
-  margin-top: 10px;
+/* Whole document: */
+body{
+  font-family: Helvetica;
+  font-size: 12pt;
 }
-p code {
-  white-space: inherit;
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 15.5px;
+    border-left: 5px solid #eee;
 }
-pre {
-  word-break: normal;
-  word-wrap: normal;
-}
-pre code {
-  white-space: inherit;
+/* Headers */
+h1,h2,h3,h4,h5,h6{
+  font-size: 15pt;
+  font-weight: bold;
 }
