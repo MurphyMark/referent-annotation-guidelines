@@ -75,7 +75,7 @@ See also:
 We use the ReFlex annotation scheme to give each new referent a referential label.
 The original ReFlex paper can be found at https://elib.uni-stuttgart.de/handle/11682/9028.
 
-We use the following 10 labels:
+We use the following 11 labels:
 
 | | R-Type | Abbreviation
 |:-|-|-|
@@ -760,10 +760,10 @@ choose the highest ranking r-type in the r-type hierarchy:
 
 `g(d) > bc > b(d) > u > n`
 
-> The driver `driver2` `b` who was behind the guy `driver1` `bc` 
-> in the blue car `car1` `g`
+> The driver `driver2` `u` who was behind the guy `driver1` `bc` 
+> in the blue car `car1` `g` was forced to stop suddenly.
   
-Both `bc` and `u` apply to `driver2`, but `bc` ranks higher.
+Both `bc` and `u` apply to `driver1`, but `bc` ranks higher.
 
 ### 3.2.2 New vs Unused Unknown
 
@@ -821,7 +821,7 @@ Phrase types:
 
 > The man who was holding the ball `g` and talking to a woman dropped it.
 
-Explanation: "who was holding the ball"
+Explanation: "who was holding the ball and talking to a woman"
 
 "the ball": `g`
 
